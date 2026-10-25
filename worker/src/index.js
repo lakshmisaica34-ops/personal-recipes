@@ -1,6 +1,6 @@
-const MODEL = "openai/gpt-oss-20b";
+const MODEL = "@cf/openai/gpt-oss-20b";
 const WINDOW_MS = 15 * 60 * 1000;
-const LIMIT = 10;
+const LIMIT = 30;
 const buckets = new Map();
 
 function cors(origin, env) {
@@ -53,7 +53,7 @@ export default {
       return json({ error: "not found" }, 404, headers);
     }
     if (origin !== env.ALLOWED_ORIGIN) return json({ error: "origin not allowed" }, 403, headers);
-    if (!env.GROQ_API_KEY) return json({ error: "chat backend is not configured" }, 503, headers);
+    if (!env.AI) return json({ error: "Workers AI binding is not configured" }, 503, headers);
 
     const length = Number(request.headers.get("Content-Length") || 0);
     if (length > 40_000) return json({ error: "request too large" }, 413, headers);
@@ -79,31 +79,20 @@ export default {
       return json({ error: "invalid message" }, 400, headers);
     }
 
-    let upstream;
+    let stream;
     try {
-      upstream = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${env.GROQ_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: MODEL,
-          messages,
-          temperature: 0.65,
-          max_tokens: 400,
-          stream: true,
-        }),
+      stream = await env.AI.run(MODEL, {
+        messages,
+        temperature: 0.65,
+        max_tokens: 400,
+        stream: true,
       });
-    } catch {
-      return json({ error: "could not reach the model provider" }, 502, headers);
+    } catch (error) {
+      const detail = String(error?.message || error).slice(0, 600);
+      const status = /limit|quota|neuron|429/i.test(detail) ? 429 : 502;
+      return json({ error: "Workers AI request failed", detail }, status, headers);
     }
-
-    if (!upstream.ok) {
-      const detail = (await upstream.text()).slice(0, 1000);
-      return json({ error: "model provider error", detail }, upstream.status, headers);
-    }
-    return new Response(upstream.body, {
+    return new Response(stream, {
       status: 200,
       headers: {
         ...headers,

@@ -5,3 +5,6 @@ workers_dev = true
 
 [vars]
 ALLOWED_ORIGIN = "https://lakshmisaica34-ops.github.io"
+
+[ai]
+binding = "AI"

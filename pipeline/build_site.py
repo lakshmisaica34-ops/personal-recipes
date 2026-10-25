@@ -708,7 +708,7 @@ form.addEventListener('submit', async e => {
       for(const line of lines){
         if(!line.startsWith('data:'))continue;
         const raw=line.slice(5).trim(); if(!raw||raw==='[DONE]')continue;
-        try{const chunk=JSON.parse(raw);answer+=chunk.choices?.[0]?.delta?.content||'';}catch{}
+        try{const chunk=JSON.parse(raw);answer+=chunk.choices?.[0]?.delta?.content||chunk.response||'';}catch{}
         assistant.textContent=answer;log.scrollTop=log.scrollHeight;
       }
     }

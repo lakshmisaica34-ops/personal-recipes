@@ -1,21 +1,23 @@
-# Free recipe-chat backend (Groq)
+# Free recipe-chat backend (Cloudflare Workers AI)
 
-This Worker proxies chat requests from the static GitHub Pages dashboard to Groq. The Groq
-credential stays in Cloudflare as a Worker secret; it is never put in the public website.
-The Worker uses Groq's `openai/gpt-oss-20b` model and streams the answer back to the browser.
+This Worker sends chat requests from the static GitHub Pages dashboard to Cloudflare Workers
+AI using the `@cf/openai/gpt-oss-20b` model. It needs no separate model-provider API key; the
+Workers AI binding is configured in `wrangler.toml`.
 
-Groq free-tier availability and rate limits can change. This avoids the ~1 GB browser model
-download; it does mean the chat text and the few matching recipe records are sent to Groq.
+Cloudflare currently includes **10,000 Neurons/day at no charge**. Based on the published
+model rates (18,182 neurons per million input tokens and 27,273 per million output tokens),
+that is roughly 100–200 short recipe-chat replies/day depending on prompt/history size. It is
+not unlimited; once the daily allocation is used, requests fail until reset. This avoids the
+~1 GB browser model download. Chat text and a few matching recipe records are sent to Cloudflare
+for inference.
 
 ## One-time setup
 
 1. Create/sign in to a Cloudflare account and install Wrangler (`npm install -g wrangler`).
 2. From this folder, run `wrangler login`.
-3. Set the Groq API key as a Cloudflare secret (obtain one from the Groq console):
-   `wrangler secret put GROQ_API_KEY`
-4. Deploy the Worker: `wrangler deploy`.
-5. Test `https://personal-recipes-chat.<your-workers-subdomain>.workers.dev/health`.
-6. Rebuild the dashboard with the Worker URL, then redeploy Pages:
+3. Deploy the Worker: `wrangler deploy`.
+4. Test `https://personal-recipes-chat.<your-workers-subdomain>.workers.dev/health`.
+5. Rebuild the dashboard with the Worker URL, then redeploy Pages:
 
    ```sh
    RECIPE_CHAT_API_URL=https://personal-recipes-chat.<your-workers-subdomain>.workers.dev/chat \
@@ -29,6 +31,6 @@ strong abuse-prevention system; for wider use, add Cloudflare Turnstile or a Dur
 
 ## ChatGPT fallback
 
-ChatGPT subscriptions cannot be used as API credentials. If Groq's free allowance is not
-enough, the Worker can be changed to call the OpenAI API using a separate OpenAI API key stored
-as a Cloudflare secret. OpenAI API usage is billed separately from ChatGPT plans.
+ChatGPT subscriptions cannot be used as API credentials. If Workers AI's daily free allocation
+is not enough, the Worker can be changed to call the OpenAI API using a separate OpenAI API key
+stored as a Cloudflare secret. OpenAI API usage is billed separately from ChatGPT plans.
