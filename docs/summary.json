@@ -1,0 +1,25 @@
+{
+  "recipes": 1046,
+  "source_posts": 1161,
+  "with_ingredients": 735,
+  "with_steps": 501,
+  "title_only": 311,
+  "duplicate_groups": 80,
+  "from_caption": 943,
+  "from_video": 103,
+  "creators": 496,
+  "languages": {
+    "en": 905,
+    "te": 99,
+    "hi": 29,
+    "kn": 5,
+    "ta": 3,
+    "mr": 2,
+    "ml": 2,
+    "fr": 1
+  },
+  "videos_processed": 108,
+  "video_cost_usd": 0.2109,
+  "video_time_s": 3901.2,
+  "generated_at": "2026-10-25T15:38:13.521930Z"
+}

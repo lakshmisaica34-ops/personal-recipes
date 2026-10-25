@@ -1,0 +1,7 @@
+node_modules/
+work/
+.env
+.DS_Store
+*.mp4
+exports/*.mp4
+site/
