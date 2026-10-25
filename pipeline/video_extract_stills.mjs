@@ -17,7 +17,8 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { execFile } from 'node:child_process';
+import { execFile, spawn } from 'node:child_process';
+import { Readable } from 'node:stream';
 import { promisify } from 'node:util';
 
 const exec = promisify(execFile);
@@ -37,6 +38,8 @@ const EVERY = Number(process.env.STILLS_EVERY || 4);
 const MAX_FRAMES = Number(process.env.STILLS_MAX || 30);
 const WITH_AUDIO = process.env.STILLS_AUDIO !== '0';
 const PREFETCH = process.env.STILLS_PREFETCH !== '0';
+const STREAM = process.env.STILLS_STREAM !== '0';
+const SCALE = Number(process.env.STILLS_SCALE || 512);
 const MAX_RAW_BYTES = 5_600_000;
 
 const KEY = process.env.Openrouter_api;
@@ -98,7 +101,7 @@ async function frames(file, dir, every, maxFrames) {
   // Instagram GOPs are ~2-5 s, so decoding only keyframes gives roughly the
   // requested spacing for a fraction of the CPU (no full-stream decode).
   await exec('ffmpeg', ['-y', '-loglevel', 'error', '-skip_frame', 'nokey', '-i', file,
-    '-vf', 'scale=512:-2', '-vsync', 'vfr', '-q:v', '4', path.join(dir, 'f%03d.jpg')], { maxBuffer: 1e8 });
+    '-vf', `scale=${SCALE}:-2`, '-vsync', 'vfr', '-q:v', '3', path.join(dir, 'f%03d.jpg')], { maxBuffer: 1e8 });
   let files = fs.readdirSync(dir).sort();
   if (files.length > maxFrames) {
     // uniform subsample: keep maxFrames spread across the reel
@@ -167,6 +170,32 @@ function normIng(list) {
   return [...seen.values()];
 }
 
+// Stream the CDN file straight into ffmpeg: decoding keyframes (~20x realtime)
+// overlaps the download instead of waiting for it. These MP4s are faststart
+// (moov first), which is what makes this possible; reels that are not fall back
+// to download-then-extract.
+async function streamExtract(url, dir, audioOut) {
+  const res = await fetch(url, { headers: { Cookie: COOKIE, 'User-Agent': UA, Referer: 'https://www.instagram.com/' } });
+  if (!res.ok) throw new Error(`download ${res.status}`);
+  fs.rmSync(dir, { recursive: true, force: true });
+  fs.mkdirSync(dir, { recursive: true });
+  const args = ['-y', '-loglevel', 'error', '-skip_frame', 'nokey', '-i', 'pipe:0',
+    '-vf', `scale=${SCALE}:-2`, '-vsync', 'vfr', '-q:v', '3', path.join(dir, 'f%03d.jpg'),
+    '-vn', '-c:a', 'copy', audioOut];
+  const proc = spawn('ffmpeg', args, { stdio: ['pipe', 'ignore', 'pipe'] });
+  let err = '';
+  proc.stderr.on('data', (d) => { err += d.toString(); });
+  const body = Readable.fromWeb(res.body);
+  body.pipe(proc.stdin);
+  body.on('error', () => { try { proc.kill('SIGKILL'); } catch {} });
+  const code = await new Promise((r) => proc.on('close', r));
+  if (code !== 0) throw new Error(`ffmpeg ${code}: ${err.slice(0, 160)}`);
+  const files = fs.readdirSync(dir).sort();
+  if (!files.length) throw new Error('no frames extracted');
+  const bytes = Number(res.headers.get('content-length') || 0);
+  return { files, bytes, audio: fs.existsSync(audioOut) ? fs.readFileSync(audioOut) : null };
+}
+
 // ---- download-ahead: fetch the next reels while earlier ones are in the API ----
 // Cuts ~4 s of dead time per reel by overlapping network with ffmpeg + Gemini.
 const AHEAD = new Map();          // code -> promise<{file, bytes, download_s}>
@@ -199,20 +228,41 @@ async function processOne(rec) {
   const dir = path.join(TMP, `${rec.code}.frames`);
   const audFile = path.join(TMP, `${rec.code}.m4a`);
   try {
-    const dl = await (AHEAD.get(rec.code) || prefetch(rec));
-    AHEAD.delete(rec.code);
-    fillAhead();
-    if (dl.file !== raw) fs.renameSync(dl.file, raw);
-    const rawBytes = dl.bytes;
-    const download_s = dl.download_s;
+    const cached = URLS.get(rec.code);
+    if (!cached) throw new Error('no cached video url');
 
-    const tEnc0 = Date.now();
-    const dur = await duration(raw);
-    const stills = await frames(raw, dir, EVERY, MAX_FRAMES);
-    const aud = WITH_AUDIO ? await audio(raw, audFile) : null;
-    const encode_s = (Date.now() - tEnc0) / 1000;
+    // ---- frames (+ audio) ----
+    const tExt = Date.now();
+    let stills = null, aud = null, dur = 0, rawBytes = null, download_s = 0;
+    if (STREAM) {
+      const tS = Date.now();
+      try {
+        const r = await streamExtract(cached.url, dir, audFile);
+        download_s = (Date.now() - tS) / 1000;   // download overlapped with decode
+        rawBytes = r.bytes;
+        stills = r.files;
+        aud = r.audio;
+      } catch (e) {
+        stills = null;                            // not faststart / bad stream -> fall back
+      }
+    }
+    if (!stills) {
+      const tDl0 = Date.now();
+      rawBytes = await download(cached.url, raw);
+      download_s = (Date.now() - tDl0) / 1000;
+      stills = await frames(raw, dir, EVERY, MAX_FRAMES);
+    }
+    if (stills.length > MAX_FRAMES) {             // cap, keeping an even spread
+      const step = stills.length / MAX_FRAMES;
+      stills = Array.from({ length: MAX_FRAMES }, (_, i) => stills[Math.floor(i * step)]);
+    }
+    if (aud === null) aud = (WITH_AUDIO && fs.existsSync(audFile)) ? fs.readFileSync(audFile) : null;
+    if (!WITH_AUDIO) aud = null;
+    dur = fs.existsSync(audFile) ? await duration(audFile) : (fs.existsSync(raw) ? await duration(raw) : 0);
+    const framesBytes = stills.map((b) => (Buffer.isBuffer(b) ? b : fs.readFileSync(path.join(dir, b))));
+    const encode_s = (Date.now() - tExt) / 1000;  // extract+download wall time
 
-    const parts = stills.map((b) => ({ type: 'image_url', image_url: { url: 'data:image/jpeg;base64,' + b.toString('base64') } }));
+    const parts = framesBytes.map((b) => ({ type: 'image_url', image_url: { url: 'data:image/jpeg;base64,' + b.toString('base64') } }));
     if (aud) parts.push({ type: 'input_audio', input_audio: { data: aud.toString('base64'), format: 'mp3' } });
 
     const tApi0 = Date.now();
@@ -224,7 +274,7 @@ async function processOne(rec) {
       source: 'stills',
       model: MODEL,
       provider,
-      frames: stills.length,
+      frames: framesBytes.length,
       frame_every_s: EVERY,
       is_recipe: !!data.is_recipe,
       dish: data.dish || '',
@@ -239,7 +289,7 @@ async function processOne(rec) {
       notes: data.notes || '',
       duration_s: dur,
       video_bytes: rawBytes,
-      encoded_bytes: stills.reduce((s, b) => s + b.length, 0) + (aud ? aud.length : 0),
+      encoded_bytes: framesBytes.reduce((s, b) => s + b.length, 0) + (aud ? aud.length : 0),
       timings: { download_s, encode_s, api_s, total_s: (Date.now() - t0) / 1000 },
       usage: {
         prompt_tokens: usage.prompt_tokens ?? null,
