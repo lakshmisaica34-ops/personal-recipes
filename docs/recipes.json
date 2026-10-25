@@ -1320,7 +1320,7 @@
  },
  {
   "code": "DBQ_HHLoPyE",
-  "dish": "Airfryed Namkeen",
+  "dish": "Airfried Namkeen",
   "dish_en": "Airfried Namkeen",
   "language": "hi",
   "creator": "harshita_tasty_treats",
@@ -1333,26 +1333,53 @@
    {
     "item": "आलू",
     "quantity": "",
-    "item_en": "potato"
+    "item_en": "Potatoes"
    },
    {
-    "item": "पीनट्स",
+    "item": "मूंगफली",
     "quantity": "",
-    "item_en": "peanuts"
+    "item_en": "Peanuts"
    },
    {
     "item": "करी पत्ता",
     "quantity": "",
-    "item_en": "curry leaves"
+    "item_en": "Curry leaves"
+   },
+   {
+    "item": "मसाला",
+    "quantity": "अपने चॉइस का",
+    "item_en": "Spice of your choice"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0009309,
-  "seconds": 17.2,
-  "frames": 11,
+  "steps": [
+   "आलू को छीलकर पोटैटो चिप्स की तरह स्लाइस कर लें।",
+   "आलू के लच्छे काट लें।",
+   "लच्छों को अच्छी तरह से दो-तीन बार पानी में धो लें।",
+   "लच्छों को किसी टॉवल में फैलाकर सुखा लें।",
+   "एयर फ्रायर में लच्छों को डालें।",
+   "लच्छों पर हल्का सा तेल ब्रश करें।",
+   "एयर फ्रायर को 180 डिग्री पर 10-15 मिनट के लिए बेक करें।",
+   "बीच-बीच में 5-6 मिनट के बाद खोलकर लच्छों को पलटें।",
+   "लच्छों में मूंगफली और करी पत्ता डालें।",
+   "अपने चॉइस का मसाला डालें।"
+  ],
+  "steps_en": [
+   "Peel the potatoes and slice them like potato chips.",
+   "Cut the potatoes into shreds.",
+   "Wash the shreds thoroughly in water two-three times.",
+   "Spread the shreds on a towel and dry them.",
+   "Put the shreds in the air fryer.",
+   "Brush a little oil on the shreds.",
+   "Bake the air fryer at 180 degrees for 10-15 minutes.",
+   "In between, open every 5-6 minutes and flip the shreds.",
+   "Add peanuts and curry leaves to the shreds.",
+   "Add spice of your choice."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0022716,
+  "seconds": 24.6,
+  "frames": null,
   "dupe_key": "airfried namkeen"
  },
  {
@@ -1844,18 +1871,36 @@
     "item_en": "Almonds"
    },
    {
+    "item": "Salt",
+    "quantity": "Pinch",
+    "item_en": "Salt"
+   },
+   {
+    "item": "Honey",
+    "quantity": "1 tbsp",
+    "item_en": "Honey"
+   },
+   {
     "item": "Ghee / Oil",
     "quantity": "1 tbsp",
     "item_en": "Ghee / Oil"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0004599,
-  "seconds": 68.9,
-  "frames": 5,
+  "steps": [
+   "Roast For 5 Mins on Medium heat",
+   "Grind until Creamy Texture",
+   "Spread on toast"
+  ],
+  "steps_en": [
+   "Roast almonds for 5 minutes on medium heat.",
+   "Grind until a creamy texture is achieved.",
+   "Spread on toast."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0010788,
+  "seconds": 15.6,
+  "frames": null,
   "dupe_key": "almond butter"
  },
  {
@@ -1876,18 +1921,50 @@
     "item_en": "almonds"
    },
    {
+    "item": "bananas",
+    "quantity": "",
+    "item_en": "bananas"
+   },
+   {
+    "item": "honey",
+    "quantity": "",
+    "item_en": "honey"
+   },
+   {
     "item": "almond flour",
     "quantity": "",
     "item_en": "almond flour"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 0.8,
-  "cost_usd": 0.0006588,
-  "seconds": 24.6,
-  "frames": 8,
+  "steps": [
+   "Add almonds to a blender.",
+   "Mash bananas with a fork.",
+   "Add honey to the mashed bananas.",
+   "Add almond flour to the mixture.",
+   "Mix the ingredients together with your hands to form a dough.",
+   "Roll the dough into small balls.",
+   "Place the balls on a baking sheet lined with parchment paper.",
+   "Flatten the balls into cookies.",
+   "Press a fork onto the cookies to create a pattern.",
+   "Bake the cookies."
+  ],
+  "steps_en": [
+   "Add almonds to a blender.",
+   "Mash bananas with a fork.",
+   "Add honey to the mashed bananas.",
+   "Add almond flour to the mixture.",
+   "Mix the ingredients together with your hands to form a dough.",
+   "Roll the dough into small balls.",
+   "Place the balls on a baking sheet lined with parchment paper.",
+   "Flatten the balls into cookies.",
+   "Press a fork onto the cookies to create a pattern.",
+   "Bake the cookies."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0015636,
+  "seconds": 25.7,
+  "frames": null,
   "dupe_key": "almond cookie"
  },
  {
@@ -6088,43 +6165,6 @@
   "dupe_key": "black urad porridge"
  },
  {
-  "code": "C7i_QXaSXog",
-  "dish": "Blueberry Cheesecake",
-  "dish_en": "Blueberry Cheesecake",
-  "language": "en",
-  "creator": "guiltfree.cookbook",
-  "creator_name": "Healthy Guiltfree Recipes",
-  "permalink": "https://www.instagram.com/p/C7i_QXaSXog/",
-  "thumbnail": "https://instagram.com/p/C7i_QXaSXog/media/?size=l",
-  "taken_at": 1716973952,
-  "duration_s": 50.20000076293945,
-  "ingredients": [
-   {
-    "item": "Low fat Cream Cheese",
-    "quantity": "",
-    "item_en": "Low fat Cream Cheese"
-   },
-   {
-    "item": "skim milk",
-    "quantity": "2 liters",
-    "item_en": "skim milk"
-   },
-   {
-    "item": "white vinegar",
-    "quantity": "",
-    "item_en": "white vinegar"
-   }
-  ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0008725,
-  "seconds": 29.9,
-  "frames": 11,
-  "dupe_key": "blueberry cheesecake"
- },
- {
   "code": "C6lSl9mOkfG",
   "dish": "Healthy Blueberry Chia Jam",
   "dish_en": "Blueberry chia jam",
@@ -7553,28 +7593,89 @@
   "duration_s": 50.53300094604492,
   "ingredients": [
    {
-    "item": "Tapioca pearls",
+    "item": "tapioca pearls",
     "quantity": "",
-    "item_en": "Tapioca pearls"
-   },
-   {
-    "item": "coffee",
-    "quantity": "",
-    "item_en": "coffee"
+    "item_en": "tapioca pearls"
    },
    {
     "item": "sugar",
     "quantity": "",
     "item_en": "sugar"
+   },
+   {
+    "item": "coffee powder",
+    "quantity": "",
+    "item_en": "coffee powder"
+   },
+   {
+    "item": "water",
+    "quantity": "",
+    "item_en": "water"
+   },
+   {
+    "item": "milk",
+    "quantity": "",
+    "item_en": "milk"
+   },
+   {
+    "item": "ice cubes",
+    "quantity": "",
+    "item_en": "ice cubes"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
+  "steps": [
+   "Add tapioca pearls to a bowl.",
+   "Add sugar to the tapioca pearls.",
+   "Add coffee powder to the bowl.",
+   "Add water to the mixture.",
+   "Mix until a dough forms.",
+   "Roll the dough into small balls.",
+   "Coat the balls in flour.",
+   "Boil the balls in water until they float.",
+   "Remove the boiled balls from the water.",
+   "Add sugar to a pan.",
+   "Add coffee powder to the pan.",
+   "Add water to the pan and caramelize.",
+   "Add the boiled tapioca pearls to the caramel.",
+   "Add coffee powder to a glass.",
+   "Add sugar to the glass.",
+   "Add water to the glass.",
+   "Froth the mixture with a frother.",
+   "Add the caramelized tapioca pearls to a serving glass.",
+   "Add ice cubes to the serving glass.",
+   "Pour the frothed coffee mixture into the serving glass.",
+   "Pour milk into the serving glass.",
+   "Stir the drink."
+  ],
+  "steps_en": [
+   "Add tapioca pearls to a bowl.",
+   "Add sugar to the tapioca pearls.",
+   "Add coffee powder to the bowl.",
+   "Add water to the mixture.",
+   "Mix until a dough forms.",
+   "Roll the dough into small balls.",
+   "Coat the balls in flour.",
+   "Boil the balls in water until they float.",
+   "Remove the boiled balls from the water.",
+   "Add sugar to a pan.",
+   "Add coffee powder to the pan.",
+   "Add water to the pan and caramelize.",
+   "Add the boiled tapioca pearls to the caramel.",
+   "Add coffee powder to a glass.",
+   "Add sugar to the glass.",
+   "Add water to the glass.",
+   "Froth the mixture with a frother.",
+   "Add the caramelized tapioca pearls to a serving glass.",
+   "Add ice cubes to the serving glass.",
+   "Pour the frothed coffee mixture into the serving glass.",
+   "Pour milk into the serving glass.",
+   "Stir the drink."
+  ],
+  "source": "video",
   "confidence": 0.9,
-  "cost_usd": 0.000869,
-  "seconds": 19.4,
-  "frames": 10,
+  "cost_usd": 0.0021897,
+  "seconds": 38.2,
+  "frames": null,
   "dupe_key": "bubble milk coffee"
  },
  {
@@ -7974,8 +8075,8 @@
  },
  {
   "code": "C7OrBrdx3yv",
-  "dish": "बर्गर बन्स",
-  "dish_en": "Burger Buns",
+  "dish": "हाई प्रोटीन बर्गर बन्स",
+  "dish_en": "High Protein Burger Buns",
   "language": "hi",
   "creator": "kriti_kaur_dhiman",
   "creator_name": "Masterchef Kriti Dhiman",
@@ -7990,9 +8091,19 @@
     "item_en": "chickpeas"
    },
    {
-    "item": "healthy high-protein mayo",
+    "item": "sugar",
     "quantity": "",
-    "item_en": "healthy high-protein mayo"
+    "item_en": "sugar"
+   },
+   {
+    "item": "water",
+    "quantity": "",
+    "item_en": "water"
+   },
+   {
+    "item": "oil",
+    "quantity": "",
+    "item_en": "oil"
    },
    {
     "item": "sesame seeds",
@@ -8000,13 +8111,27 @@
     "item_en": "sesame seeds"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0005225,
-  "seconds": 14.1,
-  "frames": 6,
+  "steps": [
+   "Add all the ingredients to the blender jar",
+   "and form rough balls out of it",
+   "Bake it",
+   "and it's done",
+   "I am making mini burgers",
+   "Also, I have used the healthy high-protein mayo"
+  ],
+  "steps_en": [
+   "Add all the ingredients to the blender jar",
+   "and form rough balls out of it",
+   "Bake it",
+   "and it's done",
+   "I am making mini burgers",
+   "Also, I have used the healthy high-protein mayo"
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0011824,
+  "seconds": 26.5,
+  "frames": null,
   "dupe_key": "burger bun"
  },
  {
@@ -8347,8 +8472,8 @@
  },
  {
   "code": "C58eOoerPph",
-  "dish": "homemade butter",
-  "dish_en": "homemade butter",
+  "dish": "Butter",
+  "dish_en": "Butter",
   "language": "en",
   "creator": "reinventing50s",
   "creator_name": "Annette | Inspiring You in Food • Beauty • Travel",
@@ -8358,23 +8483,43 @@
   "duration_s": 61.36800003051758,
   "ingredients": [
    {
-    "item": "heavy cream",
-    "quantity": "",
-    "item_en": "heavy cream"
+    "item": "heavy whipping cream",
+    "quantity": "half a jar",
+    "item_en": "heavy whipping cream"
    },
    {
     "item": "salt",
-    "quantity": "pinch",
+    "quantity": "a pinch",
     "item_en": "salt"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0010352,
-  "seconds": 41.6,
-  "frames": 13,
+  "steps": [
+   "Fill up a jar halfway with heavy whipping cream.",
+   "If you want salted butter, add your pinch of salt.",
+   "Start churning it.",
+   "Keep going because the way is a clear liquid, you're gonna start seeing an actual ball of butter.",
+   "Set up a strainer that fits your bowl so it's hands-free and stable.",
+   "Drain your butter.",
+   "Rinse your butter in an ice bath.",
+   "Now you have beautiful butter.",
+   "You can do this yourself, it is a lot less expensive and it tastes great."
+  ],
+  "steps_en": [
+   "Fill up a jar halfway with heavy whipping cream.",
+   "If you want salted butter, add your pinch of salt.",
+   "Start churning it.",
+   "Keep going because the way is a clear liquid, you're gonna start seeing an actual ball of butter.",
+   "Set up a strainer that fits your bowl so it's hands-free and stable.",
+   "Drain your butter.",
+   "Rinse your butter in an ice bath.",
+   "Now you have beautiful butter.",
+   "You can do this yourself, it is a lot less expensive and it tastes great."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0024609,
+  "seconds": 40.2,
+  "frames": null,
   "dupe_key": "butter"
  },
  {
@@ -13383,38 +13528,6 @@
   "dupe_key": "chettinad mushroom biryani"
  },
  {
-  "code": "DCtj2iVyYOP",
-  "dish": "छोले",
-  "dish_en": "chhole",
-  "language": "hi",
-  "creator": "curryit.in",
-  "creator_name": "CURRYiT | Real Taste. Real Easy",
-  "permalink": "https://www.instagram.com/p/DCtj2iVyYOP/",
-  "thumbnail": "https://instagram.com/p/DCtj2iVyYOP/media/?size=l",
-  "taken_at": 1732360746,
-  "duration_s": 21.166000366210938,
-  "ingredients": [
-   {
-    "item": "छोले",
-    "quantity": "",
-    "item_en": "chhole"
-   },
-   {
-    "item": "गरम पानी",
-    "quantity": "",
-    "item_en": "hot water"
-   }
-  ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0004242,
-  "seconds": 61.5,
-  "frames": 4,
-  "dupe_key": "chhole"
- },
- {
   "code": "DbC0pArqCPV",
   "dish": "Chia Ragi Pudding",
   "dish_en": "Chia Ragi Pudding",
@@ -13484,6 +13597,57 @@
   "seconds": 21.4,
   "frames": null,
   "dupe_key": "chia ragi pudding"
+ },
+ {
+  "code": "DHFgNRSx4r5",
+  "dish": "छोले",
+  "dish_en": "Chickpeas",
+  "language": "hi",
+  "creator": "living.with.niharika",
+  "creator_name": "Niharika ✨",
+  "permalink": "https://www.instagram.com/p/DHFgNRSx4r5/",
+  "thumbnail": "https://instagram.com/p/DHFgNRSx4r5/media/?size=l",
+  "taken_at": 1741753988,
+  "duration_s": 13.333000183105469,
+  "ingredients": [
+   {
+    "item": "छोले",
+    "quantity": "",
+    "item_en": "chickpeas"
+   },
+   {
+    "item": "ice cubes",
+    "quantity": "",
+    "item_en": "ice cubes"
+   },
+   {
+    "item": "पानी",
+    "quantity": "",
+    "item_en": "water"
+   }
+  ],
+  "steps": [
+   "छोले प्रेशर कुकर में डालें।",
+   "छोले में आइस क्यूब्स डालें।",
+   "छोले में पानी डालें।",
+   "प्रेशर कुकर का ढक्कन बंद करें।",
+   "प्रेशर कुकर को धीमी आंच पर 25 मिनट तक पकाएं।",
+   "छोले को कांटे से चेक करें।"
+  ],
+  "steps_en": [
+   "Add chickpeas to the pressure cooker.",
+   "Add ice cubes to the chickpeas.",
+   "Add water to the chickpeas.",
+   "Close the lid of the pressure cooker.",
+   "Cook the pressure cooker on low flame for 25 minutes.",
+   "Check the chickpeas with a fork."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0007138,
+  "seconds": 35.0,
+  "frames": null,
+  "dupe_key": "chickpea"
  },
  {
   "code": "C_7Vk_Qtiyp",
@@ -14193,6 +14357,53 @@
    }
   ],
   "dupe_key": "chickpea sandwich"
+ },
+ {
+  "code": "DCtj2iVyYOP",
+  "dish": "छोले भिगोने का हैक",
+  "dish_en": "Chickpea soaking hack",
+  "language": "hi",
+  "creator": "curryit.in",
+  "creator_name": "CURRYiT | Real Taste. Real Easy",
+  "permalink": "https://www.instagram.com/p/DCtj2iVyYOP/",
+  "thumbnail": "https://instagram.com/p/DCtj2iVyYOP/media/?size=l",
+  "taken_at": 1732360746,
+  "duration_s": 21.166000366210938,
+  "ingredients": [
+   {
+    "item": "chhole",
+    "quantity": "",
+    "item_en": "chickpeas"
+   },
+   {
+    "item": "garam paani",
+    "quantity": "",
+    "item_en": "hot water"
+   },
+   {
+    "item": "casserole",
+    "quantity": "",
+    "item_en": "casserole"
+   }
+  ],
+  "steps": [
+   "chhole lo",
+   "aur isme garam paani pour kar do",
+   "cover with a lid",
+   "and 1 ghante soak hone do"
+  ],
+  "steps_en": [
+   "Take the chickpeas",
+   "and pour hot water into it",
+   "cover with a lid",
+   "and let it soak for 1 hour"
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0009641,
+  "seconds": 39.1,
+  "frames": null,
+  "dupe_key": "chickpea soaking hack"
  },
  {
   "code": "C8T19VRy8FC",
@@ -15511,15 +15722,40 @@
     "item": "oil",
     "quantity": "",
     "item_en": "oil"
+   },
+   {
+    "item": "Chilli powder",
+    "quantity": "",
+    "item_en": "Chilli powder"
+   },
+   {
+    "item": "Chaat masala",
+    "quantity": "",
+    "item_en": "Chaat masala"
+   },
+   {
+    "item": "Salt",
+    "quantity": "",
+    "item_en": "Salt"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
+  "steps": [
+   "Thinly slice paneer",
+   "Airfry at 200° for 6 mins",
+   "Drizzle oil",
+   "Mix & enjoy"
+  ],
+  "steps_en": [
+   "Thinly slice paneer",
+   "Airfry at 200° for 6 mins",
+   "Drizzle oil",
+   "Mix & enjoy"
+  ],
+  "source": "video",
   "confidence": 0.9,
-  "cost_usd": 0.0003914,
-  "seconds": 14.3,
-  "frames": 4,
+  "cost_usd": 0.000902,
+  "seconds": 39.8,
+  "frames": null,
   "dupe_key": "chip"
  },
  {
@@ -15581,8 +15817,8 @@
  },
  {
   "code": "C7gt-D7v9Vm",
-  "dish": "chocos",
-  "dish_en": "chocos",
+  "dish": "Healthy Chocos",
+  "dish_en": "Healthy Chocos",
   "language": "en",
   "creator": "kriti_kaur_dhiman",
   "creator_name": "Masterchef Kriti Dhiman",
@@ -15592,23 +15828,56 @@
   "duration_s": 23.5,
   "ingredients": [
    {
-    "item": "chocolate",
+    "item": "makhana",
     "quantity": "",
-    "item_en": "chocolate"
+    "item_en": "makhana"
+   },
+   {
+    "item": "oil",
+    "quantity": "",
+    "item_en": "oil"
+   },
+   {
+    "item": "brown sugar",
+    "quantity": "",
+    "item_en": "brown sugar"
    },
    {
     "item": "cocoa powder",
     "quantity": "",
     "item_en": "cocoa powder"
+   },
+   {
+    "item": "milk",
+    "quantity": "",
+    "item_en": "milk"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0004509,
-  "seconds": 22.8,
-  "frames": 5,
+  "steps": [
+   "Roast makhana in a pan.",
+   "Add oil to a pan.",
+   "Add brown sugar to the pan and let it melt.",
+   "Add cocoa powder to the pan and mix well.",
+   "Add the roasted makhana to the pan and coat them with the chocolate mixture.",
+   "Pour milk into a bowl.",
+   "Add the coated makhana to the bowl with milk.",
+   "Serve."
+  ],
+  "steps_en": [
+   "Roast makhana in a pan.",
+   "Add oil to a pan.",
+   "Add brown sugar to the pan and let it melt.",
+   "Add cocoa powder to the pan and mix well.",
+   "Add the roasted makhana to the pan and coat them with the chocolate mixture.",
+   "Pour milk into a bowl.",
+   "Add the coated makhana to the bowl with milk.",
+   "Serve."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.00111,
+  "seconds": 28.6,
+  "frames": null,
   "dupe_key": "choco"
  },
  {
@@ -16328,38 +16597,6 @@
   "dupe_key": "chocolate foxnut cereal"
  },
  {
-  "code": "DI_-IeqteVs",
-  "dish": "Chocolate Functional Protein Smoothie",
-  "dish_en": "Chocolate Functional Protein Smoothie",
-  "language": "en",
-  "creator": "diyaeatswell",
-  "creator_name": "Diya",
-  "permalink": "https://www.instagram.com/p/DI_-IeqteVs/",
-  "thumbnail": "https://instagram.com/p/DI_-IeqteVs/media/?size=l",
-  "taken_at": 1745863200,
-  "duration_s": 8.866000175476074,
-  "ingredients": [
-   {
-    "item": "ice cubes",
-    "quantity": "",
-    "item_en": "ice cubes"
-   },
-   {
-    "item": "chocolate liquid",
-    "quantity": "",
-    "item_en": "chocolate liquid"
-   }
-  ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 0.9,
-  "cost_usd": 0.0002567,
-  "seconds": 10.9,
-  "frames": 2,
-  "dupe_key": "chocolate functional smoothie"
- },
- {
   "code": "C3P2aA-RwWv",
   "dish": "Chocolate Hazelnut Spread",
   "dish_en": "Chocolate hazelnut spread",
@@ -16867,43 +17104,6 @@
   "seconds": null,
   "frames": null,
   "dupe_key": "chocolate pudding"
- },
- {
-  "code": "DHFgNRSx4r5",
-  "dish": "छोले",
-  "dish_en": "chole",
-  "language": "hi",
-  "creator": "living.with.niharika",
-  "creator_name": "Niharika ✨",
-  "permalink": "https://www.instagram.com/p/DHFgNRSx4r5/",
-  "thumbnail": "https://instagram.com/p/DHFgNRSx4r5/media/?size=l",
-  "taken_at": 1741753988,
-  "duration_s": 13.333000183105469,
-  "ingredients": [
-   {
-    "item": "छोले",
-    "quantity": "",
-    "item_en": "chole"
-   },
-   {
-    "item": "ice",
-    "quantity": "",
-    "item_en": "ice"
-   },
-   {
-    "item": "पानी",
-    "quantity": "",
-    "item_en": "water"
-   }
-  ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0003277,
-  "seconds": 17.8,
-  "frames": 3,
-  "dupe_key": "chole"
  },
  {
   "code": "C8RD-PFvyJj",
@@ -19136,9 +19336,9 @@
   "duration_s": 24.365999221801758,
   "ingredients": [
    {
-    "item": "Corn",
-    "quantity": "",
-    "item_en": "Corn"
+    "item": "boiled corn",
+    "quantity": "1/2 cup",
+    "item_en": "boiled corn"
    },
    {
     "item": "Chopped coriander",
@@ -19146,18 +19346,42 @@
     "item_en": "Chopped coriander"
    },
    {
-    "item": "green chutney",
+    "item": "Pepper",
     "quantity": "",
-    "item_en": "Green chutney"
+    "item_en": "Pepper"
+   },
+   {
+    "item": "Salt",
+    "quantity": "",
+    "item_en": "Salt"
+   },
+   {
+    "item": "mozzarella cheese",
+    "quantity": "",
+    "item_en": "mozzarella cheese"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 0.8,
-  "cost_usd": 0.0004769,
-  "seconds": 13.3,
-  "frames": 5,
+  "steps": [
+   "Chop Roughly",
+   "Combine well",
+   "Grease tawa",
+   "Spread the corn mixture",
+   "Cook both sides",
+   "Serve with green chutney"
+  ],
+  "steps_en": [
+   "Chop Roughly",
+   "Combine well",
+   "Grease tawa",
+   "Spread the corn mixture",
+   "Cook both sides",
+   "Serve with green chutney"
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0010867,
+  "seconds": 23.2,
+  "frames": null,
   "dupe_key": "corn fritter"
  },
  {
@@ -22464,18 +22688,48 @@
     "item_en": "chickpeas"
    },
    {
-    "item": "Indian masala flavour of lays",
+    "item": "spices",
     "quantity": "",
-    "item_en": "Indian masala flavor of Lays"
+    "item_en": "spices"
+   },
+   {
+    "item": "salt",
+    "quantity": "",
+    "item_en": "salt"
+   },
+   {
+    "item": "oil",
+    "quantity": "",
+    "item_en": "oil"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0005782,
-  "seconds": 16.7,
-  "frames": 6,
+  "steps": [
+   "Rinse the chickpeas.",
+   "Drain the chickpeas.",
+   "Pat the chickpeas dry with a kitchen towel.",
+   "Add spices to the chickpeas.",
+   "Add salt to the chickpeas.",
+   "Add oil to the chickpeas.",
+   "Mix everything well.",
+   "Place the chickpeas in the air fryer basket.",
+   "Transfer the cooked chickpeas to a bowl."
+  ],
+  "steps_en": [
+   "Rinse the chickpeas.",
+   "Drain the chickpeas.",
+   "Pat the chickpeas dry with a kitchen towel.",
+   "Add spices to the chickpeas.",
+   "Add salt to the chickpeas.",
+   "Add oil to the chickpeas.",
+   "Mix everything well.",
+   "Place the chickpeas in the air fryer basket.",
+   "Transfer the cooked chickpeas to a bowl."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0014134,
+  "seconds": 24.3,
+  "frames": null,
   "dupe_key": "crunchy masala chickpea"
  },
  {
@@ -24199,94 +24453,219 @@
   "dupe_key": "diwali puffed rice snack mix"
  },
  {
-  "code": "DGVUEU0yYH7",
-  "dish": "Protein Dosa",
-  "dish_en": "Protein Dosa",
-  "language": "en",
-  "creator": "goal_together_",
-  "creator_name": "FERTILITY DIET",
-  "permalink": "https://www.instagram.com/p/DGVUEU0yYH7/",
-  "thumbnail": "https://instagram.com/p/DGVUEU0yYH7/media/?size=l",
-  "taken_at": 1740136987,
-  "duration_s": 43.70000076293945,
+  "code": "DA5-PHCSshe",
+  "dish": "Dondakaya Roti pachadi",
+  "dish_en": "Dondakaya Roti Chutney",
+  "language": "te",
+  "creator": "hariscookbook",
+  "creator_name": "Hari Venkatesh Vankayala",
+  "permalink": "https://www.instagram.com/p/DA5-PHCSshe/",
+  "thumbnail": "https://instagram.com/p/DA5-PHCSshe/media/?size=l",
+  "taken_at": 1728482189,
+  "duration_s": 32,
   "ingredients": [
    {
-    "item": "green moong",
-    "quantity": "1/4 cup",
-    "item_en": "green moong"
+    "item": "దొండకాయ ముక్కలు",
+    "quantity": "",
+    "item_en": "Dondakaya (Ivy Gourd) pieces"
    },
    {
-    "item": "rajma (kidney beans)",
-    "quantity": "1/4 cup",
-    "item_en": "rajma (kidney beans)"
+    "item": "కొత్తిమీర",
+    "quantity": "",
+    "item_en": "Coriander leaves"
    },
    {
-    "item": "horse gram",
-    "quantity": "1/4 cup",
-    "item_en": "horse gram"
+    "item": "ఎండు మిరపకాయలు",
+    "quantity": "",
+    "item_en": "Dried red chilies"
    },
    {
-    "item": "black chana",
-    "quantity": "1/4 cup",
-    "item_en": "black chana"
+    "item": "నెయ్యి",
+    "quantity": "",
+    "item_en": "Ghee"
    },
    {
-    "item": "soya beans",
-    "quantity": "1/4 cup",
-    "item_en": "soya beans"
-   },
-   {
-    "item": "idli rice",
-    "quantity": "1/2 cup",
-    "item_en": "idli rice"
-   },
-   {
-    "item": "urad dal",
-    "quantity": "1/4 cup",
-    "item_en": "urad dal"
-   },
-   {
-    "item": "fenugreek seeds",
-    "quantity": "1/2 tsp",
-    "item_en": "fenugreek seeds"
-   },
-   {
-    "item": "salt",
-    "quantity": "as needed",
-    "item_en": "salt"
-   },
-   {
-    "item": "oil",
-    "quantity": "for greasing the tawa",
-    "item_en": "oil"
+    "item": "వేడి అన్నం",
+    "quantity": "",
+    "item_en": "Hot rice"
    }
   ],
   "steps": [
-   "Wash all the lentils, beans, rice and fenugreek seeds.",
-   "Soak them together in enough water for 8-10 hours or overnight.",
-   "Drain the soaked ingredients and grind them into a smooth batter of medium consistency using a little water.",
-   "Add salt as needed and let the batter ferment overnight for 6-8 hours.",
-   "Heat a dosa tawa and lightly grease it with oil.",
-   "Pour a ladle of batter and spread it in a circular motion to make a thin dosa.",
-   "Cook on medium heat until golden brown, flip and cook the other side if needed.",
-   "Serve hot with coconut chutney or sambar."
+   "దొండకాయ ముక్కలు, కొత్తిమీర, ఎండు మిరపకాయలు వేసి దంచుకోవాలి.",
+   "దంచిన మిశ్రమాన్ని ఒక ప్లేట్ లోకి తీసుకోవాలి.",
+   "వేడి అన్నంలో కొంచెం దొండకాయ పచ్చడి వేసుకోవాలి.",
+   "నెయ్యి కలుపుకొని తినాలి."
   ],
   "steps_en": [
-   "Wash all the lentils, beans, rice and fenugreek seeds.",
-   "Soak them together in enough water for 8-10 hours or overnight.",
-   "Drain the soaked ingredients and grind them into a smooth batter of medium consistency using a little water.",
-   "Add salt as needed and let the batter ferment overnight for 6-8 hours.",
-   "Heat a dosa tawa and lightly grease it with oil.",
-   "Pour a ladle of batter and spread it in a circular motion to make a thin dosa.",
-   "Cook on medium heat until golden brown, flip and cook the other side if needed.",
-   "Serve hot with coconut chutney or sambar."
+   "Grind dondakaya pieces, coriander leaves, and dried red chilies.",
+   "Transfer the ground mixture to a plate.",
+   "Add some dondakaya chutney to hot rice.",
+   "Mix with ghee and eat."
   ],
-  "source": "caption",
-  "confidence": null,
-  "cost_usd": null,
-  "seconds": null,
+  "source": "video",
+  "confidence": 0.8,
+  "cost_usd": 0.0014191,
+  "seconds": 22.4,
+  "frames": null,
+  "dupe_key": "dondakaya roti chutney"
+ },
+ {
+  "code": "C_nLTmsPEF0",
+  "dish": "डोसा",
+  "dish_en": "Dosa",
+  "language": "hi",
+  "creator": "beauty_and_cooks",
+  "creator_name": "Babita Verma",
+  "permalink": "https://www.instagram.com/p/C_nLTmsPEF0/",
+  "thumbnail": "https://instagram.com/p/C_nLTmsPEF0/media/?size=l",
+  "taken_at": 1725704157,
+  "duration_s": 90.03299713134766,
+  "ingredients": [
+   {
+    "item": "tuvar daal",
+    "quantity": "3 spoon",
+    "item_en": "toor dal"
+   },
+   {
+    "item": "uran dal",
+    "quantity": "3 spoon",
+    "item_en": "urad dal"
+   },
+   {
+    "item": "mung daal",
+    "quantity": "3 spoon",
+    "item_en": "moong dal"
+   },
+   {
+    "item": "chana daal",
+    "quantity": "3 spoon",
+    "item_en": "chana dal"
+   },
+   {
+    "item": "masoor dal",
+    "quantity": "3 spoon",
+    "item_en": "masoor dal"
+   },
+   {
+    "item": "methi dana",
+    "quantity": "1/4 teaspoon",
+    "item_en": "fenugreek seeds"
+   },
+   {
+    "item": "chawal",
+    "quantity": "half bowl",
+    "item_en": "rice"
+   },
+   {
+    "item": "salt",
+    "quantity": "to taste",
+    "item_en": "salt"
+   }
+  ],
+  "steps": [
+   "Wash the lentils",
+   "Add hot water and soak for two hours",
+   "Wash the rice",
+   "Add hot water and soak for 2 hours",
+   "Put it in the mixer and grind it finely",
+   "Keep it for 7 to 8 hours",
+   "Salt to taste",
+   "add some water",
+   "add little water",
+   "Apply tel"
+  ],
+  "steps_en": [
+   "Wash the lentils",
+   "Add hot water and soak for two hours",
+   "Wash the rice",
+   "Add hot water and soak for 2 hours",
+   "Put it in the mixer and grind it finely",
+   "Keep it for 7 to 8 hours",
+   "Salt to taste",
+   "add some water",
+   "add little water",
+   "Apply oil"
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0035565,
+  "seconds": 50.0,
   "frames": null,
   "variants": [
+   {
+    "creator": "beauty_and_cooks",
+    "permalink": "https://www.instagram.com/p/C_nLTmsPEF0/",
+    "dish": "डोसा",
+    "dish_en": "Dosa",
+    "language": "hi",
+    "ingredients": [
+     {
+      "item": "tuvar daal",
+      "quantity": "3 spoon",
+      "item_en": "toor dal"
+     },
+     {
+      "item": "uran dal",
+      "quantity": "3 spoon",
+      "item_en": "urad dal"
+     },
+     {
+      "item": "mung daal",
+      "quantity": "3 spoon",
+      "item_en": "moong dal"
+     },
+     {
+      "item": "chana daal",
+      "quantity": "3 spoon",
+      "item_en": "chana dal"
+     },
+     {
+      "item": "masoor dal",
+      "quantity": "3 spoon",
+      "item_en": "masoor dal"
+     },
+     {
+      "item": "methi dana",
+      "quantity": "1/4 teaspoon",
+      "item_en": "fenugreek seeds"
+     },
+     {
+      "item": "chawal",
+      "quantity": "half bowl",
+      "item_en": "rice"
+     },
+     {
+      "item": "salt",
+      "quantity": "to taste",
+      "item_en": "salt"
+     }
+    ],
+    "steps": [
+     "Wash the lentils",
+     "Add hot water and soak for two hours",
+     "Wash the rice",
+     "Add hot water and soak for 2 hours",
+     "Put it in the mixer and grind it finely",
+     "Keep it for 7 to 8 hours",
+     "Salt to taste",
+     "add some water",
+     "add little water",
+     "Apply tel"
+    ],
+    "steps_en": [
+     "Wash the lentils",
+     "Add hot water and soak for two hours",
+     "Wash the rice",
+     "Add hot water and soak for 2 hours",
+     "Put it in the mixer and grind it finely",
+     "Keep it for 7 to 8 hours",
+     "Salt to taste",
+     "add some water",
+     "add little water",
+     "Apply oil"
+    ],
+    "source": "video"
+   },
    {
     "creator": "goal_together_",
     "permalink": "https://www.instagram.com/p/DGVUEU0yYH7/",
@@ -24655,33 +25034,6 @@
       "item": "సాల్ట్",
       "quantity": "తగినంత",
       "item_en": "Salt"
-     }
-    ],
-    "steps": [],
-    "steps_en": [],
-    "source": "stills"
-   },
-   {
-    "creator": "beauty_and_cooks",
-    "permalink": "https://www.instagram.com/p/C_nLTmsPEF0/",
-    "dish": "डोसा",
-    "dish_en": "Dosa",
-    "language": "hi",
-    "ingredients": [
-     {
-      "item": "uran dal",
-      "quantity": "3 spoon",
-      "item_en": "Urad dal"
-     },
-     {
-      "item": "chana daal",
-      "quantity": "3 spoon",
-      "item_en": "Chana dal"
-     },
-     {
-      "item": "chawal",
-      "quantity": "half bowl",
-      "item_en": "Rice"
      }
     ],
     "steps": [],
@@ -27747,7 +28099,7 @@
  {
   "code": "C4cdkAKIs41",
   "dish": "అవిసె గింజల లడ్డు",
-  "dish_en": "Flax seed laddu",
+  "dish_en": "Flax Seed Laddu",
   "language": "te",
   "creator": "shirisha_speaks",
   "creator_name": "shirisha speaks",
@@ -27758,27 +28110,35 @@
   "ingredients": [
    {
     "item": "అవిసె గింజలు",
-    "quantity": "అర కిలో",
-    "item_en": "flax seeds"
+    "quantity": "1/2 కిలో",
+    "item_en": "Flax seeds"
    },
    {
-    "item": "పచ్చి ఖర్జూరాలు",
-    "quantity": "అర కిలో",
-    "item_en": "dates"
+    "item": "పచ్చి ఖర్జూరం",
+    "quantity": "1/2 కిలో",
+    "item_en": "Dates"
    },
    {
     "item": "తేనె",
-    "quantity": "పావు కిలో",
-    "item_en": "honey"
+    "quantity": "",
+    "item_en": "Honey"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0007006,
-  "seconds": 34.8,
-  "frames": 8,
+  "steps": [
+   "అవిసె గింజలను చిటపటలాడేదాకా వేయించి చల్లారిన తర్వాత పౌడర్ చేసుకోవాలి.",
+   "పచ్చి ఖర్జూరాన్ని గింజలు తీసేసి బ్లెండ్ చేయాలి.",
+   "వేయించిన అవిసె గింజల పౌడర్, బ్లెండ్ చేసిన ఖర్జూరం, తేనె కలిపి లడ్డూలు కట్టాలి."
+  ],
+  "steps_en": [
+   "Roast flax seeds until they splutter and powder them after cooling.",
+   "Remove seeds from dates and blend them.",
+   "Mix roasted flax seed powder, blended dates, and honey to make laddus."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0016156,
+  "seconds": 39.3,
+  "frames": null,
   "dupe_key": "flax seed laddu"
  },
  {
@@ -28513,6 +28873,46 @@
   "dupe_key": "full jar soda"
  },
  {
+  "code": "DI_-IeqteVs",
+  "dish": "Functional Smoothie",
+  "dish_en": "Functional Smoothie",
+  "language": "en",
+  "creator": "diyaeatswell",
+  "creator_name": "Diya",
+  "permalink": "https://www.instagram.com/p/DI_-IeqteVs/",
+  "thumbnail": "https://instagram.com/p/DI_-IeqteVs/media/?size=l",
+  "taken_at": 1745863200,
+  "duration_s": 8.866000175476074,
+  "ingredients": [
+   {
+    "item": "ice",
+    "quantity": "",
+    "item_en": "ice"
+   },
+   {
+    "item": "chocolate smoothie",
+    "quantity": "",
+    "item_en": "chocolate smoothie"
+   }
+  ],
+  "steps": [
+   "Add ice to a cup.",
+   "Pour chocolate smoothie into the cup.",
+   "Stir with a straw."
+  ],
+  "steps_en": [
+   "Add ice to a cup.",
+   "Pour chocolate smoothie into the cup.",
+   "Stir with a straw."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0004969,
+  "seconds": 14.9,
+  "frames": null,
+  "dupe_key": "functional smoothie"
+ },
+ {
   "code": "DFkxBusPDXE",
   "dish": "galouti kebab",
   "dish_en": "galouti kebab",
@@ -28888,28 +29288,81 @@
   "duration_s": 26.933000564575195,
   "ingredients": [
    {
-    "item": "garlic",
+    "item": "Dahi",
     "quantity": "",
-    "item_en": "garlic"
+    "item_en": "Yogurt"
    },
    {
-    "item": "cheese",
-    "quantity": "",
-    "item_en": "cheese"
+    "item": "Garlic",
+    "quantity": "1 head",
+    "item_en": "Garlic"
    },
    {
-    "item": "bread",
+    "item": "Oil",
     "quantity": "",
-    "item_en": "bread"
+    "item_en": "Oil"
+   },
+   {
+    "item": "Salt",
+    "quantity": "",
+    "item_en": "Salt"
+   },
+   {
+    "item": "Paneer",
+    "quantity": "",
+    "item_en": "Paneer"
+   },
+   {
+    "item": "Cheese cube",
+    "quantity": "1",
+    "item_en": "Cheese cube"
+   },
+   {
+    "item": "Chilli flakes",
+    "quantity": "",
+    "item_en": "Chilli flakes"
+   },
+   {
+    "item": "Bread slices",
+    "quantity": "2",
+    "item_en": "Bread slices"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0005252,
-  "seconds": 21.6,
-  "frames": 6,
+  "steps": [
+   "Strain the dahi to remove the water.",
+   "Chop the garlic.",
+   "Drizzle oil on the chopped garlic.",
+   "Sprinkle salt on the garlic.",
+   "Wrap the garlic in aluminum foil.",
+   "Roast the garlic on a gas stove.",
+   "Add paneer to a blender jar.",
+   "Add the roasted garlic to the blender jar.",
+   "Add the cheese cube to the blender jar.",
+   "Add chilli flakes to the blender jar.",
+   "Blend the ingredients until smooth.",
+   "Spread the mixture on bread slices.",
+   "Sprinkle chilli flakes on top."
+  ],
+  "steps_en": [
+   "Strain the dahi to remove the water.",
+   "Chop the garlic.",
+   "Drizzle oil on the chopped garlic.",
+   "Sprinkle salt on the garlic.",
+   "Wrap the garlic in aluminum foil.",
+   "Roast the garlic on a gas stove.",
+   "Add paneer to a blender jar.",
+   "Add the roasted garlic to the blender jar.",
+   "Add the cheese cube to the blender jar.",
+   "Add chilli flakes to the blender jar.",
+   "Blend the ingredients until smooth.",
+   "Spread the mixture on bread slices.",
+   "Sprinkle chilli flakes on top."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0013197,
+  "seconds": 48.4,
+  "frames": null,
   "dupe_key": "garlic cheese spread"
  },
  {
@@ -29203,43 +29656,6 @@
   "seconds": 36.3,
   "frames": 11,
   "dupe_key": "garlic flavoured puffed rice"
- },
- {
-  "code": "C6A87xyu4Cc",
-  "dish": "Garlic Masala Lachcha Paratha",
-  "dish_en": "Garlic Masala Layered Flatbread",
-  "language": "en",
-  "creator": "bowl2soul",
-  "creator_name": "Azra | Bowl To Soul",
-  "permalink": "https://www.instagram.com/p/C6A87xyu4Cc/",
-  "thumbnail": "https://instagram.com/p/C6A87xyu4Cc/media/?size=l",
-  "taken_at": 1713684532,
-  "duration_s": 16.600000381469727,
-  "ingredients": [
-   {
-    "item": "garlic",
-    "quantity": "",
-    "item_en": "garlic"
-   },
-   {
-    "item": "coriander",
-    "quantity": "",
-    "item_en": "coriander"
-   },
-   {
-    "item": "masala",
-    "quantity": "",
-    "item_en": "masala"
-   }
-  ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 0.8,
-  "cost_usd": 0.0003827,
-  "seconds": 20.4,
-  "frames": 4,
-  "dupe_key": "garlic masala layered flatbread"
  },
  {
   "code": "DEg67e1PF5w",
@@ -29961,8 +30377,8 @@
  },
  {
   "code": "C-X3d03y5Uf",
-  "dish": "శొంఠి బెల్లం లాబాలు",
-  "dish_en": "Ginger Jaggery Balls",
+  "dish": "శొంఠి బెల్లం హల్వా",
+  "dish_en": "Ginger Jaggery Halwa",
   "language": "te",
   "creator": "farmer.arun07",
   "creator_name": "ARUN ODNALA KUMAR",
@@ -29987,14 +30403,28 @@
     "item_en": "Cardamom powder"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0014588,
-  "seconds": 38.4,
-  "frames": 18,
-  "dupe_key": "ginger jaggery ball"
+  "steps": [
+   "శొంఠిని పాలల్లో ఉడకబెట్టి, ఎండబెట్టగా తయారైన దానిని శొంఠిగా పిలుస్తారు.",
+   "శొంఠిని కొద్దిగా మొత్తంలో తీసుకుని, బెల్లం పాకంలా కొంచెం శొంఠి పొడి, కొంచెం యాలకల పొడి కలిపి, కొద్దిసేపు సన్నని మంట మీద మరిగిస్తే శొంఠి బెల్లం హల్వా తయారవుతుంది.",
+   "చల్లారిన తర్వాత గాజు సీసాలో నిల్వ చేసుకోవచ్చు.",
+   "రోజు కొంచెం చిన్న చెంచాడు తీసుకోవడం వల్ల పైత్యము, తల తిరగడం, అస్తమా, గుండె జబ్బులు ఉన్నవారు, పీరియడ్స్ కాలంలో వచ్చే నొప్పికి ఉపశమనం దొరుకుతుంది.",
+   "జీర్ణ వ్యవస్థ పనితీరు మెరుగుపడుతుంది.",
+   "శొంఠిని క్రమంగా కొద్ది మొత్తం లో తీసుకునేలా చేయడం వల్ల మంచి ఫలితాలు పొందవచ్చు."
+  ],
+  "steps_en": [
+   "The dried and boiled ginger in milk is called Shunti.",
+   "Take a small amount of Shunti, mix it with a little ginger powder and cardamom powder, and simmer on low heat for a while to make Shunti Jaggery Halwa.",
+   "After cooling, it can be stored in a glass bottle.",
+   "Taking a small spoonful daily provides relief from ailments like Vata imbalance, dizziness, asthma, heart disease, and menstrual pain.",
+   "Improves digestive system function.",
+   "Taking Shunti in small quantities regularly yields good results."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0035423,
+  "seconds": 60.1,
+  "frames": null,
+  "dupe_key": "ginger jaggery halwa"
  },
  {
   "code": "C_pPMnYyZ3w",
@@ -34320,86 +34750,6 @@
   "cost_usd": 0.00117,
   "seconds": 18.1,
   "frames": null,
-  "variants": [
-   {
-    "creator": "aura_matic.vibe",
-    "permalink": "https://www.instagram.com/p/DRNMlnlAfoE/",
-    "dish": "Protein Idli",
-    "dish_en": "Protein Idli",
-    "language": "en",
-    "ingredients": [
-     {
-      "item": "Green moong dal",
-      "quantity": "",
-      "item_en": "Green moong dal"
-     },
-     {
-      "item": "Chana dal",
-      "quantity": "",
-      "item_en": "Chana dal"
-     },
-     {
-      "item": "Moong dal",
-      "quantity": "",
-      "item_en": "Moong dal"
-     },
-     {
-      "item": "Methi",
-      "quantity": "",
-      "item_en": "Fenugreek seeds"
-     },
-     {
-      "item": "Makhana",
-      "quantity": "",
-      "item_en": "Fox nuts"
-     }
-    ],
-    "steps": [
-     "Wash",
-     "Soak",
-     "Soak overnight",
-     "Steam idlis",
-     "Check if idlis are cooked",
-     "Remove idlis from the steamer"
-    ],
-    "steps_en": [
-     "Wash",
-     "Soak",
-     "Soak overnight",
-     "Steam idlis",
-     "Check if idlis are cooked",
-     "Remove idlis from the steamer"
-    ],
-    "source": "video"
-   },
-   {
-    "creator": "bengaluru_thindi_guru",
-    "permalink": "https://www.instagram.com/p/DOpdi7aidJh/",
-    "dish": "Idli",
-    "dish_en": "Idli",
-    "language": "kn",
-    "ingredients": [
-     {
-      "item": "Idli",
-      "quantity": "",
-      "item_en": "Idli"
-     },
-     {
-      "item": "watery chutney",
-      "quantity": "",
-      "item_en": "watery chutney"
-     },
-     {
-      "item": "Erra Karam",
-      "quantity": "",
-      "item_en": "red chili paste"
-     }
-    ],
-    "steps": [],
-    "steps_en": [],
-    "source": "stills"
-   }
-  ],
   "dupe_key": "idli"
  },
  {
@@ -34950,6 +35300,61 @@
   "dupe_key": "idli shakshuka"
  },
  {
+  "code": "DOpdi7aidJh",
+  "dish": "Idli with watery chutney and Erra Karam",
+  "dish_en": "Idli with watery chutney and Erra Karam",
+  "language": "en",
+  "creator": "bengaluru_thindi_guru",
+  "creator_name": "Bhaskar G P || bengaluru_thindi_guru (Official)",
+  "permalink": "https://www.instagram.com/p/DOpdi7aidJh/",
+  "thumbnail": "https://instagram.com/p/DOpdi7aidJh/media/?size=l",
+  "taken_at": 1757993181,
+  "duration_s": 52.43299865722656,
+  "ingredients": [
+   {
+    "item": "Idli",
+    "quantity": "",
+    "item_en": "Idli"
+   },
+   {
+    "item": "watery chutney",
+    "quantity": "",
+    "item_en": "watery chutney"
+   },
+   {
+    "item": "Erra Karam",
+    "quantity": "",
+    "item_en": "Erra Karam"
+   },
+   {
+    "item": "curry leaves",
+    "quantity": "",
+    "item_en": "curry leaves"
+   },
+   {
+    "item": "mustard seeds",
+    "quantity": "",
+    "item_en": "mustard seeds"
+   }
+  ],
+  "steps": [
+   "Pouring watery chutney over idlis.",
+   "Adding Erra Karam to the idlis and chutney.",
+   "Picking up an idli with chutney and Erra Karam to eat."
+  ],
+  "steps_en": [
+   "Pouring watery chutney over idlis.",
+   "Adding Erra Karam to the idlis and chutney.",
+   "Picking up an idli with chutney and Erra Karam to eat."
+  ],
+  "source": "video",
+  "confidence": 0.8,
+  "cost_usd": 0.0021147,
+  "seconds": 42.4,
+  "frames": null,
+  "dupe_key": "idli watery chutney erra karam"
+ },
+ {
   "code": "DY6k0URi_65",
   "dish": "IRON PORIDGE aka AMARANTH BOWL",
   "dish_en": "IRON PORIDGE aka AMARANTH BOWL",
@@ -35093,43 +35498,6 @@
   "seconds": 38.4,
   "frames": 18,
   "dupe_key": "ivy gourd fry"
- },
- {
-  "code": "DA5-PHCSshe",
-  "dish": "Dondakaya Roti pachadi",
-  "dish_en": "Ivy Gourd Roti Chutney",
-  "language": "te",
-  "creator": "hariscookbook",
-  "creator_name": "Hari Venkatesh Vankayala",
-  "permalink": "https://www.instagram.com/p/DA5-PHCSshe/",
-  "thumbnail": "https://instagram.com/p/DA5-PHCSshe/media/?size=l",
-  "taken_at": 1728482189,
-  "duration_s": 32,
-  "ingredients": [
-   {
-    "item": "Dondakaya",
-    "quantity": "",
-    "item_en": "Ivy gourd"
-   },
-   {
-    "item": "నెయ్యి",
-    "quantity": "",
-    "item_en": "Ghee"
-   },
-   {
-    "item": "బియ్యం అన్నం",
-    "quantity": "",
-    "item_en": "Cooked rice"
-   }
-  ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 0.8,
-  "cost_usd": 0.0005775,
-  "seconds": 15.9,
-  "frames": 6,
-  "dupe_key": "ivy gourd roti chutney"
  },
  {
   "code": "DEoy_a4PF6j",
@@ -37808,22 +38176,34 @@
    },
    {
     "item": "chia seeds",
-    "quantity": "",
+    "quantity": "as shown",
     "item_en": "chia seeds"
    },
    {
     "item": "milk",
-    "quantity": "",
+    "quantity": "as shown",
     "item_en": "milk"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0005779,
-  "seconds": 12.3,
-  "frames": 6,
+  "steps": [
+   "Strain the kefir.",
+   "Add chia seeds to the kefir.",
+   "Stir the chia seeds into the kefir.",
+   "Add milk to the kefir and chia seed mixture.",
+   "Cover and leave at room temperature."
+  ],
+  "steps_en": [
+   "Strain the kefir.",
+   "Add chia seeds to the kefir.",
+   "Stir the chia seeds into the kefir.",
+   "Add milk to the kefir and chia seed mixture.",
+   "Cover and leave at room temperature."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0013631,
+  "seconds": 25.4,
+  "frames": null,
   "dupe_key": "kefir"
  },
  {
@@ -39288,6 +39668,79 @@
   "dupe_key": "lachha onion paratha"
  },
  {
+  "code": "C6A87xyu4Cc",
+  "dish": "लच्छा पराठा",
+  "dish_en": "Lachha Paratha",
+  "language": "hi",
+  "creator": "bowl2soul",
+  "creator_name": "Azra | Bowl To Soul",
+  "permalink": "https://www.instagram.com/p/C6A87xyu4Cc/",
+  "thumbnail": "https://instagram.com/p/C6A87xyu4Cc/media/?size=l",
+  "taken_at": 1713684532,
+  "duration_s": 16.600000381469727,
+  "ingredients": [
+   {
+    "item": "सूखा आटा",
+    "quantity": "",
+    "item_en": "Dry flour"
+   },
+   {
+    "item": "जीरा",
+    "quantity": "",
+    "item_en": "Cumin"
+   },
+   {
+    "item": "लाल मिर्च",
+    "quantity": "",
+    "item_en": "Red chilli"
+   },
+   {
+    "item": "लहसुन",
+    "quantity": "",
+    "item_en": "Garlic"
+   },
+   {
+    "item": "धनिया",
+    "quantity": "",
+    "item_en": "Coriander"
+   }
+  ],
+  "steps": [
+   "POV : Tried unique paratha folding",
+   "Spread dough flat.",
+   "Sprinkle dry flour.",
+   "Sprinkle cumin.",
+   "Sprinkle red chilli.",
+   "Sprinkle garlic.",
+   "Sprinkle coriander.",
+   "Fold the dough.",
+   "Shape the folded dough into a square.",
+   "Roll the dough into a circular shape.",
+   "Cook the paratha on a tawa.",
+   "Serve with raita."
+  ],
+  "steps_en": [
+   "POV : Tried unique paratha folding",
+   "Spread dough flat.",
+   "Sprinkle dry flour.",
+   "Sprinkle cumin.",
+   "Sprinkle red chilli.",
+   "Sprinkle garlic.",
+   "Sprinkle coriander.",
+   "Fold the dough.",
+   "Shape the folded dough into a square.",
+   "Roll the dough into a circular shape.",
+   "Cook the paratha on a tawa.",
+   "Serve with raita."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0008502,
+  "seconds": 21.5,
+  "frames": null,
+  "dupe_key": "lachha paratha"
+ },
+ {
   "code": "DUH_YkzDNla",
   "dish": "Laddoo",
   "dish_en": "Laddoo",
@@ -40187,8 +40640,8 @@
  },
  {
   "code": "DGgAUi9qvAy",
-  "dish": "lentil chips",
-  "dish_en": "lentil chips",
+  "dish": "Lentil chips",
+  "dish_en": "Lentil chips",
   "language": "en",
   "creator": "beextravegant",
   "creator_name": "Anjali Harikumar",
@@ -40198,18 +40651,55 @@
   "duration_s": 47.93299865722656,
   "ingredients": [
    {
-    "item": "lentils",
+    "item": "red lentils",
     "quantity": "",
-    "item_en": "lentils"
+    "item_en": "red lentils"
+   },
+   {
+    "item": "water",
+    "quantity": "",
+    "item_en": "water"
+   },
+   {
+    "item": "oil spray",
+    "quantity": "",
+    "item_en": "oil spray"
+   },
+   {
+    "item": "salt",
+    "quantity": "",
+    "item_en": "salt"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.000813,
-  "seconds": 73.1,
-  "frames": 10,
+  "steps": [
+   "Pour red lentils into a bowl.",
+   "Add water to the lentils.",
+   "Transfer the lentil mixture to a blender.",
+   "Blend the mixture until smooth.",
+   "Pour the blended mixture into a baking pan.",
+   "Spread the mixture evenly in the pan.",
+   "Cut the mixture into chip-sized pieces.",
+   "Arrange the pieces on a baking sheet lined with parchment paper.",
+   "Spray the pieces with oil.",
+   "Season with salt."
+  ],
+  "steps_en": [
+   "Pour red lentils into a bowl.",
+   "Add water to the lentils.",
+   "Transfer the lentil mixture to a blender.",
+   "Blend the mixture until smooth.",
+   "Pour the blended mixture into a baking pan.",
+   "Spread the mixture evenly in the pan.",
+   "Cut the mixture into chip-sized pieces.",
+   "Arrange the pieces on a baking sheet lined with parchment paper.",
+   "Spray the pieces with oil.",
+   "Season with salt."
+  ],
+  "source": "video",
+  "confidence": 0.8,
+  "cost_usd": 0.0019818,
+  "seconds": 31.5,
+  "frames": null,
   "dupe_key": "lentil chip"
  },
  {
@@ -40763,6 +41253,50 @@
   "seconds": null,
   "frames": null,
   "dupe_key": "low carb cottage cheese flatbread"
+ },
+ {
+  "code": "C7i_QXaSXog",
+  "dish": "Low fat Cream Cheese",
+  "dish_en": "Low fat Cream Cheese",
+  "language": "en",
+  "creator": "guiltfree.cookbook",
+  "creator_name": "Healthy Guiltfree Recipes",
+  "permalink": "https://www.instagram.com/p/C7i_QXaSXog/",
+  "thumbnail": "https://instagram.com/p/C7i_QXaSXog/media/?size=l",
+  "taken_at": 1716973952,
+  "duration_s": 50.20000076293945,
+  "ingredients": [
+   {
+    "item": "Low fat skimmed milk",
+    "quantity": "2 liters",
+    "item_en": "Low fat skimmed milk"
+   },
+   {
+    "item": "white vinegar",
+    "quantity": "",
+    "item_en": "white vinegar"
+   }
+  ],
+  "steps": [
+   "Add 2 liters of low fat skimmed milk to a pan and bring it to a boil.",
+   "Once it becomes warm to the touch, turn off your gas stove and add your white vinegar little at a time.",
+   "Add the curdled mixture into a blender jar along with the ingredients and their measurements as mentioned in the caption below.",
+   "Blend it well until it is smooth.",
+   "Transfer it to a container and let it set in the fridge for at least 15 minutes before you use."
+  ],
+  "steps_en": [
+   "Add 2 liters of low fat skimmed milk to a pan and bring it to a boil.",
+   "Once it becomes warm to the touch, turn off your gas stove and add your white vinegar little at a time.",
+   "Add the curdled mixture into a blender jar along with the ingredients and their measurements as mentioned in the caption below.",
+   "Blend it well until it is smooth.",
+   "Transfer it to a container and let it set in the fridge for at least 15 minutes before you use."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0020475,
+  "seconds": 48.3,
+  "frames": null,
+  "dupe_key": "low fat cream cheese"
  },
  {
   "code": "C9wy4Yqx2bf",
@@ -43316,147 +43850,6 @@
   "cost_usd": 0.0015562,
   "seconds": 35.9,
   "frames": 16,
-  "variants": [
-   {
-    "creator": "popula_dabba_",
-    "permalink": "https://www.instagram.com/p/DAseYnGsPoW/",
-    "dish": "మసాలా దోస",
-    "dish_en": "Masala Dosa",
-    "language": "te",
-    "ingredients": [
-     {
-      "item": "మిగిలిన అన్నం",
-      "quantity": "1 cup",
-      "item_en": "Leftover rice"
-     },
-     {
-      "item": "బొంబాయి రవ్వ",
-      "quantity": "1 cup",
-      "item_en": "Semolina"
-     },
-     {
-      "item": "పెరుగు",
-      "quantity": "1/2 cup",
-      "item_en": "Curd"
-     },
-     {
-      "item": "నీళ్లు",
-      "quantity": "1/4 cup",
-      "item_en": "Water"
-     },
-     {
-      "item": "గోధుమ పిండి",
-      "quantity": "2 tbsp",
-      "item_en": "Wheat flour"
-     },
-     {
-      "item": "బియ్యం పిండి",
-      "quantity": "2 tbsp",
-      "item_en": "Rice flour"
-     },
-     {
-      "item": "ఉడికించిన బంగాళదుంపలు",
-      "quantity": "4",
-      "item_en": "Boiled potatoes"
-     },
-     {
-      "item": "నూనె",
-      "quantity": "2 tsps",
-      "item_en": "Oil"
-     },
-     {
-      "item": "తడ్కా ఐటమ్స్",
-      "quantity": "",
-      "item_en": "Tadka items"
-     },
-     {
-      "item": "కరివేపాకు",
-      "quantity": "",
-      "item_en": "Curry leaves"
-     },
-     {
-      "item": "ఉల్లిపాయ ముక్కలు",
-      "quantity": "",
-      "item_en": "Onion pieces"
-     },
-     {
-      "item": "పచ్చిమిర్చి",
-      "quantity": "2",
-      "item_en": "Green chilli"
-     },
-     {
-      "item": "అల్లం ముక్కలు",
-      "quantity": "1 tbsp",
-      "item_en": "Ginger pieces"
-     },
-     {
-      "item": "టమోటో",
-      "quantity": "1",
-      "item_en": "Tomato"
-     },
-     {
-      "item": "ఉప్పు",
-      "quantity": "",
-      "item_en": "Salt"
-     },
-     {
-      "item": "పసుపు",
-      "quantity": "",
-      "item_en": "Turmeric powder"
-     },
-     {
-      "item": "గరం మసాలా",
-      "quantity": "1/2 tsp",
-      "item_en": "Garam masala"
-     },
-     {
-      "item": "కొత్తిమీర ఆకులు",
-      "quantity": "",
-      "item_en": "Coriander leaves"
-     },
-     {
-      "item": "నెయ్యి",
-      "quantity": "2 tbsp",
-      "item_en": "Ghee"
-     },
-     {
-      "item": "కారం పొడి",
-      "quantity": "1 tsp",
-      "item_en": "Chilli Powder"
-     }
-    ],
-    "steps": [],
-    "steps_en": [],
-    "source": "stills"
-   },
-   {
-    "creator": "cookdtv",
-    "permalink": "https://www.instagram.com/p/DBY0kgHySxP/",
-    "dish": "Masala Dosa",
-    "dish_en": "Masala Dosa",
-    "language": "en",
-    "ingredients": [
-     {
-      "item": "Greek yogurt",
-      "quantity": "",
-      "item_en": "Greek yogurt"
-     },
-     {
-      "item": "potatoes",
-      "quantity": "",
-      "item_en": "potatoes"
-     },
-     {
-      "item": "Idli podi",
-      "quantity": "",
-      "item_en": "Idli podi"
-     }
-    ],
-    "steps": [],
-    "steps_en": [],
-    "source": "stills"
-   }
-  ],
   "dupe_key": "masala dosa"
  },
  {
@@ -43548,9 +43941,9 @@
  },
  {
   "code": "C_-raqHvtaG",
-  "dish": "Masala Dosa Sandwhich",
+  "dish": "Masala Dosa Sandwich",
   "dish_en": "Masala Dosa Sandwich",
-  "language": "en",
+  "language": "hi",
   "creator": "cooking_day_diaries",
   "creator_name": "Pragya Singh",
   "permalink": "https://www.instagram.com/p/C_-raqHvtaG/",
@@ -43559,23 +43952,51 @@
   "duration_s": 28.033000946044922,
   "ingredients": [
    {
-    "item": "Dosa batter",
+    "item": "डोसा बैटर",
     "quantity": "",
     "item_en": "Dosa batter"
    },
    {
-    "item": "aloo",
+    "item": "आलू स्टफ्ड मसाला डोसा",
     "quantity": "",
-    "item_en": "potato"
+    "item_en": "Potato stuffed masala dosa"
+   },
+   {
+    "item": "करी पत्ता",
+    "quantity": "",
+    "item_en": "Curry leaves"
+   },
+   {
+    "item": "तेल",
+    "quantity": "",
+    "item_en": "Oil"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0005222,
-  "seconds": 19.7,
-  "frames": 6,
+  "steps": [
+   "सैंडविच खाना है मगर ब्रेड के बिना तो ये सैंडविच ज़रूर ट्राई करो",
+   "ये बनाएं डोसा बैटर से",
+   "एक सैंडविच मेकर ले लो",
+   "उसमें थोड़ा सा तेल और तड़का डाल के डोसा बैटर को स्प्रेड करो",
+   "उसमें अपना आलू स्टफ्ड मसाला डोसा कुक करो",
+   "कुक करो फ्रॉम बोथ द साइड्स",
+   "एंजॉय इट विथ एनी काइंड ऑफ़ चटनी",
+   "रेसिपी को फटाफट से सेव कर लो इससे पहले कि मिस हो जाए"
+  ],
+  "steps_en": [
+   "Want to eat a sandwich but without bread, then definitely try this sandwich.",
+   "Make this with dosa batter.",
+   "Take a sandwich maker.",
+   "Spread dosa batter in it after adding a little oil and tempering.",
+   "Cook your potato stuffed masala dosa in it.",
+   "Cook from both the sides.",
+   "Enjoy it with any kind of chutney.",
+   "Save the recipe quickly before you miss it."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0012802,
+  "seconds": 28.4,
+  "frames": null,
   "dupe_key": "masala dosa sandwich"
  },
  {
@@ -45989,66 +46410,118 @@
   "dupe_key": "millet crust pizza"
  },
  {
-  "code": "DAfTq1LJHR5",
-  "dish": "మిలెట్స దోశ",
+  "code": "C9otNgOvoJc",
+  "dish": "మిల్లెట్స్ దోస",
   "dish_en": "Millet Dosa",
   "language": "te",
-  "creator": "thisisbyvandana",
-  "creator_name": "Vandana Jittaboina",
-  "permalink": "https://www.instagram.com/p/DAfTq1LJHR5/",
-  "thumbnail": "https://instagram.com/p/DAfTq1LJHR5/media/?size=l",
-  "taken_at": 1727587429,
-  "duration_s": 58.768001556396484,
+  "creator": "homemakerhobbiees",
+  "creator_name": "Himaja Ala",
+  "permalink": "https://www.instagram.com/p/C9otNgOvoJc/",
+  "thumbnail": "https://instagram.com/p/C9otNgOvoJc/media/?size=l",
+  "taken_at": 1721460465,
+  "duration_s": 50.900001525878906,
   "ingredients": [
    {
-    "item": "బియ్యం",
-    "quantity": "ఒక కప్పు",
-    "item_en": "rice"
+    "item": "కొడో మిల్లెట్",
+    "quantity": "1 కప్పు",
+    "item_en": "Kodo Millet"
    },
    {
     "item": "మినపప్పు",
-    "quantity": "",
-    "item_en": "urad dal"
-   },
-   {
-    "item": "రాగులు",
-    "quantity": "",
-    "item_en": "ragi"
-   },
-   {
-    "item": "అందు కొర్రలు",
-    "quantity": "",
-    "item_en": "foxtail millet"
-   },
-   {
-    "item": "సాబుదాన",
-    "quantity": "",
-    "item_en": "sabudana"
-   },
-   {
-    "item": "పోహ",
-    "quantity": "ఒక కప్పు",
-    "item_en": "poha"
+    "quantity": "1/2 కప్పు",
+    "item_en": "Urad Dal"
    },
    {
     "item": "మెంతులు",
-    "quantity": "",
-    "item_en": "fenugreek seeds"
+    "quantity": "1 స్పూన్",
+    "item_en": "Fenugreek Seeds"
    },
    {
-    "item": "ఉప్పు",
+    "item": "నీళ్ళు",
     "quantity": "",
-    "item_en": "salt"
+    "item_en": "Water"
+   },
+   {
+    "item": "ఉల్లిపాయ",
+    "quantity": "1/2",
+    "item_en": "Onion"
+   },
+   {
+    "item": "నూనె",
+    "quantity": "",
+    "item_en": "Oil"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0010562,
-  "seconds": 34.3,
-  "frames": 12,
+  "steps": [
+   "మిల్లెట్స్, మినపప్పు, మెంతులు వేసి శుభ్రం చేసి మంచి నీళ్ళలో రాత్రంతా నానబెట్టండి.",
+   "మరుసటి రోజు ఉదయం మిక్సీలో వేసి దోస పిండి రెడీ చేసుకోండి.",
+   "దోస పిండిని దోస తవా మీద పోసి దోసలా వేయండి.",
+   "దోసను రెండు వైపులా క్రిస్పీగా కాల్చండి."
+  ],
+  "steps_en": [
+   "Wash the millets, urad dal, and fenugreek seeds and soak them in water overnight.",
+   "The next morning, grind them in a mixer to make dosa batter.",
+   "Pour the dosa batter onto the dosa tawa and make a dosa.",
+   "Cook the dosa on both sides until crispy."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0021013,
+  "seconds": 36.9,
+  "frames": null,
   "variants": [
+   {
+    "creator": "homemakerhobbiees",
+    "permalink": "https://www.instagram.com/p/C9otNgOvoJc/",
+    "dish": "మిల్లెట్స్ దోస",
+    "dish_en": "Millet Dosa",
+    "language": "te",
+    "ingredients": [
+     {
+      "item": "కొడో మిల్లెట్",
+      "quantity": "1 కప్పు",
+      "item_en": "Kodo Millet"
+     },
+     {
+      "item": "మినపప్పు",
+      "quantity": "1/2 కప్పు",
+      "item_en": "Urad Dal"
+     },
+     {
+      "item": "మెంతులు",
+      "quantity": "1 స్పూన్",
+      "item_en": "Fenugreek Seeds"
+     },
+     {
+      "item": "నీళ్ళు",
+      "quantity": "",
+      "item_en": "Water"
+     },
+     {
+      "item": "ఉల్లిపాయ",
+      "quantity": "1/2",
+      "item_en": "Onion"
+     },
+     {
+      "item": "నూనె",
+      "quantity": "",
+      "item_en": "Oil"
+     }
+    ],
+    "steps": [
+     "మిల్లెట్స్, మినపప్పు, మెంతులు వేసి శుభ్రం చేసి మంచి నీళ్ళలో రాత్రంతా నానబెట్టండి.",
+     "మరుసటి రోజు ఉదయం మిక్సీలో వేసి దోస పిండి రెడీ చేసుకోండి.",
+     "దోస పిండిని దోస తవా మీద పోసి దోసలా వేయండి.",
+     "దోసను రెండు వైపులా క్రిస్పీగా కాల్చండి."
+    ],
+    "steps_en": [
+     "Wash the millets, urad dal, and fenugreek seeds and soak them in water overnight.",
+     "The next morning, grind them in a mixer to make dosa batter.",
+     "Pour the dosa batter onto the dosa tawa and make a dosa.",
+     "Cook the dosa on both sides until crispy."
+    ],
+    "source": "video"
+   },
    {
     "creator": "thisisbyvandana",
     "permalink": "https://www.instagram.com/p/DAfTq1LJHR5/",
@@ -46095,33 +46568,6 @@
       "item": "ఉప్పు",
       "quantity": "",
       "item_en": "salt"
-     }
-    ],
-    "steps": [],
-    "steps_en": [],
-    "source": "stills"
-   },
-   {
-    "creator": "homemakerhobbiees",
-    "permalink": "https://www.instagram.com/p/C9otNgOvoJc/",
-    "dish": "మిల్లెట్స్ దోస",
-    "dish_en": "Millets Dosa",
-    "language": "te",
-    "ingredients": [
-     {
-      "item": "మిల్లెట్స్",
-      "quantity": "ఒక కప్పు",
-      "item_en": "Millets"
-     },
-     {
-      "item": "మినపప్పు",
-      "quantity": "అర కప్పు",
-      "item_en": "Urad Dal"
-     },
-     {
-      "item": "మెంతులు",
-      "quantity": "ఒక స్పూన్",
-      "item_en": "Fenugreek seeds"
      }
     ],
     "steps": [],
@@ -48181,7 +48627,7 @@
     "creator": "rupas_kitchen_delights",
     "permalink": "https://www.instagram.com/p/C_vJN6mPJ1-/",
     "dish": "Moong dal idli",
-    "dish_en": "Moong dal idli",
+    "dish_en": "Moong Dal Idli",
     "language": "en",
     "ingredients": [
      {
@@ -48193,11 +48639,39 @@
       "item": "urad dal",
       "quantity": "",
       "item_en": "urad dal"
+     },
+     {
+      "item": "fenugreek seeds",
+      "quantity": "spoonful",
+      "item_en": "fenugreek seeds"
+     },
+     {
+      "item": "water",
+      "quantity": "",
+      "item_en": "water"
      }
     ],
-    "steps": [],
-    "steps_en": [],
-    "source": "stills"
+    "steps": [
+     "Add moong dal to a bowl.",
+     "Add urad dal to the bowl.",
+     "Add fenugreek seeds to the bowl.",
+     "Add water to the bowl.",
+     "Grind the mixture into a batter.",
+     "Pour the batter into idli molds.",
+     "Steam the idlis.",
+     "Remove the idlis from the mold."
+    ],
+    "steps_en": [
+     "Add moong dal to a bowl.",
+     "Add urad dal to the bowl.",
+     "Add fenugreek seeds to the bowl.",
+     "Add water to the bowl.",
+     "Grind the mixture into a batter.",
+     "Pour the batter into idli molds.",
+     "Steam the idlis.",
+     "Remove the idlis from the mold."
+    ],
+    "source": "video"
    },
    {
     "creator": "masterchefpankajbhadouria",
@@ -56133,9 +56607,9 @@
  },
  {
   "code": "DI0ag30yBH7",
-  "dish": "Onion Tandoori Parathas",
-  "dish_en": "Onion Tandoori Parathas",
-  "language": "en",
+  "dish": "प्याज तंदूरी पराठा",
+  "dish_en": "Onion Tandoori Paratha",
+  "language": "hi",
   "creator": "thefoodieintown",
   "creator_name": "Naina Chauhan",
   "permalink": "https://www.instagram.com/p/DI0ag30yBH7/",
@@ -56144,28 +56618,47 @@
   "duration_s": 38.45000076293945,
   "ingredients": [
    {
-    "item": "onions",
+    "item": "प्याज",
     "quantity": "",
-    "item_en": "onions"
+    "item_en": "onion"
    },
    {
-    "item": "green chilies",
+    "item": "हरी मिर्च",
     "quantity": "",
-    "item_en": "green chilies"
+    "item_en": "green chili"
    },
    {
-    "item": "white butter",
-    "quantity": "a dollop",
+    "item": "आटा",
+    "quantity": "",
+    "item_en": "dough"
+   },
+   {
+    "item": "सफेद मक्खन",
+    "quantity": "एक गुड़िया",
     "item_en": "white butter"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 0.9,
-  "cost_usd": 0.0006989,
-  "seconds": 14.4,
-  "frames": 8,
+  "steps": [
+   "पराठे के लिए भरावन तैयार करें जिसमें बारीक कटा प्याज और हरी मिर्च हो।",
+   "आटे की लोई लें और उसे फैलाएं।",
+   "फैलाए हुए आटे में भरावन भरें।",
+   "भरावन को आटे में बंद करें और गोल आकार दें।",
+   "पराठे को तवे पर डालें और दोनों तरफ से सुनहरा होने तक पकाएं।",
+   "पके हुए पराठे पर सफेद मक्खन डालें।"
+  ],
+  "steps_en": [
+   "Prepare the filling for the paratha with finely chopped onions and green chilies.",
+   "Take a portion of dough and flatten it.",
+   "Fill the flattened dough with the prepared filling.",
+   "Seal the filling within the dough and shape it into a round.",
+   "Place the paratha on a griddle and cook until golden brown on both sides.",
+   "Add a dollop of white butter on the cooked paratha."
+  ],
+  "source": "video",
+  "confidence": 0.8,
+  "cost_usd": 0.0016295,
+  "seconds": 35.5,
+  "frames": null,
   "dupe_key": "onion tandoori paratha"
  },
  {
@@ -56655,6 +57148,56 @@
   "seconds": null,
   "frames": null,
   "dupe_key": "packed rajma onion paratha"
+ },
+ {
+  "code": "DF7rnH5vcEd",
+  "dish": "प्रोटीन पैक्ड रोटी",
+  "dish_en": "Protein Packed Roti",
+  "language": "hi",
+  "creator": "aalusheddo",
+  "creator_name": "Adrija Roy",
+  "permalink": "https://www.instagram.com/p/DF7rnH5vcEd/",
+  "thumbnail": "https://instagram.com/p/DF7rnH5vcEd/media/?size=l",
+  "taken_at": 1739277555,
+  "duration_s": 32.03300094604492,
+  "ingredients": [
+   {
+    "item": "प्रोटीन पैक्ड रोटी मिक्स",
+    "quantity": "1 स्कूप",
+    "item_en": "Protein Packed Roti Mix"
+   },
+   {
+    "item": "पानी",
+    "quantity": "",
+    "item_en": "Water"
+   }
+  ],
+  "steps": [
+   "प्रोटीन पैक्ड रोटी मिक्स को 4-5 रोटियों के आटे में डालें।",
+   "पानी डालकर आटा गूंथ लें।",
+   "जैसे नॉर्मली रोटी बनती है, वैसे रोटियां बना लो।",
+   "रोटी को तवे पर डालें।",
+   "रोटी को सीधे आंच पर फुलाएं।",
+   "रोटी को तवे पर पकाएं।",
+   "पकी हुई रोटी पर घी लगाएं।",
+   "रोटी को फोल्ड करें।"
+  ],
+  "steps_en": [
+   "Add 1 scoop of Protein Packed Roti Mix to the dough for 4-5 rotis.",
+   "Knead the dough by adding water.",
+   "Make rotis as you normally would.",
+   "Place the roti on the tawa.",
+   "Puff up the roti directly on the flame.",
+   "Cook the roti on the tawa.",
+   "Apply ghee on the cooked roti.",
+   "Fold the roti."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0013943,
+  "seconds": 33.1,
+  "frames": null,
+  "dupe_key": "packed roti"
  },
  {
   "code": "DA3MWdHSju0",
@@ -60468,8 +61011,8 @@
  },
  {
   "code": "C9udib8o41u",
-  "dish": "paneer shezwan",
-  "dish_en": "paneer schezwan",
+  "dish": "Paneer Shezwan",
+  "dish_en": "Paneer Shezwan",
   "language": "en",
   "creator": "_cafeteriya_",
   "creator_name": "Riyã Michael 🧿",
@@ -60489,19 +61032,54 @@
     "item_en": "garlic"
    },
    {
-    "item": "schezwan sauce",
+    "item": "scallions",
     "quantity": "",
-    "item_en": "schezwan sauce"
+    "item_en": "scallions"
+   },
+   {
+    "item": "oil",
+    "quantity": "",
+    "item_en": "oil"
+   },
+   {
+    "item": "sauce",
+    "quantity": "",
+    "item_en": "sauce"
+   },
+   {
+    "item": "chopped green onions",
+    "quantity": "",
+    "item_en": "chopped green onions"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0003727,
-  "seconds": 10.5,
-  "frames": 3,
-  "dupe_key": "paneer schezwan"
+  "steps": [
+   "Cut paneer into cubes.",
+   "Chop garlic.",
+   "Chop scallions.",
+   "Heat oil in a pan.",
+   "Add chopped garlic and sauté.",
+   "Add chopped scallions and sauté.",
+   "Add sauce and cook.",
+   "Add paneer cubes and toss to coat.",
+   "Garnish with chopped green onions."
+  ],
+  "steps_en": [
+   "Cut paneer into cubes.",
+   "Chop garlic.",
+   "Chop scallions.",
+   "Heat oil in a pan.",
+   "Add chopped garlic and sauté.",
+   "Add chopped scallions and sauté.",
+   "Add sauce and cook.",
+   "Add paneer cubes and toss to coat.",
+   "Garnish with chopped green onions."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.00087,
+  "seconds": 42.3,
+  "frames": null,
+  "dupe_key": "paneer shezwan"
  },
  {
   "code": "DOV2BLukinI",
@@ -63345,8 +63923,13 @@
   "ingredients": [
    {
     "item": "peanuts",
-    "quantity": "",
+    "quantity": "500g",
     "item_en": "peanuts"
+   },
+   {
+    "item": "water",
+    "quantity": "",
+    "item_en": "water"
    },
    {
     "item": "vinegar",
@@ -63354,13 +63937,41 @@
     "item_en": "vinegar"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0009109,
-  "seconds": 22.7,
-  "frames": 11,
+  "steps": [
+   "Soak peanuts.",
+   "Blend soaked peanuts with water.",
+   "Strain the mixture through a cloth to make peanut milk.",
+   "Squeeze the cloth to extract all the peanut milk.",
+   "Simmer the peanut milk for 5 minutes.",
+   "Cool down the peanut milk a little bit.",
+   "Slowly add vinegar to curdle the milk.",
+   "Strain the curdled mixture through a cloth again.",
+   "Squeeze the cloth to remove excess liquid.",
+   "Place the curdled peanut mixture into a tofu press with a weight on top.",
+   "Refrigerate overnight.",
+   "Remove from tofu press.",
+   "Slice and serve."
+  ],
+  "steps_en": [
+   "Soak peanuts.",
+   "Blend soaked peanuts with water.",
+   "Strain the mixture through a cloth to make peanut milk.",
+   "Squeeze the cloth to extract all the peanut milk.",
+   "Simmer the peanut milk for 5 minutes.",
+   "Cool down the peanut milk a little bit.",
+   "Slowly add vinegar to curdle the milk.",
+   "Strain the curdled mixture through a cloth again.",
+   "Squeeze the cloth to remove excess liquid.",
+   "Place the curdled peanut mixture into a tofu press with a weight on top.",
+   "Refrigerate overnight.",
+   "Remove from tofu press.",
+   "Slice and serve."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0022248,
+  "seconds": 41.3,
+  "frames": null,
   "dupe_key": "peanut tofu"
  },
  {
@@ -66305,56 +66916,102 @@
   "dupe_key": "potato cauliflower air fryer"
  },
  {
-  "code": "C4PGe8qNMXV",
-  "dish": "Potato Chips on Skewers",
-  "dish_en": "Potato chips",
-  "language": "en",
-  "creator": "delicious_healthy_story",
-  "creator_name": "Laxmi_Goud",
-  "permalink": "https://www.instagram.com/p/C4PGe8qNMXV/",
-  "thumbnail": "https://instagram.com/p/C4PGe8qNMXV/media/?size=l",
-  "taken_at": 1709863758,
-  "duration_s": 30.766000747680664,
+  "code": "C8yX634vZj2",
+  "dish": "ఆలుగడ్డ చిప్స్",
+  "dish_en": "Potato Chips",
+  "language": "te",
+  "creator": "telangana_kitchen4u",
+  "creator_name": "Ramesh Kuncham",
+  "permalink": "https://www.instagram.com/p/C8yX634vZj2/",
+  "thumbnail": "https://instagram.com/p/C8yX634vZj2/media/?size=l",
+  "taken_at": 1719637279,
+  "duration_s": 59.88199996948242,
   "ingredients": [
    {
-    "item": "Potatoes",
-    "quantity": "",
+    "item": "ఆలుగడ్డ",
+    "quantity": "5-6",
     "item_en": "Potatoes"
    },
    {
-    "item": "Salt",
-    "quantity": "",
-    "item_en": "Salt"
-   },
-   {
-    "item": "Red Chili Powder",
-    "quantity": "",
-    "item_en": "Red Chili Powder"
-   },
-   {
-    "item": "Corn Flour",
-    "quantity": "",
-    "item_en": "Corn Flour"
-   },
-   {
-    "item": "Oil for fry",
-    "quantity": "",
-    "item_en": "Oil for fry"
-   },
-   {
-    "item": "Peri Peri Masala",
-    "quantity": "",
-    "item_en": "Peri Peri Masala"
+    "item": "ఉప్పు",
+    "quantity": "దొడ్డు ఉప్పు",
+    "item_en": "Salt (coarse salt)"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "caption",
-  "confidence": null,
-  "cost_usd": null,
-  "seconds": null,
+  "steps": [
+   "ఆలుగడ్డలు కడిగి పొట్టు తీసి శుభ్రం చేసుకోవాలి.",
+   "ఆలుగడ్డలను సన్నగా తరగాలి.",
+   "తరిగిన ఆలుగడ్డ ముక్కలను నీటిలో వేయాలి.",
+   "ఒక గిన్నెలో నీళ్లు పోసి వేడి చేయాలి.",
+   "నీళ్లు వేడయ్యాక అందులో ఉప్పు వేయాలి.",
+   "తరిగిన ఆలుగడ్డ ముక్కలను వేడి నీటిలో వేసి 5 నిమిషాలు ఉడికించాలి.",
+   "ఉడికిన ఆలుగడ్డ ముక్కలను నీటిలో నుండి తీసి జల్లెడ గిన్నెలో వేసుకోవాలి.",
+   "ఆలుగడ్డ ముక్కలను ఒక వస్త్రంపై వేసి ఆరబెట్టాలి.",
+   "ఎండలో లేదా ఫ్యాన్ కింద ఆరబెట్టాలి.",
+   "ఆరిన ఆలుగడ్డ చిప్స్ ను నూనెలో వేయించుకోవాలి."
+  ],
+  "steps_en": [
+   "Wash and peel the potatoes.",
+   "Slice the potatoes thinly.",
+   "Put the sliced potato pieces in water.",
+   "Heat water in a pot.",
+   "Add salt to the hot water.",
+   "Add the sliced potato pieces to the hot water and boil for 5 minutes.",
+   "Remove the boiled potato pieces from the water and place them in a sieve.",
+   "Spread the potato slices on a cloth to dry.",
+   "Dry them in the sun or under a fan.",
+   "Fry the dried potato chips in oil."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0024295,
+  "seconds": 33.9,
   "frames": null,
   "variants": [
+   {
+    "creator": "telangana_kitchen4u",
+    "permalink": "https://www.instagram.com/p/C8yX634vZj2/",
+    "dish": "ఆలుగడ్డ చిప్స్",
+    "dish_en": "Potato Chips",
+    "language": "te",
+    "ingredients": [
+     {
+      "item": "ఆలుగడ్డ",
+      "quantity": "5-6",
+      "item_en": "Potatoes"
+     },
+     {
+      "item": "ఉప్పు",
+      "quantity": "దొడ్డు ఉప్పు",
+      "item_en": "Salt (coarse salt)"
+     }
+    ],
+    "steps": [
+     "ఆలుగడ్డలు కడిగి పొట్టు తీసి శుభ్రం చేసుకోవాలి.",
+     "ఆలుగడ్డలను సన్నగా తరగాలి.",
+     "తరిగిన ఆలుగడ్డ ముక్కలను నీటిలో వేయాలి.",
+     "ఒక గిన్నెలో నీళ్లు పోసి వేడి చేయాలి.",
+     "నీళ్లు వేడయ్యాక అందులో ఉప్పు వేయాలి.",
+     "తరిగిన ఆలుగడ్డ ముక్కలను వేడి నీటిలో వేసి 5 నిమిషాలు ఉడికించాలి.",
+     "ఉడికిన ఆలుగడ్డ ముక్కలను నీటిలో నుండి తీసి జల్లెడ గిన్నెలో వేసుకోవాలి.",
+     "ఆలుగడ్డ ముక్కలను ఒక వస్త్రంపై వేసి ఆరబెట్టాలి.",
+     "ఎండలో లేదా ఫ్యాన్ కింద ఆరబెట్టాలి.",
+     "ఆరిన ఆలుగడ్డ చిప్స్ ను నూనెలో వేయించుకోవాలి."
+    ],
+    "steps_en": [
+     "Wash and peel the potatoes.",
+     "Slice the potatoes thinly.",
+     "Put the sliced potato pieces in water.",
+     "Heat water in a pot.",
+     "Add salt to the hot water.",
+     "Add the sliced potato pieces to the hot water and boil for 5 minutes.",
+     "Remove the boiled potato pieces from the water and place them in a sieve.",
+     "Spread the potato slices on a cloth to dry.",
+     "Dry them in the sun or under a fan.",
+     "Fry the dried potato chips in oil."
+    ],
+    "source": "video"
+   },
    {
     "creator": "delicious_healthy_story",
     "permalink": "https://www.instagram.com/p/C4PGe8qNMXV/",
@@ -66396,28 +67053,6 @@
     "steps": [],
     "steps_en": [],
     "source": "caption"
-   },
-   {
-    "creator": "telangana_kitchen4u",
-    "permalink": "https://www.instagram.com/p/C8yX634vZj2/",
-    "dish": "ఆలుగడ్డ చిప్స్",
-    "dish_en": "Potato Chips",
-    "language": "te",
-    "ingredients": [
-     {
-      "item": "ఆలుగడ్డ",
-      "quantity": "",
-      "item_en": "Potato"
-     },
-     {
-      "item": "ఉప్పు",
-      "quantity": "",
-      "item_en": "Salt"
-     }
-    ],
-    "steps": [],
-    "steps_en": [],
-    "source": "stills"
    }
   ],
   "dupe_key": "potato chip"
@@ -66953,28 +67588,40 @@
   "duration_s": 57.566001892089844,
   "ingredients": [
    {
-    "item": "బెల్లం",
-    "quantity": "",
-    "item_en": "Jaggery"
-   },
-   {
     "item": "పేలాలు",
     "quantity": "",
-    "item_en": "Puffed Rice"
+    "item_en": "puffed rice"
+   },
+   {
+    "item": "బెల్లం",
+    "quantity": "కట్టు",
+    "item_en": "jaggery"
    },
    {
     "item": "నెయ్యి",
-    "quantity": "",
-    "item_en": "Ghee"
+    "quantity": "జర్రంత",
+    "item_en": "ghee"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0009843,
-  "seconds": 45.3,
-  "frames": 12,
+  "steps": [
+   "కట్టు బెల్లం తీసుకుని ఒకసారి కరిగించుకొని వడ పోసుకోండి.",
+   "దానిలో జర్రంత నెయ్యి వేసుకోండి.",
+   "మంచిగా మరిగిన గిన్నెల నీళ్లు తీసుకుని ఒక గిన్నెలో పోసుకుని టక్ మని సౌండ్ వస్తే పాలేసుకుని కలుపుకోండి.",
+   "పేలాలు వేసుకుని కలుపుకోండి.",
+   "మంచిగా ఉండలు చుట్టుకోండి."
+  ],
+  "steps_en": [
+   "Take jaggery, melt it once and strain it.",
+   "Add a little ghee to it.",
+   "Take some water in a bowl, pour it, and if it makes a 'tak' sound, add milk and mix.",
+   "Add puffed rice and mix.",
+   "Make nice balls."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.00055904,
+  "seconds": 27.8,
+  "frames": null,
   "dupe_key": "puffed rice ball"
  },
  {
@@ -67593,9 +68240,9 @@
  },
  {
   "code": "C7OMwVzvOcB",
-  "dish": "Quinoa Dosa",
-  "dish_en": "Quinoa Dosa",
-  "language": "en",
+  "dish": "High Protein Quinda Dosa",
+  "dish_en": "High Protein Quinoa Dosa",
+  "language": "te",
   "creator": "mad.over.f00d",
   "creator_name": "Mad Over Food",
   "permalink": "https://www.instagram.com/p/C7OMwVzvOcB/",
@@ -67605,7 +68252,7 @@
   "ingredients": [
    {
     "item": "Quinoa",
-    "quantity": "",
+    "quantity": "1 Cup",
     "item_en": "Quinoa"
    },
    {
@@ -67614,18 +68261,49 @@
     "item_en": "Brown Rice"
    },
    {
-    "item": "Urad Dal",
-    "quantity": "",
-    "item_en": "Urad Dal"
+    "item": "Chana Dal",
+    "quantity": "1/4 Cup",
+    "item_en": "Chana Dal"
+   },
+   {
+    "item": "Fenugreek Seeds",
+    "quantity": "1tsp",
+    "item_en": "Fenugreek Seeds"
+   },
+   {
+    "item": "Salt",
+    "quantity": "as per taste",
+    "item_en": "Salt"
+   },
+   {
+    "item": "Water",
+    "quantity": "as required",
+    "item_en": "Water"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 0.8,
-  "cost_usd": 0.0006064,
-  "seconds": 16.2,
-  "frames": 7,
+  "steps": [
+   "Wash and Soak for 5hrs",
+   "Grind smooth and ferment overnight",
+   "Add salt as per taste",
+   "Add water as required",
+   "Pour the batter on a hot tawa",
+   "Spread it in a circular motion",
+   "Cook until golden brown"
+  ],
+  "steps_en": [
+   "Wash and soak for 5 hours",
+   "Grind smooth and ferment overnight",
+   "Add salt as per taste",
+   "Add water as required",
+   "Pour the batter on a hot tawa",
+   "Spread it in a circular motion",
+   "Cook until golden brown"
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0014175,
+  "seconds": 44.1,
+  "frames": null,
   "dupe_key": "quinoa dosa"
  },
  {
@@ -68670,18 +69348,49 @@
   "duration_s": 40.132999420166016,
   "ingredients": [
    {
-    "item": "Ragi",
+    "item": "ragi flour",
     "quantity": "",
-    "item_en": "Finger millet"
+    "item_en": "ragi flour"
+   },
+   {
+    "item": "grated coconut",
+    "quantity": "",
+    "item_en": "grated coconut"
+   },
+   {
+    "item": "salt",
+    "quantity": "a spoon",
+    "item_en": "salt"
+   },
+   {
+    "item": "water",
+    "quantity": "",
+    "item_en": "water"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
+  "steps": [
+   "Add ragi flour to a blender jar.",
+   "Add grated coconut.",
+   "Add salt.",
+   "Add water and blend to a smooth batter.",
+   "Pour the batter onto a hot tawa.",
+   "Cook until done.",
+   "Flip and cook the other side."
+  ],
+  "steps_en": [
+   "Add ragi flour to a blender jar.",
+   "Add grated coconut.",
+   "Add salt.",
+   "Add water and blend to a smooth batter.",
+   "Pour the batter onto a hot tawa.",
+   "Cook until done.",
+   "Flip and cook the other side."
+  ],
+  "source": "video",
   "confidence": 0.9,
-  "cost_usd": 0.0006857,
-  "seconds": 47.9,
-  "frames": 8,
+  "cost_usd": 0.0016769,
+  "seconds": 50.4,
+  "frames": null,
   "dupe_key": "ragi appam"
  },
  {
@@ -70516,15 +71225,78 @@
     "item": "राजमा",
     "quantity": "",
     "item_en": "kidney beans"
+   },
+   {
+    "item": "तांदूळ",
+    "quantity": "",
+    "item_en": "rice"
+   },
+   {
+    "item": "हिरवी मिरची",
+    "quantity": "",
+    "item_en": "green chilies"
+   },
+   {
+    "item": "लसूण",
+    "quantity": "",
+    "item_en": "garlic"
+   },
+   {
+    "item": "कोथिंबीर",
+    "quantity": "",
+    "item_en": "coriander leaves"
+   },
+   {
+    "item": "तेल",
+    "quantity": "",
+    "item_en": "oil"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
+  "steps": [
+   "राजमा मिक्सरमध्ये घाला.",
+   "तांदूळ मिक्सरमध्ये घाला.",
+   "हिरवी मिरची मिक्सरमध्ये घाला.",
+   "लसूण मिक्सरमध्ये घाला.",
+   "कोथिंबीर मिक्सरमध्ये घाला.",
+   "सर्व साहित्य बारीक वाटून घ्या.",
+   "मिश्रण एका भांड्यात काढा.",
+   "मिश्रण चांगले ढवळा.",
+   "तवा गरम करा.",
+   "तव्याला तेल लावा.",
+   "तवा पुसून घ्या.",
+   "तव्याला पुन्हा तेल लावा.",
+   "मिश्रण तव्यावर पसरा.",
+   "डोसा शिजवा.",
+   "डोसा पलटा.",
+   "डोसाला तेल लावा.",
+   "डोसा फोल्ड करा.",
+   "डोसा सर्व्ह करा."
+  ],
+  "steps_en": [
+   "Add kidney beans to the mixer.",
+   "Add rice to the mixer.",
+   "Add green chilies to the mixer.",
+   "Add garlic to the mixer.",
+   "Add coriander leaves to the mixer.",
+   "Grind all ingredients finely.",
+   "Pour the mixture into a bowl.",
+   "Mix the batter well.",
+   "Heat the tawa.",
+   "Grease the tawa with oil.",
+   "Wipe the tawa.",
+   "Grease the tawa with oil again.",
+   "Spread the batter on the tawa.",
+   "Cook the dosa.",
+   "Flip the dosa.",
+   "Apply oil to the dosa.",
+   "Fold the dosa.",
+   "Serve the dosa."
+  ],
+  "source": "video",
   "confidence": 0.9,
-  "cost_usd": 0.0007067,
-  "seconds": 16.8,
-  "frames": 8,
+  "cost_usd": 0.0018665,
+  "seconds": 52.0,
+  "frames": null,
   "dupe_key": "rajma dosa"
  },
  {
@@ -71876,9 +72648,9 @@
   "duration_s": 72.16600036621094,
   "ingredients": [
    {
-    "item": "rice",
+    "item": "Rice",
     "quantity": "",
-    "item_en": "rice"
+    "item_en": "Rice"
    },
    {
     "item": "chia seed",
@@ -71886,18 +72658,47 @@
     "item_en": "chia seed"
    },
    {
+    "item": "sugar",
+    "quantity": "",
+    "item_en": "sugar"
+   },
+   {
     "item": "salt",
     "quantity": "",
     "item_en": "salt"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.001163,
-  "seconds": 78.5,
-  "frames": 14,
+  "steps": [
+   "Add rice to a bowl.",
+   "Add chia seeds.",
+   "Add sugar.",
+   "Add salt.",
+   "Mix the ingredients.",
+   "Spread the mixture on parchment paper.",
+   "Roll the mixture.",
+   "Open the parchment paper.",
+   "Put in the oven.",
+   "Take out of the oven.",
+   "Break into pieces."
+  ],
+  "steps_en": [
+   "Add rice to a bowl.",
+   "Add chia seeds.",
+   "Add sugar.",
+   "Add salt.",
+   "Mix the ingredients.",
+   "Spread the mixture on parchment paper.",
+   "Roll the mixture.",
+   "Open the parchment paper.",
+   "Put in the oven.",
+   "Take out of the oven.",
+   "Break into pieces."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0028227,
+  "seconds": 31.4,
+  "frames": null,
   "dupe_key": "rice cracker"
  },
  {
@@ -72790,28 +73591,6 @@
      "Cook on a hot tawa until beautifully puffed."
     ],
     "source": "caption"
-   },
-   {
-    "creator": "aalusheddo",
-    "permalink": "https://www.instagram.com/p/DF7rnH5vcEd/",
-    "dish": "रोटी",
-    "dish_en": "Roti",
-    "language": "hi",
-    "ingredients": [
-     {
-      "item": "रोटी प्रोटीन मिक्स",
-      "quantity": "1 स्कूप",
-      "item_en": "Roti Protein Mix"
-     },
-     {
-      "item": "पानी",
-      "quantity": "4 से 5 रोटियों के आटे में",
-      "item_en": "Water"
-     }
-    ],
-    "steps": [],
-    "steps_en": [],
-    "source": "stills"
    },
    {
     "creator": "cookandvlogs",
@@ -76480,8 +77259,8 @@
  {
   "code": "C-zqjFEAN6E",
   "dish": "somberi mushroom",
-  "dish_en": "somberi mushroom",
-  "language": "te",
+  "dish_en": "Somberi Mushroom",
+  "language": "en",
   "creator": "chillarboys",
   "creator_name": "chillarboy",
   "permalink": "https://www.instagram.com/p/C-zqjFEAN6E/",
@@ -76490,28 +77269,76 @@
   "duration_s": 50.70000076293945,
   "ingredients": [
    {
-    "item": "mushroom",
+    "item": "mushrooms",
+    "quantity": "1 container",
+    "item_en": "mushrooms"
+   },
+   {
+    "item": "Yogurt / Curd",
     "quantity": "",
-    "item_en": "mushroom"
+    "item_en": "Yogurt / Curd"
+   },
+   {
+    "item": "Ginger garlic paste",
+    "quantity": "",
+    "item_en": "Ginger garlic paste"
+   },
+   {
+    "item": "Chilli powder",
+    "quantity": "",
+    "item_en": "Chilli powder"
    },
    {
     "item": "Salt",
     "quantity": "",
-    "item_en": "salt"
+    "item_en": "Salt"
    },
    {
-    "item": "onion",
+    "item": "Ghee",
     "quantity": "",
-    "item_en": "onion"
+    "item_en": "Ghee"
+   },
+   {
+    "item": "Onion",
+    "quantity": "",
+    "item_en": "Onion"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
+  "steps": [
+   "Chop the mushrooms.",
+   "Add Yogurt / Curd to a bowl.",
+   "Add Ginger garlic paste.",
+   "Add Chilli powder.",
+   "Add Salt.",
+   "Mix the ingredients in the bowl.",
+   "Chop the onion.",
+   "Add Ghee to a pan.",
+   "Add chopped onions to the pan and sauté.",
+   "Add chopped mushrooms to the pan.",
+   "Add the prepared mixture to the pan.",
+   "Cover the pan and cook.",
+   "Serve with rice."
+  ],
+  "steps_en": [
+   "Chop the mushrooms.",
+   "Add Yogurt / Curd to a bowl.",
+   "Add Ginger garlic paste.",
+   "Add Chilli powder.",
+   "Add Salt.",
+   "Mix the ingredients in the bowl.",
+   "Chop the onion.",
+   "Add Ghee to a pan.",
+   "Add chopped onions to the pan and sauté.",
+   "Add chopped mushrooms to the pan.",
+   "Add the prepared mixture to the pan.",
+   "Cover the pan and cook.",
+   "Serve with rice."
+  ],
+  "source": "video",
   "confidence": 0.9,
-  "cost_usd": 0.0008727,
-  "seconds": 23.0,
-  "frames": 10,
+  "cost_usd": 0.0021301,
+  "seconds": 38.7,
+  "frames": null,
   "dupe_key": "somberi mushroom"
  },
  {
@@ -77032,15 +77859,35 @@
     "item": "natural yeast",
     "quantity": "",
     "item_en": "natural yeast"
+   },
+   {
+    "item": "Flour",
+    "quantity": "",
+    "item_en": "Flour"
+   },
+   {
+    "item": "water",
+    "quantity": "",
+    "item_en": "water"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0002455,
-  "seconds": 47.4,
-  "frames": 2,
+  "steps": [
+   "Use this natural yeast to bake healthy bread",
+   "Wild yeast Sourdough Magic With Millets",
+   "Flour+ water only",
+   "Soft Flavorful Healthy Bread Is A reality"
+  ],
+  "steps_en": [
+   "Use this natural yeast to bake healthy bread",
+   "Wild yeast Sourdough Magic With Millets",
+   "Flour+ water only",
+   "Soft Flavorful Healthy Bread Is A reality"
+  ],
+  "source": "video",
+  "confidence": 0.8,
+  "cost_usd": 0.0005713,
+  "seconds": 12.4,
+  "frames": null,
   "dupe_key": "sourdough bun"
  },
  {
@@ -83704,49 +84551,84 @@
   "dupe_key": "sprouted masoor pulav"
  },
  {
-  "code": "C3hS6R_v_Bs",
-  "dish": "Sprouted Ragi Flour",
+  "code": "C-ULyihJGe3",
+  "dish": "మొలకెత్తిన రాగి పిండి",
   "dish_en": "Sprouted Ragi Flour",
-  "language": "en",
-  "creator": "yumcurry88",
-  "creator_name": "Pragya Piparsania",
-  "permalink": "https://www.instagram.com/p/C3hS6R_v_Bs/",
-  "thumbnail": "https://instagram.com/p/C3hS6R_v_Bs/media/?size=l",
-  "taken_at": 1708327159,
-  "duration_s": 45,
+  "language": "te",
+  "creator": "thisisbyvandana",
+  "creator_name": "Vandana Jittaboina",
+  "permalink": "https://www.instagram.com/p/C-ULyihJGe3/",
+  "thumbnail": "https://instagram.com/p/C-ULyihJGe3/media/?size=l",
+  "taken_at": 1722919250,
+  "duration_s": 87.11900329589844,
   "ingredients": [
    {
-    "item": "ragi",
-    "quantity": "1 cup",
-    "item_en": "finger millet"
+    "item": "రాగులు",
+    "quantity": "1 కేజీ",
+    "item_en": "Ragi (Finger Millet)"
    }
   ],
   "steps": [
-   "Wash 1 cup ragi 3-4 times in water until the water becomes clear.",
-   "Soak the ragi in enough water overnight.",
-   "Remove the water and transfer the ragi to a muslin cloth and squeeze out the excess water.",
-   "Keep this in a covered container and leave it for 2 days until the ragi is well sprouted, checking daily for moisture or fungus.",
-   "Take it out once sprouted well, spread it on a plate and air dry it until fully dry.",
-   "Roast it in a kadai to remove all the moisture.",
-   "Transfer it to a grinder and grind it to make a fine powder.",
-   "Store this ragi flour in an airtight container."
+   "రాగులను శుభ్రంగా కడిగి, రెండు సార్లు నీళ్లు పోసి కడగండి.",
+   "కడిగిన రాగులలో నీళ్లు పోసి ఒక రోజు మొత్తం నానబెట్టండి.",
+   "నానబెట్టిన రాగులను ఒక క్లాత్ లో వేసి నీళ్లు పోయేంత వరకు ఆరబెట్టండి.",
+   "క్లాత్ ను మడతపెట్టి రెండు రోజులు పక్కన పెట్టండి.",
+   "రెండు రోజుల తర్వాత రాగులను ఒక వెడల్పుగా ఉన్న పాత్రలోకి మార్చుకోండి.",
+   "రాగులను ఎండలో లేదా ఫ్యాన్ గాలికి పూర్తిగా ఆరబెట్టండి.",
+   "ఆరిన రాగులను చల్లారిన తర్వాత గ్రైండర్ లో వేసి మెత్తగా గ్రైండ్ చేసుకోండి.",
+   "గ్రైండ్ చేసిన పిండిని జల్లెడ పట్టుకోండి."
   ],
   "steps_en": [
-   "Wash 1 cup ragi 3-4 times in water until the water becomes clear.",
-   "Soak the ragi in enough water overnight.",
-   "Remove the water and transfer the ragi to a muslin cloth and squeeze out the excess water.",
-   "Keep this in a covered container and leave it for 2 days until the ragi is well sprouted, checking daily for moisture or fungus.",
-   "Take it out once sprouted well, spread it on a plate and air dry it until fully dry.",
-   "Roast it in a kadai to remove all the moisture.",
-   "Transfer it to a grinder and grind it to make a fine powder.",
-   "Store this ragi flour in an airtight container."
+   "Wash the ragi thoroughly, pouring water twice.",
+   "Add water to the washed ragi and soak for one full day.",
+   "Place the soaked ragi in a cloth and let it dry until the water drains.",
+   "Fold the cloth and keep it aside for two days.",
+   "After two days, transfer the sprouted ragi to a wide vessel.",
+   "Dry the ragi completely in the sun or under a fan.",
+   "Once dry and cooled, transfer the ragi to a grinder and grind it into a fine powder.",
+   "Sieve the ground flour."
   ],
-  "source": "caption",
-  "confidence": null,
-  "cost_usd": null,
-  "seconds": null,
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0034263,
+  "seconds": 130.5,
   "frames": null,
   "variants": [
+   {
+    "creator": "thisisbyvandana",
+    "permalink": "https://www.instagram.com/p/C-ULyihJGe3/",
+    "dish": "మొలకెత్తిన రాగి పిండి",
+    "dish_en": "Sprouted Ragi Flour",
+    "language": "te",
+    "ingredients": [
+     {
+      "item": "రాగులు",
+      "quantity": "1 కేజీ",
+      "item_en": "Ragi (Finger Millet)"
+     }
+    ],
+    "steps": [
+     "రాగులను శుభ్రంగా కడిగి, రెండు సార్లు నీళ్లు పోసి కడగండి.",
+     "కడిగిన రాగులలో నీళ్లు పోసి ఒక రోజు మొత్తం నానబెట్టండి.",
+     "నానబెట్టిన రాగులను ఒక క్లాత్ లో వేసి నీళ్లు పోయేంత వరకు ఆరబెట్టండి.",
+     "క్లాత్ ను మడతపెట్టి రెండు రోజులు పక్కన పెట్టండి.",
+     "రెండు రోజుల తర్వాత రాగులను ఒక వెడల్పుగా ఉన్న పాత్రలోకి మార్చుకోండి.",
+     "రాగులను ఎండలో లేదా ఫ్యాన్ గాలికి పూర్తిగా ఆరబెట్టండి.",
+     "ఆరిన రాగులను చల్లారిన తర్వాత గ్రైండర్ లో వేసి మెత్తగా గ్రైండ్ చేసుకోండి.",
+     "గ్రైండ్ చేసిన పిండిని జల్లెడ పట్టుకోండి."
+    ],
+    "steps_en": [
+     "Wash the ragi thoroughly, pouring water twice.",
+     "Add water to the washed ragi and soak for one full day.",
+     "Place the soaked ragi in a cloth and let it dry until the water drains.",
+     "Fold the cloth and keep it aside for two days.",
+     "After two days, transfer the sprouted ragi to a wide vessel.",
+     "Dry the ragi completely in the sun or under a fan.",
+     "Once dry and cooled, transfer the ragi to a grinder and grind it into a fine powder.",
+     "Sieve the ground flour."
+    ],
+    "source": "video"
+   },
    {
     "creator": "yumcurry88",
     "permalink": "https://www.instagram.com/p/C3hS6R_v_Bs/",
@@ -83781,23 +84663,6 @@
      "Store this ragi flour in an airtight container."
     ],
     "source": "caption"
-   },
-   {
-    "creator": "thisisbyvandana",
-    "permalink": "https://www.instagram.com/p/C-ULyihJGe3/",
-    "dish": "మొలకెత్తిన రాగి పిండి",
-    "dish_en": "Sprouted Ragi Flour",
-    "language": "te",
-    "ingredients": [
-     {
-      "item": "రాగులు",
-      "quantity": "1 కేజీ",
-      "item_en": "Ragi"
-     }
-    ],
-    "steps": [],
-    "steps_en": [],
-    "source": "stills"
    }
   ],
   "dupe_key": "sprouted ragi flour"
@@ -84985,6 +85850,168 @@
   "dupe_key": "stuffed pizza pita"
  },
  {
+  "code": "DBY0kgHySxP",
+  "dish": "Suda Suda Masala Dosa",
+  "dish_en": "Suda Suda Masala Dosa",
+  "language": "en",
+  "creator": "cookdtv",
+  "creator_name": "Cookd",
+  "permalink": "https://www.instagram.com/p/DBY0kgHySxP/",
+  "thumbnail": "https://instagram.com/p/DBY0kgHySxP/media/?size=l",
+  "taken_at": 1729517387,
+  "duration_s": 56.75,
+  "ingredients": [
+   {
+    "item": "Black Eyed Peas (soaked)",
+    "quantity": "",
+    "item_en": "Black Eyed Peas (soaked)"
+   },
+   {
+    "item": "Channa (soaked)",
+    "quantity": "",
+    "item_en": "Channa (soaked)"
+   },
+   {
+    "item": "Channa Dal (soaked)",
+    "quantity": "",
+    "item_en": "Channa Dal (soaked)"
+   },
+   {
+    "item": "Urad Dal (soaked)",
+    "quantity": "",
+    "item_en": "Urad Dal (soaked)"
+   },
+   {
+    "item": "Rice (soaked)",
+    "quantity": "",
+    "item_en": "Rice (soaked)"
+   },
+   {
+    "item": "Flax Seeds (soaked)",
+    "quantity": "",
+    "item_en": "Flax Seeds (soaked)"
+   },
+   {
+    "item": "Fenugreek (soaked)",
+    "quantity": "",
+    "item_en": "Fenugreek (soaked)"
+   },
+   {
+    "item": "Low Fat Hung Curd",
+    "quantity": "",
+    "item_en": "Low Fat Hung Curd"
+   },
+   {
+    "item": "Potato (boiled and mashed)",
+    "quantity": "",
+    "item_en": "Potato (boiled and mashed)"
+   },
+   {
+    "item": "Mustard Seeds",
+    "quantity": "",
+    "item_en": "Mustard Seeds"
+   },
+   {
+    "item": "Cumin Seeds",
+    "quantity": "",
+    "item_en": "Cumin Seeds"
+   },
+   {
+    "item": "Ginger (finely chopped)",
+    "quantity": "",
+    "item_en": "Ginger (finely chopped)"
+   },
+   {
+    "item": "Onion (finely chopped)",
+    "quantity": "",
+    "item_en": "Onion (finely chopped)"
+   },
+   {
+    "item": "Green Chillies (finely chopped)",
+    "quantity": "",
+    "item_en": "Green Chillies (finely chopped)"
+   },
+   {
+    "item": "Coconut Oil",
+    "quantity": "",
+    "item_en": "Coconut Oil"
+   },
+   {
+    "item": "Urad Dal",
+    "quantity": "",
+    "item_en": "Urad Dal"
+   },
+   {
+    "item": "Channa Dal",
+    "quantity": "",
+    "item_en": "Channa Dal"
+   },
+   {
+    "item": "Turmeric Powder",
+    "quantity": "",
+    "item_en": "Turmeric Powder"
+   },
+   {
+    "item": "Asafoetida",
+    "quantity": "",
+    "item_en": "Asafoetida"
+   },
+   {
+    "item": "Salt",
+    "quantity": "",
+    "item_en": "Salt"
+   },
+   {
+    "item": "Curry Leaves",
+    "quantity": "",
+    "item_en": "Curry Leaves"
+   },
+   {
+    "item": "Idli Podi",
+    "quantity": "",
+    "item_en": "Idli Podi"
+   }
+  ],
+  "steps": [
+   "Add all the ingredients shown on the screen.",
+   "Soak this for an hour.",
+   "Once this is soaked, blend this into a smooth paste.",
+   "Add your greek yogurt to this.",
+   "Your batter is smooth dosa batter is ready.",
+   "Mash your potatoes thoroughly.",
+   "Add everything that's shown on the screen.",
+   "Add curry leaves.",
+   "Add curd to your masala.",
+   "Make your delicious high protein potato masala.",
+   "Add extra gum talaka.",
+   "I'm adding idli podi.",
+   "The dosa batter should be little runny.",
+   "So that's why I'm adding extra curd."
+  ],
+  "steps_en": [
+   "Add all the ingredients shown on the screen.",
+   "Soak this for an hour.",
+   "Once this is soaked, blend this into a smooth paste.",
+   "Add your greek yogurt to this.",
+   "Your batter is smooth dosa batter is ready.",
+   "Mash your potatoes thoroughly.",
+   "Add everything that's shown on the screen.",
+   "Add curry leaves.",
+   "Add curd to your masala.",
+   "Make your delicious high protein potato masala.",
+   "Add extra gum talaka.",
+   "I'm adding idli podi.",
+   "The dosa batter should be little runny.",
+   "So that's why I'm adding extra curd."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0026317,
+  "seconds": 85.7,
+  "frames": null,
+  "dupe_key": "suda suda masala dosa"
+ },
+ {
   "code": "DBwNmh_o1uf",
   "dish": "Sugar free kulfi",
   "dish_en": "Sugar-free kulfi",
@@ -85345,7 +86372,7 @@
  {
   "code": "DPF8IZXEZQH",
   "dish": "Sweet Chilli Peanut Makhana",
-  "dish_en": "Sweet Chili Peanut Makhana",
+  "dish_en": "Sweet Chilli Peanut Makhana",
   "language": "en",
   "creator": "feastlyfit",
   "creator_name": "Vavya",
@@ -85355,29 +86382,67 @@
   "duration_s": 21.299999237060547,
   "ingredients": [
    {
-    "item": "Peanuts",
-    "quantity": "",
-    "item_en": "Peanuts"
-   },
-   {
     "item": "Makhana",
     "quantity": "",
     "item_en": "Makhana"
    },
    {
-    "item": "Sweet Chilli",
+    "item": "Peanuts",
     "quantity": "",
-    "item_en": "Sweet Chili"
+    "item_en": "Peanuts"
+   },
+   {
+    "item": "Sweet chilli sauce",
+    "quantity": "",
+    "item_en": "Sweet chilli sauce"
+   },
+   {
+    "item": "Oil",
+    "quantity": "",
+    "item_en": "Oil"
+   },
+   {
+    "item": "Salt",
+    "quantity": "",
+    "item_en": "Salt"
+   },
+   {
+    "item": "Sesame seeds",
+    "quantity": "",
+    "item_en": "Sesame seeds"
+   },
+   {
+    "item": "Spring onions",
+    "quantity": "",
+    "item_en": "Spring onions"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0004273,
-  "seconds": 13.9,
-  "frames": 4,
-  "dupe_key": "sweet chili peanut makhana"
+  "steps": [
+   "Roast makhana",
+   "Roast peanuts",
+   "Add sweet chilli sauce",
+   "Add oil",
+   "Add salt",
+   "Add sesame seeds",
+   "Mix well",
+   "Garnish with spring onions"
+  ],
+  "steps_en": [
+   "Roast makhana",
+   "Roast peanuts",
+   "Add sweet chilli sauce",
+   "Add oil",
+   "Add salt",
+   "Add sesame seeds",
+   "Mix well",
+   "Garnish with spring onions"
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0010216,
+  "seconds": 17.8,
+  "frames": null,
+  "dupe_key": "sweet chilli peanut makhana"
  },
  {
   "code": "DHAkzGzpyUT",
@@ -89783,18 +90848,55 @@
     "item_en": "foxtail millet"
    },
    {
-    "item": "tomato",
+    "item": "urad dal",
     "quantity": "",
-    "item_en": "tomato"
+    "item_en": "urad dal"
+   },
+   {
+    "item": "tomatoes",
+    "quantity": "",
+    "item_en": "tomatoes"
+   },
+   {
+    "item": "dried red chilies",
+    "quantity": "",
+    "item_en": "dried red chilies"
+   },
+   {
+    "item": "salt",
+    "quantity": "",
+    "item_en": "salt"
+   },
+   {
+    "item": "water",
+    "quantity": "",
+    "item_en": "water"
+   },
+   {
+    "item": "oil",
+    "quantity": "",
+    "item_en": "oil"
    }
   ],
-  "steps": [],
-  "steps_en": [],
-  "source": "stills",
-  "confidence": 1,
-  "cost_usd": 0.0005278,
-  "seconds": 14.2,
-  "frames": 6,
+  "steps": [
+   "Add foxtail millet, urad dal, tomatoes, dried red chilies, and salt to a blender.",
+   "Add water and blend into a batter.",
+   "Pour the batter onto a hot tawa and spread it into a dosa.",
+   "Cook the dosa until crispy.",
+   "Serve with chutney."
+  ],
+  "steps_en": [
+   "Add foxtail millet, urad dal, tomatoes, dried red chilies, and salt to a blender.",
+   "Add water and blend into a batter.",
+   "Pour the batter onto a hot tawa and spread it into a dosa.",
+   "Cook the dosa until crispy.",
+   "Serve with chutney."
+  ],
+  "source": "video",
+  "confidence": 0.9,
+  "cost_usd": 0.0012867,
+  "seconds": 26.4,
+  "frames": null,
   "dupe_key": "tomato millet dosa"
  },
  {

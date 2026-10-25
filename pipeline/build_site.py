@@ -29,6 +29,7 @@ ING_PATCHES = [
     os.path.join(ROOT, "work/batches/out_gap_ing_3.jsonl"),
 ]
 TITLE_PATCH = os.path.join(ROOT, "work/batches/out_gap_title.jsonl")
+LOG = os.path.join(ROOT, "work/video_log.jsonl")
 SITE = os.path.join(ROOT, "docs")
 os.makedirs(SITE, exist_ok=True)
 
@@ -235,6 +236,10 @@ def build():
         "languages": dict(collections.Counter(m["language"] or "unknown" for m in merged).most_common()),
         "videos_processed": len(cost_log),
         "video_cost_usd": round(sum(c["cost_usd"] or 0 for c in cost_log), 4),
+        # actual spend includes videos that were re-read; cost_log keeps one row per post
+        "extractions": max(len(cost_log), len(load_jsonl(LOG))),
+        "total_spend_usd": round(sum((r.get("cost_usd") or 0) for r in load_jsonl(LOG)) or
+                                 sum(c["cost_usd"] or 0 for c in cost_log), 4),
         "video_time_s": round(sum(c["total_s"] for c in cost_log), 1),
         "generated_at": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat().replace("+00:00", "Z"),
     }
@@ -511,6 +516,9 @@ $('#stats').innerHTML =
   'Video analysis: ' + SUMMARY.videos_processed + ' videos, $' + SUMMARY.video_cost_usd.toFixed(2) +
   ', ' + (SUMMARY.video_time_s/60).toFixed(0) + ' min compute (' +
   (SUMMARY.video_time_s / Math.max(SUMMARY.videos_processed, 1)).toFixed(0) + ' s per video on average). ' +
+  (SUMMARY.extractions > SUMMARY.videos_processed ?
+    SUMMARY.extractions + ' extractions incl. ' + (SUMMARY.extractions - SUMMARY.videos_processed) +
+    ' re-reads, $' + SUMMARY.total_spend_usd.toFixed(2) + ' in total. ' : '') +
   '<button class="link" onclick="var c=document.getElementById(\'costs\');c.style.display=c.style.display===\'block\'?\'none\':\'block\'">per-video cost log</button>' +
   ' <a class="link" href="costs.csv" download>costs.csv</a>' +
   '<div id="costs"><table><thead><tr><th>#</th><th>video</th><th>dish</th><th>len s</th><th>dl s</th><th>enc s</th><th>api s</th><th>total s</th><th>cost</th><th>running $</th><th>running min</th></tr></thead><tbody>' +
@@ -518,7 +526,11 @@ $('#stats').innerHTML =
     '</td><td>' + c.encode_s + '</td><td>' + c.api_s + '</td><td>' + c.total_s + '</td><td>$' + (c.cost_usd||0).toFixed(4) +
     '</td><td>$' + (c.cost_total_usd||0).toFixed(4) + '</td><td>' + ((c.time_total_s||0)/60).toFixed(1) + '</td></tr>').join('') +
   '</tbody><tfoot><tr><th colspan="8">' + COSTS.length + ' videos</th><th>$' + SUMMARY.video_cost_usd.toFixed(4) +
-  '</th><th></th><th>' + (SUMMARY.video_time_s/60).toFixed(1) + '</th></tr></tfoot></table></div>';
+  '</th><th></th><th>' + (SUMMARY.video_time_s/60).toFixed(1) + '</th></tr></tfoot></table>' +
+  (SUMMARY.extractions > SUMMARY.videos_processed ?
+    '<div style="padding:8px 4px;color:var(--mute);font-size:12px">This table keeps one row per post: ' +
+    SUMMARY.extractions + ' extractions in total (incl. re-reads), $' + SUMMARY.total_spend_usd.toFixed(2) + ' spent.</div>' : '') +
+  '</div>';
 
 render();
 </script>

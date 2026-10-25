@@ -1,18 +1,18 @@
 {
-  "recipes": 1044,
+  "recipes": 1047,
   "source_posts": 1161,
-  "with_ingredients": 1029,
-  "with_steps": 501,
+  "with_ingredients": 1032,
+  "with_steps": 540,
   "title_only": 15,
-  "duplicate_groups": 82,
-  "from_caption": 647,
-  "from_video": 103,
-  "from_stills": 294,
-  "creators": 493,
+  "duplicate_groups": 80,
+  "from_caption": 644,
+  "from_video": 144,
+  "from_stills": 259,
+  "creators": 495,
   "languages": {
-    "en": 835,
-    "te": 124,
-    "hi": 54,
+    "en": 831,
+    "te": 126,
+    "hi": 59,
     "kn": 16,
     "ta": 8,
     "mr": 3,
@@ -21,7 +21,9 @@
     "fr": 1
   },
   "videos_processed": 432,
-  "video_cost_usd": 0.5113,
-  "video_time_s": 14780.2,
-  "generated_at": "2026-10-25T16:44:17.750221Z"
+  "video_cost_usd": 0.5526,
+  "extractions": 474,
+  "total_spend_usd": 0.5816,
+  "video_time_s": 15158.3,
+  "generated_at": "2026-10-25T18:39:43.174101Z"
 }
