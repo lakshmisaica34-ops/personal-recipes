@@ -120,7 +120,7 @@ def build():
         source = "caption"
         cost = seconds = None
         if vid is not None:
-            source = "video"
+            source = vid.get("source") or "video"
             ingredients = merge_ingredients(ingredients, vid.get("ingredients") or [])
             if vid.get("steps"):
                 steps = vid["steps"]
@@ -159,6 +159,7 @@ def build():
             "confidence": (vid or {}).get("confidence"),
             "cost_usd": cost,
             "seconds": round(seconds, 1) if seconds else None,
+            "frames": (vid or {}).get("frames"),
         })
 
     # ---- conservative duplicate merge: same normalised English dish name ----
@@ -205,6 +206,7 @@ def build():
             "username": v.get("username"),
             "dish": v.get("dish") or v.get("dish_hint") or "",
             "at": v.get("at"),
+            "frames": v.get("frames"),
             "duration_s": round(v.get("duration_s") or 0, 1),
             "video_mb": round((v.get("video_bytes") or 0) / 1e6, 2),
             "download_s": round(t.get("download_s") or 0, 1),
@@ -228,6 +230,7 @@ def build():
         "duplicate_groups": sum(1 for m in merged if m.get("variants")),
         "from_caption": sum(1 for m in merged if m["source"] == "caption"),
         "from_video": sum(1 for m in merged if m["source"] == "video"),
+        "from_stills": sum(1 for m in merged if m["source"] == "stills"),
         "creators": len({m["creator"] for m in merged}),
         "languages": dict(collections.Counter(m["language"] or "unknown" for m in merged).most_common()),
         "videos_processed": len(cost_log),
@@ -243,7 +246,7 @@ def build():
     json.dump(summary, open(os.path.join(SITE, "summary.json"), "w", encoding="utf-8"),
               ensure_ascii=False, indent=2)
 
-    cost_cols = ["n", "at", "code", "username", "dish", "duration_s", "video_mb",
+    cost_cols = ["n", "at", "code", "username", "dish", "duration_s", "frames", "video_mb",
                  "download_s", "encode_s", "api_s", "total_s", "video_tokens",
                  "audio_tokens", "cost_usd", "cost_total_usd", "time_total_s", "is_recipe"]
     with open(os.path.join(SITE, "costs.csv"), "w", encoding="utf-8", newline="") as fh:
@@ -340,6 +343,7 @@ TEMPLATE = r"""<!doctype html>
   .variant{border:1px solid var(--line);border-radius:10px;padding:9px 11px;margin-bottom:7px;background:var(--card2)}
   .variant .vhead{font-size:12.5px;color:var(--muted);margin-bottom:5px}
   .variant .vhead a{color:var(--accent);text-decoration:none}
+  .proc{font-size:11.5px;color:var(--muted);margin-top:12px;border-top:1px dashed var(--line);padding-top:8px;line-height:1.6}
   .empty{text-align:center;color:var(--muted);padding:50px 20px;font-size:14px}
   .stats{font-size:12px;color:var(--muted);line-height:1.7;margin-top:14px;border-top:1px solid var(--line);padding-top:10px}
   .stats b{color:var(--text)}
@@ -443,7 +447,8 @@ function card(r, idx){
           '<span>@' + esc(r.creator) + '</span>' +
           '<a href="' + attr(r.permalink) + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">video ↗</a>' +
           '<span class="badge">' + esc(langName(r.language)) + '</span>' +
-          '<span class="badge ' + (r.source === 'video' ? 'vid' : '') + '">' + (r.source === 'video' ? 'on camera' : 'caption') + '</span>' +
+          '<span class="badge ' + (r.source === 'caption' ? '' : 'vid') + '">' +
+            ({'video': 'on camera', 'stills': 'frames + audio'}[r.source] || 'caption') + '</span>' +
           (nv > 1 ? '<span class="badge">' + nv + ' versions</span>' : '') +
         '</div>' +
       '</div><div class="arrow">▶</div>' +
@@ -451,6 +456,9 @@ function card(r, idx){
     '<div class="body">' + ingHTML(r) +
       '<div class="toggle"><button class="on" onclick="setMode(this,\'orig\')">Original</button><button onclick="setMode(this,\'en\')">English</button></div>' +
       stepsHTML(r, null, 'orig') +
+      (r.seconds ? '<div class="proc">Read in ' + r.seconds + ' s' +
+          (r.frames ? ' from ' + r.frames + ' frames + audio' : ' from the full video') +
+          ' · $' + (r.cost_usd || 0).toFixed(4) + ' of API usage.</div>' : '') +
       (r.variants ? '<div class="sect">Other versions</div><div class="variants">' + r.variants.slice(1).map(v =>
           '<div class="variant"><div class="vhead">@' + esc(v.creator) + ' · <a href="' + attr(v.permalink) + '" target="_blank" rel="noopener">video ↗</a> · ' + esc(langName(v.language)) + '</div>' +
           ingHTML(r, v) + stepsHTML(r, v, 'orig') + '</div>').join('') + '</div>' : '') +
@@ -495,12 +503,14 @@ sortEl.addEventListener('change', e => { state.sort = e.target.value; render(); 
 $('#hdr').textContent = '· ' + SUMMARY.recipes + ' dishes · ' + SUMMARY.creators + ' creators';
 $('#stats').innerHTML =
   'Collected from ' + SUMMARY.source_posts + ' recipe videos by ' + SUMMARY.creators + ' creators.<br>' +
-  SUMMARY.from_caption + ' recipes already complete in the caption, ' + SUMMARY.from_video + ' read from the video.<br>' +
+  SUMMARY.from_caption + ' recipes complete in the caption, ' + SUMMARY.from_video + ' read from the full video, ' +
+  (SUMMARY.from_stills || 0) + ' from sampled frames + audio.<br>' +
   SUMMARY.with_ingredients + ' dishes list their ingredients' +
   (SUMMARY.title_only ? ', ' + SUMMARY.title_only + ' are a dish name only' : '') + '.<br>' +
   (SUMMARY.duplicate_groups ? SUMMARY.duplicate_groups + ' dishes merged from multiple videos.<br>' : '') +
   'Video analysis: ' + SUMMARY.videos_processed + ' videos, $' + SUMMARY.video_cost_usd.toFixed(2) +
-  ', ' + (SUMMARY.video_time_s/60).toFixed(0) + ' min compute. ' +
+  ', ' + (SUMMARY.video_time_s/60).toFixed(0) + ' min compute (' +
+  (SUMMARY.video_time_s / Math.max(SUMMARY.videos_processed, 1)).toFixed(0) + ' s per video on average). ' +
   '<button class="link" onclick="var c=document.getElementById(\'costs\');c.style.display=c.style.display===\'block\'?\'none\':\'block\'">per-video cost log</button>' +
   ' <a class="link" href="costs.csv" download>costs.csv</a>' +
   '<div id="costs"><table><thead><tr><th>#</th><th>video</th><th>dish</th><th>len s</th><th>dl s</th><th>enc s</th><th>api s</th><th>total s</th><th>cost</th><th>running $</th><th>running min</th></tr></thead><tbody>' +

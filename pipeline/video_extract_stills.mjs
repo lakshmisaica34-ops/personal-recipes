@@ -36,6 +36,7 @@ const WORKERS = Math.max(1, Number(process.argv[2] || 3));
 const EVERY = Number(process.env.STILLS_EVERY || 4);
 const MAX_FRAMES = Number(process.env.STILLS_MAX || 30);
 const WITH_AUDIO = process.env.STILLS_AUDIO !== '0';
+const PREFETCH = process.env.STILLS_PREFETCH !== '0';
 const MAX_RAW_BYTES = 5_600_000;
 
 const KEY = process.env.Openrouter_api;
@@ -94,12 +95,19 @@ async function duration(file) {
 async function frames(file, dir, every, maxFrames) {
   fs.rmSync(dir, { recursive: true, force: true });
   fs.mkdirSync(dir, { recursive: true });
-  await exec('ffmpeg', ['-y', '-loglevel', 'error', '-i', file,
-    '-vf', `fps=1/${every},scale=512:-2`, '-q:v', '4', path.join(dir, 'f%03d.jpg')], { maxBuffer: 1e8 });
-  const files = fs.readdirSync(dir).sort();
-  const keep = files.slice(0, maxFrames);
-  for (const f of files.slice(maxFrames)) fs.unlinkSync(path.join(dir, f));
-  return keep.map((f) => fs.readFileSync(path.join(dir, f)));
+  // Instagram GOPs are ~2-5 s, so decoding only keyframes gives roughly the
+  // requested spacing for a fraction of the CPU (no full-stream decode).
+  await exec('ffmpeg', ['-y', '-loglevel', 'error', '-skip_frame', 'nokey', '-i', file,
+    '-vf', 'scale=512:-2', '-vsync', 'vfr', '-q:v', '4', path.join(dir, 'f%03d.jpg')], { maxBuffer: 1e8 });
+  let files = fs.readdirSync(dir).sort();
+  if (files.length > maxFrames) {
+    // uniform subsample: keep maxFrames spread across the reel
+    const step = files.length / maxFrames;
+    const keep = new Set(Array.from({ length: maxFrames }, (_, i) => files[Math.floor(i * step)]));
+    for (const f of files) if (!keep.has(f)) fs.unlinkSync(path.join(dir, f));
+    files = [...keep].sort();
+  }
+  return files.map((f) => fs.readFileSync(path.join(dir, f)));
 }
 
 async function audio(file, out) {
@@ -159,17 +167,44 @@ function normIng(list) {
   return [...seen.values()];
 }
 
+// ---- download-ahead: fetch the next reels while earlier ones are in the API ----
+// Cuts ~4 s of dead time per reel by overlapping network with ffmpeg + Gemini.
+const AHEAD = new Map();          // code -> promise<{file, bytes, download_s}>
+let aheadIdx = 0;
+let aheadQueue = [];
+
+function prefetch(rec) {
+  if (AHEAD.has(rec.code)) return AHEAD.get(rec.code);
+  const file = path.join(TMP, `${rec.code}.raw.mp4`);
+  const p = (async () => {
+    const t = Date.now();
+    const cached = URLS.get(rec.code);
+    if (!cached) throw new Error('no cached video url');
+    const bytes = await download(cached.url, file);
+    return { file, bytes, download_s: (Date.now() - t) / 1000 };
+  })();
+  p.catch(() => {});              // surfaced when the worker awaits it
+  AHEAD.set(rec.code, p);
+  return p;
+}
+
+function fillAhead() {
+  if (!PREFETCH) return;
+  while (aheadIdx < aheadQueue.length && AHEAD.size < WORKERS + 1) prefetch(aheadQueue[aheadIdx++]);
+}
+
 async function processOne(rec) {
   const t0 = Date.now();
   const raw = path.join(TMP, `${rec.code}.raw.mp4`);
   const dir = path.join(TMP, `${rec.code}.frames`);
   const audFile = path.join(TMP, `${rec.code}.m4a`);
   try {
-    const cached = URLS.get(rec.code);
-    if (!cached) throw new Error('no cached video url');
-    const tDl0 = Date.now();
-    const rawBytes = await download(cached.url, raw);
-    const download_s = (Date.now() - tDl0) / 1000;
+    const dl = await (AHEAD.get(rec.code) || prefetch(rec));
+    AHEAD.delete(rec.code);
+    fillAhead();
+    if (dl.file !== raw) fs.renameSync(dl.file, raw);
+    const rawBytes = dl.bytes;
+    const download_s = dl.download_s;
 
     const tEnc0 = Date.now();
     const dur = await duration(raw);
@@ -278,6 +313,10 @@ async function main() {
 
   const ledger = rebuildLog();
   console.log(`per-video log: ${LOG} (+ ${LOG_CSV}) — ${ledger.n} videos so far, $${ledger.cost.toFixed(4)}, ${(ledger.time / 60).toFixed(1)} min`);
+
+  aheadQueue = todo;
+  aheadIdx = 0;
+  fillAhead();
 
   let next = 0, ok = 0, fail = 0;
   async function worker(w) {
