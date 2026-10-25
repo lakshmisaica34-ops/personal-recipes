@@ -9,11 +9,14 @@ It is one self-contained page: search by dish, ingredient or creator, filter by 
 and switch any recipe between the original language and English.
 
 The dashboard is designed for cooking: a responsive, photo-first grid with the recipe name
-under each locally cached reel cover. The collection also has a free, private recipe finder:
-type a request such as “vegetarian with paneer” or “no onion”, and it filters/ranks these
-recipes in your browser. It uses no AI API, account, or server, so it costs nothing and your
-query does not leave your device. It is a collection recommender, not a general-purpose
-generative chatbot; it can only recommend dishes already in this collection.
+under each locally cached reel cover. It also has a free, private AI chat. Press **Load free
+AI** to download a small open model into your browser, then ask for dinner ideas and refine
+them over multiple turns. WebLLM runs the model locally with WebGPU; no API account or server
+is used, and the browser caches the model after its first download. This needs a recent
+WebGPU-capable browser (Chrome or Edge on desktop is the safest bet) and enough device memory.
+Model download/inference are free but use your device's storage, data and battery. The chat
+only recommends dishes in this collection; ingredient extraction can be incomplete, so verify
+allergy-sensitive details against the linked original video.
 
 ## What is in here
 

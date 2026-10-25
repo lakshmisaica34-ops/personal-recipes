@@ -357,9 +357,16 @@ TEMPLATE = r"""<!doctype html>
   .chat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin:0 0 14px}
   .chat-title{font-size:14px;font-weight:650;margin-bottom:5px}
   .chat-hint{font-size:12px;color:var(--muted);margin-bottom:9px}
+  .chat-tools{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+  .chat-tools button{background:var(--card2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:7px 10px;cursor:pointer}
+  #chat-status{font-size:12px;color:var(--muted)}
   .chatrow{display:flex;gap:8px}.chatrow input{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:9px;padding:10px 11px;font-size:15px}
   .chatrow button{background:var(--accent);color:#1b1408;border:0;border-radius:9px;padding:0 14px;font-weight:650;cursor:pointer}
-  #chat-answer{font-size:13px;line-height:1.5;margin-top:10px;white-space:pre-line}
+  .chatrow button:disabled,.chatrow input:disabled{opacity:.5;cursor:not-allowed}
+  #chat-log{display:flex;flex-direction:column;gap:8px;margin:8px 0;max-height:420px;overflow:auto}
+  .bubble{max-width:88%;padding:9px 11px;border-radius:12px;font-size:13px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
+  .bubble.user{align-self:flex-end;background:var(--card2)}.bubble.assistant{align-self:flex-start;background:var(--bg);border:1px solid var(--line)}
+  .chat-picks{display:flex;flex-wrap:wrap;gap:6px;max-width:92%}.chat-picks button{border:1px solid var(--line);background:var(--card2);color:var(--text);border-radius:999px;padding:6px 9px;font-size:11px;cursor:pointer}
   @media(max-width:380px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
   @media(min-width:700px){.grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}}
   button.link{background:none;border:0;color:var(--accent);font-size:12.5px;cursor:pointer;padding:0;text-decoration:underline}
@@ -386,9 +393,10 @@ TEMPLATE = r"""<!doctype html>
 <main>
   <section class="chat">
     <div class="chat-title">Ask your recipe collection</div>
-    <div class="chat-hint">Free and private: searches your recipes on this device. Try “vegetarian, no onion” or “something with paneer”.</div>
-    <form class="chatrow" id="chat-form"><input id="chat-q" type="search" placeholder="What would you like to cook?" autocomplete="off"><button type="submit">Find</button></form>
-    <div id="chat-answer" aria-live="polite"></div>
+    <div class="chat-hint">A free local AI chat. Ask for ideas, then refine them conversationally. The model and chat stay in this browser.</div>
+    <div class="chat-tools"><button id="load-ai" type="button">Load free AI</button><button id="clear-chat" type="button">New chat</button><span id="chat-status" aria-live="polite">AI not loaded — load it when you’re ready (first download can take a while).</span></div>
+    <div id="chat-log" aria-live="polite"></div>
+    <form class="chatrow" id="chat-form"><input id="chat-q" type="text" placeholder="Ask for a recipe… e.g. dinner with paneer, no onion" autocomplete="off" disabled><button id="chat-send" type="submit" disabled>Send</button></form>
   </section>
   <div class="count" id="count"></div>
   <div id="list"></div>
@@ -398,6 +406,7 @@ TEMPLATE = r"""<!doctype html>
 const DATA = __DATA__;
 const COSTS = __COSTS__;
 const SUMMARY = __SUMMARY__;
+window.RECIPE_DATA = DATA;
 const $ = (s) => document.querySelector(s);
 const list = $('#list'), qEl = $('#q'), sortEl = $('#sort'), chipsEl = $('#chips');
 
@@ -523,46 +532,13 @@ function render(){
 qEl.addEventListener('input', e => { state.q = e.target.value.trim().toLowerCase(); render(); });
 sortEl.addEventListener('change', e => { state.sort = e.target.value; render(); });
 
-// Tiny deterministic recommender: no hosted model, account, or API key. It turns
-// natural-language constraints into ingredient/title filters, then ranks matches.
-function chatRecommend(text){
-  const q=text.toLowerCase();
-  const avoid=[];
-  const avoidMap={onion:['onion'],garlic:['garlic'],dairy:['milk','cream','cheese','butter','paneer','yogurt','curd'],
-    nuts:['almond','cashew','peanut','pistachio','walnut'],gluten:['wheat','flour','maida','bread','pasta'],
-    egg:['egg'],meat:['chicken','mutton','lamb','beef','pork','fish','prawn','shrimp']};
-  for(const [word,items] of Object.entries(avoidMap)) if(new RegExp('\\b(no|without|avoid|exclude|skip)\\s+(\\w+\\s+){0,2}'+word+'s?\\b').test(q)) avoid.push(...items);
-  const vegetarian=/vegetarian|vegan|veg food|no meat/.test(q);
-  if(vegetarian) avoid.push(...avoidMap.meat);
-  if(/vegan/.test(q)) avoid.push(...avoidMap.dairy,...avoidMap.egg);
-  const wants=[];
-  for(const m of q.matchAll(/(?:with|using|have|has)\s+([a-z][a-z -]{1,24})/g)) wants.push(m[1].trim());
-  const positiveQ=q.replace(/\b(no|without|avoid|exclude|skip)\s+(\w+\s+){0,2}\w+s?\b/g,' ')
-    .replace(/\b(vegetarian|vegan|veg food|no meat|quick|easy|healthy|spicy|recipe|recipes|something|anything|make|cook|want|like|please|find|show|recommend|for|with|that|have|has)\b/g,' ');
-  const terms=positiveQ.split(/[^a-z0-9\u0900-\u0DFF]+/).filter(w=>w.length>2);
-  let matches=DATA.filter(r=>{
-    const hay=field(r);
-    if(avoid.some(x=>hay.includes(x))) return false;
-    return true;
-  }).map(r=>{
-    const hay=field(r); let score=0;
-    for(const t of terms) if(hay.includes(t)) score+=t.length>4?3:1;
-    for(const w of wants) if(hay.includes(w)) score+=5;
-    if(/easy|simple|quick/.test(q) && (r.steps||[]).length) score+=1;
-    return {r,score};
-  }).filter(x=>x.score>0 || (!terms.length && (vegetarian||avoid.length))).sort((a,b)=>b.score-a.score);
-  if(!terms.length && !vegetarian && !avoid.length) matches=[];
-  return matches.slice(0,8).map(x=>x.r);
-}
-$('#chat-form').addEventListener('submit',e=>{
-  e.preventDefault(); const q=$('#chat-q').value.trim(); if(!q)return;
-  const found=chatRecommend(q); const answer=$('#chat-answer');
-  if(!found.length){answer.textContent='I couldn’t find a clear match. Try an ingredient or a constraint such as “no onion”.';return;}
-  answer.innerHTML='<b>'+found.length+' ideas from your collection:</b> '+found.map(r=>'<button class="link" onclick="openRecipe(\''+attr(r.code)+'\')">'+esc(r.dish_en||r.dish)+'</button>').join(' · ');
-  list.className='grid'; list.innerHTML=found.map(r=>card(r,DATA.indexOf(r))).join('');
-  $('#count').textContent=found.length+' recommendations'; window.scrollTo({top:0,behavior:'smooth'});
-});
-window.openRecipe=(code)=>{const el=list.querySelector('[data-i="'+DATA.findIndex(r=>r.code===code)+'"]');if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.querySelector('.head').click();}};
+window.showRecipe=(code)=>{
+  const r=DATA.find(x=>x.code===code); if(!r)return;
+  list.className='grid'; list.innerHTML=card(r,DATA.indexOf(r));
+  $('#count').textContent='1 recipe';
+  window.scrollTo({top:0,behavior:'smooth'});
+  const el=list.querySelector('.card'); if(el)el.querySelector('.head').click();
+};
 
 $('#hdr').textContent = '· ' + SUMMARY.recipes + ' dishes · ' + SUMMARY.creators + ' creators';
 $('#stats').innerHTML =
@@ -592,6 +568,144 @@ $('#stats').innerHTML =
   '</div>';
 
 render();
+</script>
+<script type="module">
+const MODEL = 'Qwen3-1.7B-q4f16_1-MLC';
+const statusEl = document.querySelector('#chat-status');
+const loadBtn = document.querySelector('#load-ai');
+const form = document.querySelector('#chat-form');
+const input = document.querySelector('#chat-q');
+const send = document.querySelector('#chat-send');
+const log = document.querySelector('#chat-log');
+let engine = null, busy = false;
+let history = [];
+const setStatus = (s) => { statusEl.textContent = s; };
+const escText = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function bubble(role, text='') {
+  const el = document.createElement('div');
+  el.className = 'bubble ' + role;
+  el.textContent = text;
+  log.appendChild(el);
+  log.scrollTop = log.scrollHeight;
+  return el;
+}
+function pickRecipes(query) {
+  const data = window.RECIPE_DATA || [];
+  const previous = history.filter(m => m.role === 'user').slice(-5).map(m => m.content).join(' ');
+  const q = (previous + ' ' + query).toLowerCase();
+  const banned = new Set();
+  const groups = {
+    onion:['onion'], garlic:['garlic'], dairy:['milk','cream','cheese','butter','paneer','yogurt','curd','ghee'],
+    nuts:['almond','cashew','peanut','pistachio','walnut'], gluten:['wheat','flour','maida','bread','pasta'],
+    egg:['egg'], meat:['chicken','mutton','lamb','beef','pork','fish','prawn','shrimp']
+  };
+  for (const [key, items] of Object.entries(groups)) {
+    if (new RegExp('\\b(no|without|avoid|exclude|skip)\\s+(\\w+\\s+){0,2}' + key + 's?\\b').test(q)) items.forEach(x => banned.add(x));
+  }
+  if (/\b(vegetarian|vegan|no meat)\b/.test(q)) groups.meat.forEach(x => banned.add(x));
+  if (/\bvegan\b/.test(q)) [...groups.dairy, ...groups.egg].forEach(x => banned.add(x));
+  const stop = new Set('what which with from into have has make cook cooking recipe recipes something anything please suggest recommend give find show me i want need can you dinner lunch breakfast idea ideas dish dishes this that for the a an and or but no without avoid exclude skip vegetarian vegan healthy quick easy simple spicy mild meal meals'.split(' '));
+  const terms = q.normalize('NFKD').toLowerCase().split(/[^a-z0-9\u0900-\u0dff]+/).filter(w => w.length > 2 && !stop.has(w));
+  const candidates = data.map(r => {
+    const ing = (r.ingredients || []).map(i => ((i.item_en || '') + ' ' + (i.item || '')).toLowerCase());
+    const text = [r.dish, r.dish_en, ...ing].join(' ').toLowerCase();
+    if ([...banned].some(x => text.includes(x))) return null;
+    let score = 0;
+    for (const t of terms) if (text.includes(t)) score += t.length > 4 ? 3 : 1;
+    return { r, score };
+  }).filter(Boolean).sort((a,b) => b.score - a.score);
+  let matched = candidates.filter(x => x.score > 0);
+  if (!matched.length) matched = candidates.sort(() => Math.random() - .5);
+  return matched.slice(0, 10).map(x => x.r);
+}
+function showPicks(parent, recipes, answer) {
+  const row = document.createElement('div'); row.className = 'chat-picks';
+  const mentioned = recipes.filter(r => {
+    const a = answer.toLowerCase();
+    return [r.dish, r.dish_en].filter(Boolean).some(n => n.length > 3 && a.includes(n.toLowerCase()));
+  });
+  for (const r of (mentioned.length ? mentioned : recipes.slice(0,3)).slice(0,5)) {
+    const b = document.createElement('button');
+    b.textContent = r.dish_en || r.dish || 'Recipe';
+    b.title = 'Show this recipe in the collection';
+    b.addEventListener('click', () => window.showRecipe(r.code));
+    row.appendChild(b);
+  }
+  parent.after(row);
+}
+
+loadBtn.addEventListener('click', async () => {
+  if (engine || loadBtn.disabled) return;
+  if (!navigator.gpu) {
+    setStatus('This browser/device does not provide WebGPU. Try recent Chrome or Edge on a computer.');
+    return;
+  }
+  loadBtn.disabled = true; setStatus('Loading the free AI package…');
+  try {
+    const { CreateMLCEngine } = await import('https://esm.run/@mlc-ai/web-llm');
+    engine = await CreateMLCEngine(MODEL, {
+      initProgressCallback: p => {
+        const pct = Number.isFinite(p.progress) ? ` ${Math.round(p.progress * 100)}%` : '';
+        setStatus('Preparing on-device model' + pct + (p.text ? ' — ' + p.text : '…'));
+      }
+    });
+    input.disabled = false; send.disabled = false;
+    loadBtn.textContent = 'AI ready';
+    setStatus('Ready. The model is cached on this device; your conversation stays in this browser.');
+    input.focus();
+  } catch (e) {
+    engine = null; loadBtn.disabled = false;
+    setStatus('Could not start the local model: ' + (e?.message || e) + '. Check WebGPU and try Chrome/Edge.');
+  }
+});
+
+document.querySelector('#clear-chat').addEventListener('click', () => {
+  history = []; log.replaceChildren();
+  if (engine) setStatus('New conversation. The local model is still ready.');
+});
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const text = input.value.trim();
+  if (!text || !engine || busy) return;
+  input.value = ''; busy = true; send.disabled = true;
+  bubble('user', text);
+  const picks = pickRecipes(text);
+  const compact = picks.map(r => ({
+    code: r.code, name: r.dish_en || r.dish, original_name: r.dish,
+    ingredients: (r.ingredients || []).slice(0, 24).map(i => [i.quantity, i.item_en || i.item].filter(Boolean).join(' ')),
+    method: (r.steps_en || r.steps || []).slice(0, 5), url: r.permalink
+  }));
+  const system = `You are my friendly personal recipe-finding assistant. Have a natural, useful back-and-forth: ask one short clarifying question when needed, remember my preferences from this conversation, and recommend dishes only from the supplied collection. When suggesting a dish, use its exact card title so I can open it below. Never invent a dish or claim an ingredient/method is present if the supplied record does not show it. Be concise, explain why a suggestion fits, and mention when ingredient data is incomplete. If the user gives an allergy, say this extracted list is not a safety guarantee and they must check the original video. The recipe cards below are the only source of truth for recommendations.\n\nAvailable recipe cards (JSON):\n${JSON.stringify(compact)}`;
+  if (!history.length) history.push({role:'system', content:system});
+  else history[0] = {role:'system', content:system};
+  history.push({role:'user', content:text});
+  const assistant = bubble('assistant', '');
+  setStatus('Thinking locally…');
+  try {
+    const stream = await engine.chat.completions.create({
+      messages: [{role:'system', content:system}, ...history.slice(1).slice(-8)],
+      stream: true, temperature: 0.65, max_tokens: 320, enable_thinking: false
+    });
+    let answer = '';
+    for await (const chunk of stream) {
+      answer += chunk.choices?.[0]?.delta?.content || '';
+      assistant.textContent = answer;
+      log.scrollTop = log.scrollHeight;
+    }
+    if (!answer.trim()) answer = 'I could not form a reply. Try asking in another way.';
+    assistant.textContent = answer;
+    history.push({role:'assistant', content:answer});
+    showPicks(assistant, picks, answer);
+    setStatus('On-device AI · no API charge');
+  } catch (err) {
+    assistant.textContent = 'The local model hit an error: ' + (err?.message || err);
+    setStatus('Try again, or reload the model.');
+  } finally {
+    busy = false; send.disabled = false; input.focus();
+  }
+});
 </script>
 </body>
 </html>
