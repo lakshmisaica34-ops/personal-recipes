@@ -30,6 +30,7 @@ ING_PATCHES = [
 ]
 TITLE_PATCH = os.path.join(ROOT, "work/batches/out_gap_title.jsonl")
 LOG = os.path.join(ROOT, "work/video_log.jsonl")
+CHAT_API_URL = os.environ.get("RECIPE_CHAT_API_URL", "")
 SITE = os.path.join(ROOT, "docs")
 os.makedirs(SITE, exist_ok=True)
 
@@ -281,7 +282,8 @@ def render_html(recipes, summary, costs):
     data = json.dumps(recipes, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     cdata = json.dumps(costs, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     sdata = json.dumps(summary, ensure_ascii=False)
-    return TEMPLATE.replace("__DATA__", data).replace("__COSTS__", cdata).replace("__SUMMARY__", sdata)
+    return (TEMPLATE.replace("__DATA__", data).replace("__COSTS__", cdata)
+            .replace("__SUMMARY__", sdata).replace("__CHAT_API_URL__", json.dumps(CHAT_API_URL)))
 
 
 TEMPLATE = r"""<!doctype html>
@@ -409,8 +411,8 @@ TEMPLATE = r"""<!doctype html>
   <section id="chat-view" class="view">
     <div class="chat">
       <div class="chat-title">Chat with your recipes</div>
-      <div class="chat-hint">A free local AI chat. Ask for ideas, then refine them conversationally. The model and chat stay in this browser.</div>
-      <div class="chat-tools"><button id="load-ai" type="button">Load free AI</button><button id="clear-chat" type="button">New chat</button><span id="chat-status" aria-live="polite">AI not loaded — load it when you’re ready (first download can take a while).</span></div>
+      <div class="chat-hint">Chat naturally and refine recipe ideas. The free hosted model receives your messages and a few matching recipe records.</div>
+      <div class="chat-tools"><button id="clear-chat" type="button">New chat</button><span id="chat-status" aria-live="polite">Checking chat service…</span></div>
       <div id="chat-log" aria-live="polite"></div>
       <form class="chatrow" id="chat-form"><input id="chat-q" type="text" placeholder="Ask for a recipe… e.g. dinner with paneer, no onion" autocomplete="off" disabled><button id="chat-send" type="submit" disabled>Send</button></form>
     </div>
@@ -597,17 +599,21 @@ $('#stats').innerHTML =
 render();
 </script>
 <script type="module">
-const MODEL = 'Qwen3-1.7B-q4f16_1-MLC';
+const CHAT_API = __CHAT_API_URL__;
 const statusEl = document.querySelector('#chat-status');
-const loadBtn = document.querySelector('#load-ai');
 const form = document.querySelector('#chat-form');
 const input = document.querySelector('#chat-q');
 const send = document.querySelector('#chat-send');
 const log = document.querySelector('#chat-log');
-let engine = null, busy = false;
+let busy = false;
 let history = [];
 const setStatus = (s) => { statusEl.textContent = s; };
-const escText = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+if (CHAT_API) {
+  input.disabled = false; send.disabled = false;
+  setStatus('Free hosted AI · chat is sent to the recipe assistant service.');
+} else {
+  setStatus('Chat service is not connected yet. The free backend needs to be deployed first.');
+}
 
 function bubble(role, text='') {
   const el = document.createElement('div');
@@ -662,40 +668,15 @@ function showPicks(parent, recipes, answer) {
   parent.after(row);
 }
 
-loadBtn.addEventListener('click', async () => {
-  if (engine || loadBtn.disabled) return;
-  if (!navigator.gpu) {
-    setStatus('This browser/device does not provide WebGPU. Try recent Chrome or Edge on a computer.');
-    return;
-  }
-  loadBtn.disabled = true; setStatus('Loading the free AI package…');
-  try {
-    const { CreateMLCEngine } = await import('https://esm.run/@mlc-ai/web-llm');
-    engine = await CreateMLCEngine(MODEL, {
-      initProgressCallback: p => {
-        const pct = Number.isFinite(p.progress) ? ` ${Math.round(p.progress * 100)}%` : '';
-        setStatus('Preparing on-device model' + pct + (p.text ? ' — ' + p.text : '…'));
-      }
-    });
-    input.disabled = false; send.disabled = false;
-    loadBtn.textContent = 'AI ready';
-    setStatus('Ready. The model is cached on this device; your conversation stays in this browser.');
-    input.focus();
-  } catch (e) {
-    engine = null; loadBtn.disabled = false;
-    setStatus('Could not start the local model: ' + (e?.message || e) + '. Check WebGPU and try Chrome/Edge.');
-  }
-});
-
 document.querySelector('#clear-chat').addEventListener('click', () => {
   history = []; log.replaceChildren();
-  if (engine) setStatus('New conversation. The local model is still ready.');
+  if (CHAT_API) setStatus('New conversation. Free hosted AI is ready.');
 });
 
 form.addEventListener('submit', async e => {
   e.preventDefault();
   const text = input.value.trim();
-  if (!text || !engine || busy) return;
+  if (!text || !CHAT_API || busy) return;
   input.value = ''; busy = true; send.disabled = true;
   bubble('user', text);
   const picks = pickRecipes(text);
@@ -709,28 +690,38 @@ form.addEventListener('submit', async e => {
   else history[0] = {role:'system', content:system};
   history.push({role:'user', content:text});
   const assistant = bubble('assistant', '');
-  setStatus('Thinking locally…');
+  setStatus('Thinking…');
   try {
-    const stream = await engine.chat.completions.create({
-      messages: [{role:'system', content:system}, ...history.slice(1).slice(-8)],
-      stream: true, temperature: 0.65, max_tokens: 320, enable_thinking: false
+    const response = await fetch(CHAT_API, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({messages:[{role:'system',content:system},...history.slice(1).slice(-8)]})
     });
+    if (!response.ok) throw new Error((await response.text()).slice(0,240) || `HTTP ${response.status}`);
+    if (!response.body) throw new Error('The chat service returned no response stream');
+    const reader=response.body.getReader(), decoder=new TextDecoder();
+    let buffer='';
     let answer = '';
-    for await (const chunk of stream) {
-      answer += chunk.choices?.[0]?.delta?.content || '';
-      assistant.textContent = answer;
-      log.scrollTop = log.scrollHeight;
+    while(true){
+      const {value,done}=await reader.read(); if(done)break;
+      buffer+=decoder.decode(value,{stream:true});
+      const lines=buffer.split('\n'); buffer=lines.pop()||'';
+      for(const line of lines){
+        if(!line.startsWith('data:'))continue;
+        const raw=line.slice(5).trim(); if(!raw||raw==='[DONE]')continue;
+        try{const chunk=JSON.parse(raw);answer+=chunk.choices?.[0]?.delta?.content||'';}catch{}
+        assistant.textContent=answer;log.scrollTop=log.scrollHeight;
+      }
     }
     if (!answer.trim()) answer = 'I could not form a reply. Try asking in another way.';
     assistant.textContent = answer;
     history.push({role:'assistant', content:answer});
     showPicks(assistant, picks, answer);
-    setStatus('On-device AI · no API charge');
+    setStatus('Free-tier hosted AI · provider quotas may change.');
   } catch (err) {
     assistant.textContent = 'The local model hit an error: ' + (err?.message || err);
-    setStatus('Try again, or reload the model.');
+    setStatus('Chat request failed. Try again in a moment.');
   } finally {
-    busy = false; send.disabled = false; input.focus();
+    busy = false; send.disabled = !CHAT_API; input.focus();
   }
 });
 </script>

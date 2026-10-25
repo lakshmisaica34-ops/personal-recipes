@@ -9,14 +9,12 @@ It is one self-contained page: search by dish, ingredient or creator, filter by 
 and switch any recipe between the original language and English.
 
 The dashboard is designed for cooking: a responsive, photo-first grid with the recipe name
-under each locally cached reel cover. It also has a free, private AI chat. Press **Load free
-AI** to download a small open model into your browser, then ask for dinner ideas and refine
-them over multiple turns. WebLLM runs the model locally with WebGPU; no API account or server
-is used, and the browser caches the model after its first download. This needs a recent
-WebGPU-capable browser (Chrome or Edge on desktop is the safest bet) and enough device memory.
-Model download/inference are free but use your device's storage, data and battery. The chat
-only recommends dishes in this collection; ingredient extraction can be incomplete, so verify
-allergy-sensitive details against the linked original video.
+under each locally cached reel cover. Its separate Chat tab is designed for natural, multi-turn
+recipe recommendations. The chat uses a small Cloudflare Worker to call Groq's free-tier hosted
+model, avoiding a large browser model download; see [`worker/README.md`](worker/README.md) for
+the one-time backend setup. Chat text and a few matching recipe records are sent to Groq. Free
+quotas can change. The chat only recommends dishes in this collection; ingredient extraction
+can be incomplete, so verify allergy-sensitive details against the linked original video.
 
 ## What is in here
 
