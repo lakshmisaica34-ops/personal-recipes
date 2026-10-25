@@ -308,6 +308,10 @@ TEMPLATE = r"""<!doctype html>
     backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px 14px calc(10px)}
   h1{font-size:17px;margin:0 0 8px;letter-spacing:.2px;font-weight:650}
   h1 span{color:var(--muted);font-weight:400;font-size:13px}
+  .nav{display:flex;gap:6px;margin:0 0 9px}
+  .nav button{flex:1;background:var(--card);border:1px solid var(--line);color:var(--muted);border-radius:9px;padding:8px 12px;font-size:13px;font-weight:600;cursor:pointer}
+  .nav button.active{background:var(--accent);border-color:var(--accent);color:#1b1408}
+  .view{display:none}.view.active{display:block}
   .searchrow{display:flex;gap:8px}
   input[type=search]{flex:1;min-width:0;background:var(--card);border:1px solid var(--line);color:var(--text);
     border-radius:10px;padding:11px 12px;font-size:16px;outline:none}
@@ -380,27 +384,37 @@ TEMPLATE = r"""<!doctype html>
 <body>
 <header>
   <h1>My Recipe Collection <span id="hdr"></span></h1>
-  <div class="searchrow">
-    <input id="q" type="search" placeholder="Search dish, ingredient, creator…" autocomplete="off" spellcheck="false">
-    <select id="sort">
-      <option value="az">A–Z</option>
-      <option value="new">Newest</option>
-      <option value="ing">Most ingredients</option>
-    </select>
+  <nav class="nav" aria-label="Main navigation">
+    <button type="button" class="active" data-tab="recipes" aria-selected="true">Recipes</button>
+    <button type="button" data-tab="chat" aria-selected="false">Chat</button>
+  </nav>
+  <div id="recipes-controls">
+    <div class="searchrow">
+      <input id="q" type="search" placeholder="Search dish, ingredient, creator…" autocomplete="off" spellcheck="false">
+      <select id="sort">
+        <option value="az">A–Z</option>
+        <option value="new">Newest</option>
+        <option value="ing">Most ingredients</option>
+      </select>
+    </div>
+    <div class="chips" id="chips"></div>
   </div>
-  <div class="chips" id="chips"></div>
 </header>
 <main>
-  <section class="chat">
-    <div class="chat-title">Ask your recipe collection</div>
-    <div class="chat-hint">A free local AI chat. Ask for ideas, then refine them conversationally. The model and chat stay in this browser.</div>
-    <div class="chat-tools"><button id="load-ai" type="button">Load free AI</button><button id="clear-chat" type="button">New chat</button><span id="chat-status" aria-live="polite">AI not loaded — load it when you’re ready (first download can take a while).</span></div>
-    <div id="chat-log" aria-live="polite"></div>
-    <form class="chatrow" id="chat-form"><input id="chat-q" type="text" placeholder="Ask for a recipe… e.g. dinner with paneer, no onion" autocomplete="off" disabled><button id="chat-send" type="submit" disabled>Send</button></form>
+  <section id="recipes-view" class="view active">
+    <div class="count" id="count"></div>
+    <div id="list"></div>
+    <div class="stats" id="stats"></div>
   </section>
-  <div class="count" id="count"></div>
-  <div id="list"></div>
-  <div class="stats" id="stats"></div>
+  <section id="chat-view" class="view">
+    <div class="chat">
+      <div class="chat-title">Chat with your recipes</div>
+      <div class="chat-hint">A free local AI chat. Ask for ideas, then refine them conversationally. The model and chat stay in this browser.</div>
+      <div class="chat-tools"><button id="load-ai" type="button">Load free AI</button><button id="clear-chat" type="button">New chat</button><span id="chat-status" aria-live="polite">AI not loaded — load it when you’re ready (first download can take a while).</span></div>
+      <div id="chat-log" aria-live="polite"></div>
+      <form class="chatrow" id="chat-form"><input id="chat-q" type="text" placeholder="Ask for a recipe… e.g. dinner with paneer, no onion" autocomplete="off" disabled><button id="chat-send" type="submit" disabled>Send</button></form>
+    </div>
+  </section>
 </main>
 <script>
 const DATA = __DATA__;
@@ -409,6 +423,18 @@ const SUMMARY = __SUMMARY__;
 window.RECIPE_DATA = DATA;
 const $ = (s) => document.querySelector(s);
 const list = $('#list'), qEl = $('#q'), sortEl = $('#sort'), chipsEl = $('#chips');
+window.setTab = (tab) => {
+  document.querySelectorAll('.nav [data-tab]').forEach(b => {
+    const active = b.dataset.tab === tab;
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-selected', String(active));
+  });
+  $('#recipes-view').classList.toggle('active', tab === 'recipes');
+  $('#chat-view').classList.toggle('active', tab === 'chat');
+  $('#recipes-controls').style.display = tab === 'recipes' ? '' : 'none';
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+document.querySelectorAll('.nav [data-tab]').forEach(b => b.addEventListener('click', () => window.setTab(b.dataset.tab)));
 
 const field = (r) => [
   r.dish, r.dish_en, r.creator, r.creator_name,
@@ -534,6 +560,7 @@ sortEl.addEventListener('change', e => { state.sort = e.target.value; render(); 
 
 window.showRecipe=(code)=>{
   const r=DATA.find(x=>x.code===code); if(!r)return;
+  window.setTab('recipes');
   list.className='grid'; list.innerHTML=card(r,DATA.indexOf(r));
   $('#count').textContent='1 recipe';
   window.scrollTo({top:0,behavior:'smooth'});
