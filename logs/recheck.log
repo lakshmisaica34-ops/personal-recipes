@@ -1,0 +1,151 @@
+74 posts to recheck
+0 already done
+video endpoint blocked - falling back to poster frames
+  3975011459822198363_11772708660: is_recipe=true The image shows a close-up of a dish that appears to be rice cooked with tomatoes and spices, consistent with a recipe preparation.
+1/74 3975011459822198363_11772708660 -> RECIPE [frame] Tomato Rice
+  3996223949347933055_49476470459: is_recipe=false The image shows a man holding bags of snacks, and the caption mentions locations and "Healthy Snacks." There is no visual evidence of food preparation or a recipe being made.
+2/74 3996223949347933055_49476470459 -> not [frame] The image shows a man holding bags of snacks, and the caption mentions
+  3966936281262315892_46260398130: is_recipe=true The image shows a bowl of creamy pasta, and the caption explicitly mentions a "One Ingredient Pasta hack" and "viral pasta recipe," indicating food preparation.
+3/74 3966936281262315892_46260398130 -> RECIPE [frame] One Ingredient Pasta
+  3930136804505328833_80179178853: is_recipe=true The video cover clearly shows the text 'Tamarind Soda' and the caption confirms it is a recipe for Tamarind Soda. The image itself shows a person holding a clay pot, which is often used for preparing and serving drinks in some cultures, hinting at the preparation of a beverage.
+4/74 3930136804505328833_80179178853 -> RECIPE [frame] Tamarind Soda
+  3837249466714055776_63890284461: is_recipe=true The image shows peas being seasoned with spices and placed in an air fryer basket, indicating a food preparation process. The caption also explicitly mentions 'Crispy Matar' and 'airfry'.
+5/74 3837249466714055776_63890284461 -> RECIPE [frame] Crispy Matar
+  3906633598367605452_230856467: is_recipe=true The video shows a person preparing a drink by adding water, lemon, and baking soda to a container and then stirring it. The caption also explicitly mentions these ingredients and the preparation of a drink.
+6/74 3906633598367605452_230856467 -> RECIPE [frame] Lemon and Baking Soda Drink
+  3814536048353037219_4841178758: is_recipe=true The image shows a grain mill with whole grains in the hopper and flour being dispensed into a bowl. The caption also explicitly mentions "fresh milled flour" and the process of milling.
+7/74 3814536048353037219_4841178758 -> RECIPE [frame] Fresh Milled Flour
+  3860725356634924663_74459058132: is_recipe=true The image clearly shows stuffed mushrooms, a prepared dish, and the caption explicitly mentions a "mushroom dish" that "shocked the MasterChef judges," indicating a cooking preparation.
+8/74 3860725356634924663_74459058132 -> RECIPE [frame] Stuffed Mushrooms
+  3836749932389284802_74377657822: is_recipe=false The image and caption are an advertisement for premium free-range desi eggs, not a recipe for preparing food. There is no visual evidence of food preparation.
+9/74 3836749932389284802_74377657822 -> not [frame] The image and caption are an advertisement for premium free-range desi
+  3850645720320341572_62301143248: is_recipe=false The image shows a farm with many chickens and the caption is an advertisement for farm-fresh eggs. There is no food preparation shown in the image.
+10/74 3850645720320341572_62301143248 -> not [frame] The image shows a farm with many chickens and the caption is an advert
+  3817800658640998621_65875939760: is_recipe=true The video shows ingredients being added to a pan with oil and spices, indicating a cooking process. The caption explicitly mentions "Brown Chana Palak Curry" and its nutritional benefits, confirming it's a recipe.
+11/74 3817800658640998621_65875939760 -> RECIPE [frame] Brown Chana Palak Curry
+  3789009939428312643_65875939760: is_recipe=true The video shows the preparation and cooking of a spinach and paneer roti, which is a food item. The caption also details the ingredients and benefits, confirming it's a recipe.
+12/74 3789009939428312643_65875939760 -> RECIPE [frame] Spinach Paneer Roti
+  3768183092633852249_3249976280: is_recipe=true The image shows a dish titled 'Paneer Chickpea Herb Rice' which is a prepared food item. The ingredients visible in the dish, such as rice, paneer, chickpeas, and green bell pepper, suggest a recipe for this dish.
+13/74 3768183092633852249_3249976280 -> RECIPE [frame] Paneer Chickpea Herb Rice
+  3796574751368582491_58237053253: is_recipe=true The image and caption clearly indicate the preparation of a multi-millet sprouted malt drink. The caption lists the ingredients and the image shows the finished product in glasses, suggesting a recipe.
+14/74 3796574751368582491_58237053253 -> RECIPE [frame] Multi millet Sprouted Malt
+  3764229999868820312_63533467041: is_recipe=true The image and caption clearly indicate a recipe for cheese garlic mushrooms. The image shows mushrooms being cooked in a pan with spices, green chilies, and melted cheese, with visible cilantro and curry leaves.
+15/74 3764229999868820312_63533467041 -> RECIPE [frame] Cheese garlic mushrooms
+  3768311613623418374_5008248690: is_recipe=true The image and caption clearly indicate the preparation of noodles made from sorghum flour, with visible ingredients like carrots, bell peppers, and onions, and the caption explicitly mentions 'Weight Loss Noodles' and 'Jowar Noodles'.
+16/74 3768311613623418374_5008248690 -> RECIPE [frame] Jowar Noodles
+  3762644472795455369_77228639989: is_recipe=false The image shows two people posing for a photo and does not depict any food preparation. The caption mentions health tips and anemia, but the visual content does not provide any recipe information.
+17/74 3762644472795455369_77228639989 -> not [frame] The image shows two people posing for a photo and does not depict any 
+  3665082312955915961_11617158032: is_recipe=false The image and caption indicate a video about nutrition and vitamins, featuring a dermatologist. There is no visual evidence of food preparation or a recipe being presented.
+18/74 3665082312955915961_11617158032 -> not [frame] The image and caption indicate a video about nutrition and vitamins, f
+  3761470449458066452_74548122493: is_recipe=true The video shows bottles being filled with milk, which is a preparation step for selling or distributing milk. The caption also mentions 'milk' and 'dairy farm'.
+19/74 3761470449458066452_74548122493 -> RECIPE [frame] Milk
+  3767041138038543502_61848807483: is_recipe=false The image shows a person posing in front of a fence with some papaya trees in the background. The caption discusses the launch of a ghee product and includes business-related hashtags, but there is no visual evidence of food preparation.
+20/74 3767041138038543502_61848807483 -> not [frame] The image shows a person posing in front of a fence with some papaya t
+  3704765720195487853_61848807483: is_recipe=false The image shows a bottle of milk and the caption discusses "Glass Bottles Details" and business aspects related to milk products. There is no visual evidence of food or drink preparation.
+21/74 3704765720195487853_61848807483 -> not [frame] The image shows a bottle of milk and the caption discusses "Glass Bott
+  3760702959588946697_47592275039: is_recipe=true The video shows a roti being cooked on a stovetop, and the caption explicitly mentions spinach and paneer as ingredients for a roti, indicating a recipe for Spinach Paneer Roti.
+22/74 3760702959588946697_47592275039 -> RECIPE [frame] Spinach Paneer Roti
+  3630019271921365965_48605040729: is_recipe=true The image shows mushrooms being added to a pot containing cooked onions, and the caption explicitly states "Mushroom Biryani recipe". This indicates a food preparation process.
+23/74 3630019271921365965_48605040729 -> RECIPE [frame] Mushroom Biryani
+  3655475423216888006_54600455843: is_recipe=true The video shows cooked rice being measured with a food scale and placed on a plate, demonstrating portion control for rice.
+24/74 3655475423216888006_54600455843 -> RECIPE [frame] Portioned Rice
+  3631566361848112761_330954974: is_recipe=true The image and caption clearly indicate a process of milling grains into flour using a grain mill. The presence of whole grains and a bowl of flour visually represents the preparation steps.
+25/74 3631566361848112761_330954974 -> RECIPE [frame] Milled Grains
+  3546596209554418061_1900281124: is_recipe=true The image shows the preparation and plating of Masala Pav, a dish involving stuffed bread rolls with a spicy filling, cheese, and cilantro. The caption also explicitly mentions enjoying this dish.
+26/74 3546596209554418061_1900281124 -> RECIPE [frame] Masala Pav
+  3618474076769286671_64478934504: is_recipe=false The video shows a person reading books, and the caption discusses books related to holistic health, wellness, and healing. There is no food preparation or cooking depicted.
+27/74 3618474076769286671_64478934504 -> not [frame] The video shows a person reading books, and the caption discusses book
+  3612734448600564211_18968000901: is_recipe=true The image shows a smoothie in a bowl, garnished with almonds and shredded coconut. The caption mentions almonds as a key ingredient for longevity, and the visual clearly depicts a food preparation.
+28/74 3612734448600564211_18968000901 -> RECIPE [frame] Almond and Raisin Smoothie
+  3607782596040097469_70802598517: is_recipe=true The image shows ingredients like atukulu (poha), peanuts, and chopped carrots being combined in a bowl, indicating the preparation of a snack.
+29/74 3607782596040097469_70802598517 -> RECIPE [frame] Atukula Mixture
+  3606970857487722994_57814417242: is_recipe=false The image and caption are advertising honey for sale, not showing a recipe being prepared. There are no ingredients or steps visible for a food or drink preparation.
+30/74 3606970857487722994_57814417242 -> not [frame] The image and caption are advertising honey for sale, not showing a re
+  3595024598404468854_3675641635: is_recipe=true The video shows a KitchenAid food processor attachment being used to dice carrots, onions, and celery, which are then collected in a bowl. This clearly demonstrates a food preparation process.
+31/74 3595024598404468854_3675641635 -> RECIPE [frame] Diced Vegetables
+  3575785431339926990_72807970522: is_recipe=false The image shows a man in a gym and a person on a talk show. The caption mentions "clean bulk" and "gym," indicating a fitness-related post rather than a cooking video.
+32/74 3575785431339926990_72807970522 -> not [frame] The image shows a man in a gym and a person on a talk show. The captio
+  3540812899080034989_65293696737: is_recipe=false The image shows a product advertisement for plant protein powder. The caption also focuses on the product's features and benefits, not on a specific recipe being prepared.
+33/74 3540812899080034989_65293696737 -> not [frame] The image shows a product advertisement for plant protein powder. The 
+  3553738176101019876_6288834885: is_recipe=true The video shows the preparation of a salad by combining chopped vegetables with peanuts in a bowl and mixing them. The caption also mentions a "healthier upgrade," implying a food preparation.
+34/74 3553738176101019876_6288834885 -> RECIPE [frame] Peanut and Vegetable Salad
+  3482209864127031720_47702484144: is_recipe=true The image shows a dish of fried, bite-sized pieces, consistent with the caption 'Pakodi'. The presence of curry leaves, green chilies, onion rings, and garlic cloves suggests these are ingredients used in the preparation or as garnish for this snack.
+35/74 3482209864127031720_47702484144 -> RECIPE [frame] Pakodi
+  3536449313558117814_45028293711: is_recipe=true The caption mentions 'Super Tiffin with Hard Rotis' and the image shows an elderly woman drinking from a metal cup, implying a meal or snack preparation. The video likely demonstrates how to make the rotis and serve them.
+36/74 3536449313558117814_45028293711 -> RECIPE [frame] Super Tiffin with Hard Rotis
+  3456175810862913498_47046312776: is_recipe=true The image shows a dish labeled "Ulli karam" which is confirmed by the caption and hashtags to be a recipe for Ulli Karam Podi. The dish itself appears to be a ground mixture of ingredients, and the visual elements suggest common components of such a spice powder.
+37/74 3456175810862913498_47046312776 -> RECIPE [frame] Ulli Karam Podi
+  3524935302869719899_67796065328: is_recipe=true The image shows a dish that appears to be a stir-fry made with julienned potatoes, sliced green bell peppers, and sliced red onions, indicating a food preparation process.
+38/74 3524935302869719899_67796065328 -> RECIPE [frame] Crispy Potato and Vegetable Stir-fry
+  3523334299452039048_7276174: is_recipe=true The video shows the preparation of a 'Zero Carbs Paneer Roll' as indicated by the text overlay and the visual of a rolled-up food item with visible ingredients like paneer, onions, and tomatoes.
+39/74 3523334299452039048_7276174 -> RECIPE [frame] Zero Carbs Paneer Roll
+  3511911476162767161_45419210485: is_recipe=true The video shows a cooking hack to separate excess oil from a sabzi (vegetable dish). The caption explicitly states the purpose of the video is to demonstrate this technique.
+40/74 3511911476162767161_45419210485 -> RECIPE [frame] Separate oil from sabzi
+  3509574471042069762_20182604055: is_recipe=true The video shows poppy seeds being poured into a bowl, which is a clear indication of food preparation. The caption also mentions 'poppy seed' and 'recipe'.
+41/74 3509574471042069762_20182604055 -> RECIPE [frame] Poppy Seed Dish
+  3468512034047113265_7549039725: is_recipe=true The image displays a bowl of moong dal, and the caption explicitly mentions 'moongdal', indicating a recipe preparation or a finished dish.
+42/74 3468512034047113265_7549039725 -> RECIPE [frame] Moong Dal
+  3487339853921376378_7549039725: is_recipe=true The image shows cooked taro root being added to a simmering orange-colored gravy, which is consistent with the preparation of a dish like Chama Gadda Pulusu, as indicated by the hashtag.
+43/74 3487339853921376378_7549039725 -> RECIPE [frame] Chama Gadda Pulusu
+  3492424027862703731_7549039725: is_recipe=true The image shows chopped mushrooms being sautéed in a pan with a spatula. This indicates a cooking process, making it a recipe.
+44/74 3492424027862703731_7549039725 -> RECIPE [frame] Sautéed Mushrooms
+  3455420364132883829_13209031403: is_recipe=true The image shows a person preparing and eating a salad made with chickpeas, onions, and other chopped vegetables. The caption also refers to it as a 'simple evening snack'.
+45/74 3455420364132883829_13209031403 -> RECIPE [frame] Chickpea Salad
+  3485950701620879824_697048003: is_recipe=false The video is about a lab test of whey protein, not the preparation of a food or drink. The caption and visual elements focus on testing and product information.
+46/74 3485950701620879824_697048003 -> not [frame] The video is about a lab test of whey protein, not the preparation of 
+  3475598765162472433_434609455: is_recipe=false The image and caption indicate a discussion about grains for people with diabetes, not a cooking demonstration. The content is educational and informational, not a recipe.
+47/74 3475598765162472433_434609455 -> not [frame] The image and caption indicate a discussion about grains for people wi
+  3419131435203086754_63914291569: is_recipe=true The image shows a person holding a block of paneer, and the caption explicitly mentions 'Paneer' and 'pannerrecipes'. This strongly suggests the video is about preparing a dish with paneer.
+48/74 3419131435203086754_63914291569 -> RECIPE [frame] Paneer
+  3469268534323541586_55577428433: is_recipe=true The image shows small pizza-like items being held, with visible toppings of cheese, corn, red bell pepper, and paneer on a bread base, indicating a food preparation process.
+49/74 3469268534323541586_55577428433 -> RECIPE [frame] Pizza Bites
+  3451943123209789768_13582405779: is_recipe=false The video shows a person speaking and displaying text that discusses ghee and its health benefits, rather than demonstrating a cooking process. Therefore, it is not a recipe.
+50/74 3451943123209789768_13582405779 -> not [frame] The video shows a person speaking and displaying text that discusses g
+  3415695712036883992_67546908157: is_recipe=true The image clearly shows a prepared dish consisting of rice, a creamy mushroom sauce, and steamed vegetables, indicating a recipe for a rice bowl. The caption also explicitly names the dish as 'Creamy Mushroom Rice Bowl'.
+51/74 3415695712036883992_67546908157 -> RECIPE [frame] Creamy Mushroom Rice Bowl
+  3437200083998055390_63914291569: is_recipe=true The image shows a woman holding a cooked dosa and a plate with dosas and chutney, indicating a recipe for this dish.
+52/74 3437200083998055390_63914291569 -> RECIPE [frame] Dosa
+  3425741240120466193_51439316482: is_recipe=true The image shows a flatbread, likely roti, being cooked on a griddle. This indicates a food preparation process.
+53/74 3425741240120466193_51439316482 -> RECIPE [frame] Roti
+  3464169787116272118_69234463967: is_recipe=true The image shows a serving of rice with a spoonful of green pickle being added from a bowl. This visually depicts the preparation of a meal.
+54/74 3464169787116272118_69234463967 -> RECIPE [frame] Pickle with rice
+  3461239464611571091_58444404442: is_recipe=true The image displays a prepared food item, and the caption explicitly mentions ingredients and the purpose of the dish, indicating it is a recipe.
+55/74 3461239464611571091_58444404442 -> RECIPE [frame] Moringa Sesame Karampodi
+  3465406370368946237_47659908499: is_recipe=true The caption mentions 'Garlic Rasam' and the image shows a person serving rice onto a plate, implying a meal preparation or consumption context. The hashtags also confirm it's a cooking video.
+56/74 3465406370368946237_47659908499 -> RECIPE [frame] Garlic Rasam
+  3382747489974639547_7549039725: is_recipe=true The image shows a plate with mushroom masala and flatbread, indicating a prepared dish. The caption '#mushroommasala' further confirms it's a recipe for this dish.
+57/74 3382747489974639547_7549039725 -> RECIPE [frame] Mushroom Masala
+58/74 3450230326388070331_58735429185 -> ERR [none] ERROR: poster frame fetch failed: HTTP 404
+  3441557025122873394_63914291569: is_recipe=true The image shows a woman holding a bowl of chickpeas, and the caption mentions "Breakfast series", "easyrecipes", "dosa", and "chanadosa" (chickpea dosa), indicating a recipe for chickpea dosa is being presented.
+59/74 3441557025122873394_63914291569 -> RECIPE [frame] Chana Dosa
+60/74 3426536441461544283_1544879313 -> ERR [none] ERROR: poster frame fetch failed: HTTP 404
+  3377956050682217847_9416722269: is_recipe=false The image shows a person holding a bag of what appears to be flour or a similar dry ingredient next to a refrigerator. There are no visible cooking elements or ingredients being prepared, and the caption is too vague to infer a recipe.
+61/74 3377956050682217847_9416722269 -> not [frame] The image shows a person holding a bag of what appears to be flour or 
+  3425653379666709483_63914291569: is_recipe=true The image shows a person holding sweetcorn, and the caption explicitly mentions "Sweetcorn" and "sweetcornrecipes", indicating that the video is about preparing a dish with sweetcorn.
+62/74 3425653379666709483_63914291569 -> RECIPE [frame] Sweetcorn
+  3400228302128987380_4841455139: is_recipe=true The image shows a child with a fork and a plate of pasta, and the caption mentions "Healthy Pasta rich in vitamin C and veggies". This indicates that the video is about preparing a pasta dish.
+63/74 3400228302128987380_4841455139 -> RECIPE [frame] Healthy Pasta
+  3401676349413342285_4841455139: is_recipe=true The image shows cauliflower florets and a bowl of honey, with the caption indicating "Honey Chilli Cauliflower". This suggests a recipe for preparing this dish.
+64/74 3401676349413342285_4841455139 -> RECIPE [frame] Honey Chilli Cauliflower
+  3408919677297017016_4841455139: is_recipe=true The image shows a woman and child with what appear to be homemade rice crackers. The caption also explicitly states 'Rice Crackers', indicating a food preparation video.
+65/74 3408919677297017016_4841455139 -> RECIPE [frame] Rice Crackers
+  3407004788410793402_4156295133: is_recipe=true The video shows paneer being dunked in ice water and the caption discusses the process of compressing paneer, indicating a food preparation experiment.
+66/74 3407004788410793402_4156295133 -> RECIPE [frame] Paneer
+  3374261169430053362_1978048178: is_recipe=false The image and caption discuss the health benefits of a superfood, but do not show any food preparation or provide a recipe.
+67/74 3374261169430053362_1978048178 -> not [frame] The image and caption discuss the health benefits of a superfood, but 
+  3377901897452082534_1978048178: is_recipe=true The video shows a bowl of milk with chocolate-flavored cereal (chocos) being added, indicating a breakfast preparation.
+68/74 3377901897452082534_1978048178 -> RECIPE [frame] Healthy Chocos
+  3369184555432373720_38561435911: is_recipe=true The video shows a person holding a bowl of hemp seeds, and the caption describes them as an 'Indian superfood' and suggests adding them to one's diet. This indicates the video is about preparing or consuming hemp seeds.
+69/74 3369184555432373720_38561435911 -> RECIPE [frame] Hemp Seeds
+  3371943320467837712_8161491353: is_recipe=false The image shows a person in a gym setting with text overlay promoting a high-protein snack for weight gain. However, there are no visual cues or ingredients shown that would indicate a recipe is being prepared.
+70/74 3371943320467837712_8161491353 -> not [frame] The image shows a person in a gym setting with text overlay promoting 
+  3236568442680735516_1956912909: is_recipe=true The image shows water droplets in a hot pan on a stove, with text indicating a cooking technique. This suggests a preparation step for cooking food.
+71/74 3236568442680735516_1956912909 -> RECIPE [frame] Pan-seared food
+  3253251136228559977_62593729737: is_recipe=false The image is an advertisement announcing the collaboration between Purifry and Jayati Bhatia, a home chef. It does not show any food preparation or ingredients.
+72/74 3253251136228559977_62593729737 -> not [frame] The image is an advertisement announcing the collaboration between Pur
+  3257421751171151254_58331237433: is_recipe=true The image shows a pile of puffed rice balls coated in a sticky, golden syrup, indicating a sweet treat being prepared. The caption also mentions 'dessert' and 'recipes'.
+73/74 3257421751171151254_58331237433 -> RECIPE [frame] Puffed Rice Balls
+  3148276455058928970_3998154030: is_recipe=true The image shows a dosa being cooked on a griddle and then folded with a spatula, indicating a cooking preparation process.
+74/74 3148276455058928970_3998154030 -> RECIPE [frame] Dosa
+
+recheck done: 54 now recipes, 18 still not, 2 errors

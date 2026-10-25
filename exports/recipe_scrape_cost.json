@@ -1,0 +1,18 @@
+{
+  "model": "N/A (no LLM / no video fetch / no batch)",
+  "cost_source": "caption-authority + top-comments only",
+  "per_video_cost_usd": 0,
+  "input_tokens": 0,
+  "completion_tokens": 0,
+  "total_tokens": 0,
+  "videos_processed": 1284,
+  "real": 959,
+  "not": 325,
+  "empty": 0,
+  "via_caption": 959,
+  "via_comments": 0,
+  "total_time_s": 164.602,
+  "avg_time_s_per_video": 0.128,
+  "total_cost_usd": 0,
+  "notes": "Caption-first, then top-comments. Video never fetched. Zero API cost."
+}

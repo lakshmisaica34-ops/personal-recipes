@@ -1,0 +1,161 @@
+"""Utility functions."""
+
+from __future__ import annotations
+
+from pathlib import Path
+from typing import TYPE_CHECKING, Any, Protocol, TypeVar
+import json
+import mimetypes
+
+from typing_extensions import override
+import click
+
+if TYPE_CHECKING:
+    from collections.abc import Awaitable, Iterable
+
+    from .typing import Edge
+
+__all__ = ('JSONFormattedString', 'UnknownMimetypeError', 'dump_json', 'get_extension',
+           'json_dumps_formatted', 'write_bytes', 'write_failed_urls', 'write_if_new')
+
+T = TypeVar('T')
+
+
+class JSONFormattedString:
+    """Contains a formatted version of the JSON str and the original value."""
+    def __init__(self, formatted: str, original: Any) -> None:
+        self.formatted = formatted
+        """Formatted JSON string."""
+        self.original_value = original
+        """Original value."""
+
+    @override
+    def __str__(self) -> str:
+        return self.formatted
+
+
+def json_dumps_formatted(obj: Any) -> JSONFormattedString:
+    """
+    Return a special object with the formatted version of the JSON str and the original.
+
+    Parameters
+    ----------
+    obj : Any
+        The object to be formatted.
+
+    Returns
+    -------
+    JSONFormattedString
+        Formatted JSON text together with the original value.
+    """
+    return JSONFormattedString(json.dumps(obj, sort_keys=True, indent=2), obj)
+
+
+def write_if_new(target: Path | str, content: str | bytes, mode: str = 'w') -> None:
+    """Write a file only if it will be a new file."""
+    if not Path(target).is_file():
+        with click.open_file(str(target), mode) as f:
+            f.write(content)
+
+
+def write_bytes(target: Path | str, content: bytes) -> None:
+    """
+    Write bytes to a file.
+
+    Parameters
+    ----------
+    target : Path | str
+        File path to write to.
+    content : bytes
+        Bytes to write.
+    """
+    Path(target).write_bytes(content)
+
+
+def dump_json(target: Path | str, obj: Any, *, mode: str = 'w') -> None:
+    """
+    Dump ``obj`` to ``target`` as sorted, indented JSON.
+
+    Parameters
+    ----------
+    target : Path | str
+        File path to write to.
+    obj : Any
+        Object to serialise.
+    mode : str
+        File open mode (typically ``'w'`` or ``'w+'``).
+    """
+    with Path(target).open(mode, encoding='utf-8') as f:
+        json.dump(obj, f, sort_keys=True, indent=2)
+
+
+def write_failed_urls(target: Path | str, urls: Iterable[str]) -> None:
+    """
+    Write a newline-separated list of URLs to ``target``.
+
+    Parameters
+    ----------
+    target : Path | str
+        File path to write to.
+    urls : Iterable[str]
+        URLs to write, one per line.
+    """
+    with Path(target).open('w', encoding='utf-8') as f:
+        f.writelines(f'{url}\n' for url in urls)
+
+
+class UnknownMimetypeError(Exception):
+    """Raised when an unknown mimetype is encountered in :py:func:`~get_extension`."""
+
+
+def get_extension(mimetype: str) -> str:
+    """
+    Get the appropriate extension for a mimetype.
+
+    Parameters
+    ----------
+    mimetype : str
+        Mimetype to be converted.
+
+    Returns
+    -------
+    str
+        File extension without the leading dot.
+
+    Raises
+    ------
+    UnknownMimetypeError
+        If the mimetype is not recognised.
+    """
+    if not (extension := mimetypes.guess_extension(mimetype, strict=False)):
+        raise UnknownMimetypeError(mimetype)
+    return extension[1:]
+
+
+if TYPE_CHECKING:
+
+    class InstagramClientInterface(Protocol):
+        should_save_comments: bool
+
+        def save_comments(self, edge: Edge) -> Awaitable[None]:
+            ...
+
+else:
+    InstagramClientInterface = object
+
+
+class SaveCommentsCheckDisabledMixin(InstagramClientInterface):
+    """Mixin to control saving comments."""
+    @override
+    async def save_comments(self, edge: Edge) -> None:
+        """
+        Save the comments for ``edge`` only when :py:attr:`should_save_comments` is ``True``.
+
+        Parameters
+        ----------
+        edge : Edge
+            Edge whose comments should be saved.
+        """
+        if not self.should_save_comments:
+            return
+        await super().save_comments(edge)  # type: ignore[safe-super]

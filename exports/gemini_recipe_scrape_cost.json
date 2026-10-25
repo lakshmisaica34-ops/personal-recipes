@@ -1,0 +1,18 @@
+{
+  "model": "N/A (no API calls)",
+  "model_used": null,
+  "rate_input_per_m": null,
+  "rate_output_per_m": null,
+  "per_video_cost_usd": 0,
+  "input_tokens": 0,
+  "completion_tokens": 0,
+  "total_tokens": 0,
+  "videos_processed": 1284,
+  "real": 925,
+  "not": 348,
+  "empty": 11,
+  "total_time_s": 0.103,
+  "avg_time_s_per_video": 0,
+  "total_cost_usd": 0,
+  "notes": "Caption-authority only. No LLM/API calls, so per-video API cost is 0."
+}

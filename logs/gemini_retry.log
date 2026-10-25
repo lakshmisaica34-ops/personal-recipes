@@ -1,0 +1,370 @@
+[2026-10-24T20:36:57.588Z] queued 172 videos
+    video throttled (attempt 1), sleeping 20s
+    video throttled (attempt 2), sleeping 34s
+  3743108908186723716_4706872342: is_recipe=true The caption "ఇడ్లీ లోకి చట్నీ" translates to "Chutney for Idli", and the image shows a prepared chutney with visible ingredients like dried chilies and curry leaves, suggesting a recipe.
+[1/172] vani_nichenametla DPyMbhcEeWE -> REAL_GEMINI [frame] (55.7s)
+    video throttled (attempt 1), sleeping 20s
+    video throttled (attempt 2), sleeping 34s
+    video API confirmed blocked -- switching to poster[2/172] madhuvlogsusa DOcVa61ADtZ -> ERROR: instagram throttled after 7 attempts
+    throttled (attempt 1), sleeping 30s
+    throttled (attempt 2), sleeping 48s
+    throttled (attempt 3), sleeping 77s
+    throttled (attempt 4), sleeping 123s
+    throttled (attempt 5), sleeping 197s
+    throttled (attempt 6), sleeping 240s
+[3/172] mouni_masti DP0cd-2EmI2 -> ERROR: instagram throttled after 7 attempts
+    throttled (attempt 1), sleeping 30s
+    throttled (attempt 2), sleeping 48s
+    throttled (attempt 3), sleeping 77s
+    throttled (attempt 4), sleeping 123s
+    throttled (attempt 5), sleeping 197s
+    throttled (attempt 6), sleeping 240s
+[4/172] foodviva DM5dz5YOusn -> ERROR: instagram throttled after 7 attempts
+    throttled (attempt 1), sleeping 30s
+    throttled (attempt 2), sleeping 48s
+    throttled (attempt 3), sleeping 77s
+    throttled (attempt 4), sleeping 123s
+    throttled (attempt 5), sleeping 197s
+    throttled (attempt 6), sleeping 240s
+[5/172] kali_yuga_purushudu DKO-ynazglx -> ERROR: instagram throttled after 7 attempts
+    throttled (attempt 1), sleeping 30s
+    throttled (attempt 2), sleeping 48s
+    throttled (attempt 3), sleeping 77s
+hudu DKO-ynazglx -> REAL_GEMINI [frame] (1.4s)
+  3696132904238714058_62505262143: is_recipe=true The caption explicitly states 'Bubble milk coffee/ Boba', and the image shows a drink with boba pearls, suggesting a preparation process.
+[6/172] corporategirliecooks DNLTUsfyAzK -> REAL_GEMINI [frame] (1.1s)
+  3677542436268766093_57038804116: is_recipe=true The caption lists ingredients and implies a preparation process for a drink.
+[7/172] lindsay.keosayian DMJQVyAOXON -> REAL_GEMINI [frame] (1.2s)
+  3661300067538527004_5360161587: is_recipe=true The video shows a food item being cooked in a pan, and the caption mentions 'Sarvapindi' which is a traditional dish, implying a recipe is being presented.
+[8/172] harika_cooks DLPjQNVv2Mc -> REAL_GEMINI [frame] (1.3s)
+  3655475423216888006_54600455843: is_recipe=false The video shows a person weighing rice and the caption discusses food portions for weight loss, not a recipe.
+[9/172] drcarolinerebuilt DK624emA2jG -> NOT_RECIPE_GEMINI [frame] (1.6s)
+  3439365241270191693_6227039906: is_recipe=true The caption explicitly states '30 Days 30 Healthy breakfast Recipes' and mentions 'Sprouts sale, pineapple juice', indicating a recipe. The image also shows ingredients like sprouts, pomegranate, and a green drink.
+[10/172] jonnas_kitchen C-7FHbivEZN -> REAL_GEMINI [frame] (1.1s)
+  3635969383157384371_65478280308: is_recipe=true The caption clearly lists ingredients and mentions preparation steps like 'Soaked & Boiled Kabuli Chana', indicating it is a recipe.
+[11/172] poonamscookery_ DJ1juPJSsSz -> REAL_GEMINI [frame] (1.6s)
+  3638600526123661788_66273146696: is_recipe=true The image shows a dish labeled 'Masala Paneer Salad' with the text 'WEIGHTLOSS' at the top, suggesting it's a recipe for a healthy meal.
+[12/172] fitness_garage_lucknow DJ-5-Z_Jnnc -> REAL_GEMINI [frame] (1.3s)
+  3631434697326885477_72551151702: is_recipe=true The caption mentions 'fruit laddu' and the image shows chopped nuts, which are common ingredients for laddu. This suggests a recipe is being presented.
+[13/172] amruthapondara DJlcp33Mnpl -> REAL_GEMINI [frame] (1.7s)
+  3633825918638077273_65181859972: is_recipe=true The video shows a person adding potatoes to a pan on a stove, and the on-screen text says "Add potatoes", indicating a cooking step.
+[14/172] bhargavimuchatlu DJt8WuQB7VZ -> REAL_GEMINI [frame] (1.2s)
+  3635748095116717732_72503668309: is_recipe=true The caption explicitly describes the preparation of 'Oats Mango Kheer' and mentions ingredients like oats, mangoes, dates, milk, cardamom, and saffron, along with steps such as roasting oats, simmering in milk, and blending with mangoes.
+[15/172] feastlyfit DJ0xaEmPC6k -> REAL_GEMINI [frame] (1.8s)
+  3631566361848112761_330954974: is_recipe=false The title 'how I mill my grains' and the presence of grain and flour suggest a process, but the caption explicitly states the video is for 'my real luv for this mill' and to 'shoot UCG videos', indicating it's a product demonstration or personal vlog rather than a recipe.
+[16/172] binal_valand DJl6l2ANuZ5 -> NOT_RECIPE_GEMINI [frame] (1.4s)
+  3626401847519326523_17129659346: is_recipe=true The caption mentions 'Paratha pizza' and the on-screen text says 'Roll & make chapati', indicating a cooking process.
+[17/172] official_poonamjaiswal118 DJTkURONbE7 -> REAL_GEMINI [frame] (1.8s)
+  3546596209554418061_1900281124: is_recipe=false The caption describes the dish as "spicy, tangy Masala Pav" and "comforting and absolutely delicious," but it does not provide any ingredients or preparation steps. The image itself shows the finished dish, not the cooking process.
+[18/172] iamdatingfood DE4CnZAPOmN -> NOT_RECIPE_GEMINI [frame] (1.6s)
+  3521346079708581085_46284800614: is_recipe=true The caption and the image text clearly indicate that the video is about making 'Open Paneer Toast', and the visual shows a prepared dish with cheese and paneer, suggesting a cooking process.
+[19/172] funfoodcorner_ DDeVZpEPozd -> REAL_GEMINI [frame] (1.5s)
+  3549666323590694433_56599193788: is_recipe=true The caption explicitly lists ingredients and preparation steps for making Paneer Pakoras, including quantities and cooking instructions.
+[20/172] vishal.chowhan_ DFC8rbgykYh -> REAL_GEMINI [frame] (1.7s)
+  3618474076769286671_64478934504: is_recipe=false The video cover and caption focus on books related to holistic health, wellness, and self-healing, not on cooking or food preparation.
+[21/172] theyogicgeek DI3ZwBWyvoP -> NOT_RECIPE_GEMINI [frame] (1.2s)
+  3612734448600564211_18968000901: is_recipe=false The caption mentions clean eating, black coffee, and almonds as part of a healthy lifestyle, but it is primarily an advertisement for "Doctor Towels" and not a recipe. The image shows a bowl of food with almonds and raisins, but no preparation steps or ingredients list are provided.
+[22/172] doctortowels DIjAtcEp0Hz -> NOT_RECIPE_GEMINI [frame] (1.3s)
+  3607782596040097469_70802598517: is_recipe=false The image shows a prepared dish being poured into a bowl, and the caption is a playful tag to a friend. There are no visible ingredients, quantities, or preparation steps.
+[23/172] mudhapappu.avakai.muchatlu DIRayf_zn69 -> NOT_RECIPE_GEMINI [frame] (2.1s)
+  3606970857487722994_57814417242: is_recipe=false The video cover and caption indicate a product advertisement for honey, not a recipe. It provides details about the product, price, and contact information.
+[24/172] b.techwala_naturals DIOiOJjveny -> NOT_RECIPE_GEMINI [frame] (1.6s)
+  3565635334538379549_12024182170: is_recipe=true The video cover shows a roti being cooked on a stove, and the caption mentions 'Protein Packed Roti' with descriptors like 'Healthy• Easy• Tasty', suggesting a recipe for preparing this item.
+[25/172] aalusheddo DF7rnH5vcEd -> REAL_GEMINI [frame] (1.8s)
+  3595024598404468854_3675641635: is_recipe=false The video shows a KitchenAid food processor attachment dicing vegetables, and the caption expresses a preference for this method over hand-dicing. There are no ingredients or steps listed, indicating it's not a recipe.
+[26/172] siobhanamccaffrey DHkF9MysJB2 -> NOT_RECIPE_GEMINI [frame] (1.5s)
+  3593014559598833548_48605040729: is_recipe=true The image shows ingredients (eggplant, tomatoes, greens) and the Telugu text "వంకాయ వేపుడు" which translates to "Brinjal Fry", indicating a recipe.
+[27/172] siriorganicsrjy DHc87SRse-M -> REAL_GEMINI [frame] (1.4s)
+  3575785431339926990_72807970522: is_recipe=false The caption mentions a 'clean bulk' and the image shows a person in a gym, suggesting a fitness or lifestyle video rather than a cooking recipe. There are no visible ingredients or preparation steps.
+[28/172] fitnesswitharjunaman DGfveeMCIXO -> NOT_RECIPE_GEMINI [frame] (1.2s)
+  3540812899080034989_65293696737: is_recipe=false The video cover and caption promote a plant protein product, not a recipe. The text mentions mixing the protein into existing foods like dosa, dal, or pancakes, but does not provide specific instructions or ingredient lists for preparing these dishes.
+[29/172] aceblend.wellness DEjfpJZyVqt -> NOT_RECIPE_GEMINI [frame] (1.6s)
+  3512531140596319066_62945048693: is_recipe=true The caption states 'Make 200 Types of Snacks without oil or ghee', and the image shows a person preparing a snack using a device and various ingredients like papad and nuts, indicating a cooking demonstration.
+[30/172] india_food_hustle DC_BHZRvcNa -> REAL_GEMINI [frame] (2.0s)
+  3552022645173166342_27961246836: is_recipe=true The caption clearly lists ingredients with quantities and provides a sequence of preparation steps for making potato waffles.
+[31/172] ginie.healthylife DFLUca_sKEG -> REAL_GEMINI [frame] (2.2s)
+  3556759630363840412_1523201669: is_recipe=true The video cover shows a dish labeled 'Red sauce pasta' and the caption includes a pasta emoji, indicating it is likely a recipe for pasta.
+[32/172] rekhascucina DFcJgoPSU-c -> REAL_GEMINI [frame] (1.4s)
+  3574120056336086616_36838904900: is_recipe=true The on-screen text "Junnu Boorelu - Food Stories With Amma" and the visual of someone preparing small balls of food from a mixture in a pot indicate a recipe.
+[33/172] melody_mocktail DGZ00E2gvZY -> REAL_GEMINI [frame] (1.1s)
+  3567614497687745233_58237053253: is_recipe=true The caption mentions "Finger Millet Jaggery Sweet" and "Ragimanni", and the on-screen text describes health benefits, suggesting a food preparation. The image shows a prepared dish, likely the result of a recipe.
+[34/172] ismartaiswaryakitchen DGCtnvONjLR -> REAL_GEMINI [frame] (1.3s)
+  3559929636151983464_7325455700: is_recipe=true The caption explicitly lists ingredients with quantities and provides a sequence of preparation steps, clearly indicating it is a recipe.
+[35/172] emilyxlevi DFnaSSMOX1o -> REAL_GEMINI [frame] (1.3s)
+  3553738176101019876_6288834885: is_recipe=false The caption indicates the video is for a pre-pregnancy/pregnancy care class, not a cooking recipe. The image shows a salad, but there are no ingredients or steps listed.
+[36/172] utiram.krithika DFRagrrPvDk -> NOT_RECIPE_GEMINI [frame] (1.3s)
+  3482209864127031720_47702484144: is_recipe=false The image shows a dish of pakodi, which is a fried snack. The caption is simply the name of the dish. There are no visible ingredients, quantities, or preparation steps in the image or caption to indicate it is a recipe.
+[37/172] mahalakshmi_kommoju DBTS2wApymo -> NOT_RECIPE_GEMINI [frame] (1.2s)
+  3551096084523488434_54153273799: is_recipe=true The caption mentions "pizza in 10mins" and "try this when your pizza cravings hit," implying a preparation method. The image shows a pizza with visible ingredients like corn and peppers, suggesting it's a homemade dish.
+[38/172] cookpriii DFIBxMJTZSy -> REAL_GEMINI [frame] (1.5s)
+  3547436971237379027_48448330719: is_recipe=true The caption mentions 'ఇడ్లీ పిండితో పేపర్ దోస' which translates to 'Paper dosa with idli batter', indicating a recipe. The image shows dosa with chutneys, common accompaniments to a dosa recipe.
+[39/172] mini_tv_renus_kitchen DE7ByFVsQvT -> REAL_GEMINI [frame] (1.5s)
+  3481411702747079661_48290569654: is_recipe=true The caption mentions "ragi upma" and describes it as "simple and tasty, healthy", implying a recipe. The image shows the prepared dish, which is consistent with a recipe video.
+[40/172] tasteintradition DBQdX-TIKPt -> REAL_GEMINI [frame] (1.6s)
+  3536449313558117814_45028293711: is_recipe=false The caption mentions "super tiffin with hard rotis" and "snacks", but the image itself only shows an elderly woman drinking from a metal cup. There are no visible ingredients or preparation steps to indicate it's a recipe.
+[41/172] sakhi_diaries DET_enszj22 -> NOT_RECIPE_GEMINI [frame] (1.3s)
+  3456175810862913498_47046312776: is_recipe=false The image shows a dish called "Ulli karam" and the caption is in Telugu, but there are no visible ingredients, quantities, or preparation steps to indicate it's a recipe.
+[42/172] versatilesunitha C_2zZafyBfa -> NOT_RECIPE_GEMINI [frame] (1.3s)
+  3517148683886658116_44601146416: is_recipe=true The caption translates to "Method of making pachhi pulusu" and the image shows chopped onions and a dried chili being added to a bowl, indicating preparation steps for a dish.
+[43/172] padma_naredla DDPbBflTAJE -> REAL_GEMINI [frame] (1.2s)
+  3524935302869719899_67796065328: is_recipe=false The caption "Try This Snacks Once Time" and the image of a prepared dish do not provide any ingredients or preparation steps, suggesting it is not a recipe.
+[44/172] racy__cook DDrFftnyJtb -> NOT_RECIPE_GEMINI [frame] (1.1s)
+  3472226454664896408_5968665026: is_recipe=true The caption explicitly states 'I made 32g Protein Waali Veg Meal' and provides nutritional information, indicating a prepared dish. While the image itself is blurry, the caption strongly suggests a recipe is being presented.
+[45/172] naturalbodyaesthetics DAv05BaA9-Y -> REAL_GEMINI [frame] (1.3s)
+  3502346489777570405_3556810281: is_recipe=true The caption mentions '60Gm Protein Muscle Gain Meal' and the image shows a dish being dipped into a sauce, along with a box of spices, suggesting a preparation or cooking process.
+[46/172] niteshsoniy DCa1ZODh0Jl -> REAL_GEMINI [frame] (1.3s)
+  3523334299452039048_7276174: is_recipe=false The caption mentions "Almond Tortilla" and asks users to comment for a link, suggesting it's a promotion for a recipe rather than the recipe itself being presented in the video.
+[47/172] iamleanbeast_india DDlZeC_yd-I -> NOT_RECIPE_GEMINI [frame] (1.6s)
+  3511911476162767161_45419210485: is_recipe=false The caption indicates a 'hack' to separate oil from vegetables, not a recipe for preparing a dish. There are no visible ingredients or cooking steps.
+[48/172] mommywithatwist DC80OFzTKk5 -> NOT_RECIPE_GEMINI [frame] (1.3s)
+  3511268216427788208_7549039725: is_recipe=true The image shows a pan full of noodles with visible vegetables like onions, carrots, and bell peppers, suggesting a cooking process. The way the noodles are prepared and mixed with ingredients implies a recipe.
+[49/172] that_basic_girlllll DC6h9bfTDew -> REAL_GEMINI [frame] (1.7s)
+  3500859965101224049_20182604055: is_recipe=true The caption mentions 'అల్లం చట్నీ Ready' which translates to 'Ginger chutney Ready', and the image shows ginger being prepared, suggesting a recipe for ginger chutney.
+[50/172] homemakerhobbiees DCVjZcEPrBx -> REAL_GEMINI [frame] (1.2s)
+  3509574471042069762_20182604055: is_recipe=false The image shows a substance being poured into a bowl, and the caption asks "What do u call these?" This suggests a question about an ingredient or food item, not a demonstration of a recipe.
+[51/172] homemakerhobbiees DC0g2MLPfUC -> NOT_RECIPE_GEMINI [frame] (1.2s)
+  3465413570259450321_8499586188: is_recipe=true The caption explicitly provides instructions and quantities for preparing Dal Khichdi, indicating it is a recipe.
+[52/172] mad.over.f00d DAXn0gXIfnR -> REAL_GEMINI [frame] (3.0s)
+  3500932894586100604_7382966355: is_recipe=true The caption "Low Carb Pizza 🍕" and the image showing a prepared pizza with visible toppings like tomatoes and olives suggest a recipe. While no explicit ingredients or steps are shown, the context implies a cooking demonstration.
+[53/172] ohcheatday DCVz-s8SNt8 -> REAL_GEMINI [frame] (1.4s)
+  3487345232809079780_65478280308: is_recipe=true The image shows a woman cooking vegetables in a pot, and the caption mentions "Saturday Special Tehri", suggesting a recipe. The pot contains visible ingredients like broccoli, carrots, and onions, indicating preparation steps.
+[54/172] poonamscookery_ DBligMyvLPk -> REAL_GEMINI [frame] (1.4s)
+  3499679204914331353_65478280308: is_recipe=true The image shows a prepared garlic bread with visible ingredients like cheese, corn, and herbs. The caption asks about the best garlic bread, implying a discussion or demonstration of how to make it.
+[55/172] poonamscookery_ DCRW7HcvX7Z -> REAL_GEMINI [frame] (1.4s)
+  3495121078052369513_17803334150: is_recipe=true The caption explicitly states 'Bombay chutney for idly/dosa', indicating a food preparation. The image shows a bowl of chutney, which is a prepared food item.
+[56/172] cookwithpramod DCBKhpASrRp -> REAL_GEMINI [frame] (1.5s)
+  3496549185254814817_17803334150: is_recipe=true The caption "Kadapa erra karam dosa" and the image showing a dosa with two chutneys suggest a food preparation video. While no explicit ingredients or steps are visible, the title implies a recipe for this specific dish.
+[57/172] cookwithpramod DCGPPVey3Rh -> REAL_GEMINI [frame] (2.0s)
+  3436674073642193779_42496737349: is_recipe=true The caption explicitly states "5-minutes recipe" and mentions "Achari Paratha", indicating a cooking tutorial. The image shows ingredients being added to a paratha base.
+[58/172] harshita_tasty_treats C-xhNyYPNNz -> REAL_GEMINI [frame] (2.0s)
+  3499392538732501287_48331663398: is_recipe=true The caption explicitly states 'Mushroom Pulav' and 'Pulav Series', indicating a cooking demonstration. The image shows a prepared dish of pulav, suggesting it's part of a recipe series.
+[59/172] miss_teju_tho DCQVvkwzZkn -> REAL_GEMINI [frame] (1.5s)
+  3385132863654778903_48686207699: is_recipe=true The caption mentions 'ABC powder' and '1 month store', suggesting a preparation or preservation method for a food item. The image shows a person drinking a beverage, which could be the result of the recipe.
+[60/172] pallavi_home_trends C76aGd_pNgX -> REAL_GEMINI [frame] (1.7s)
+  3452702877574425103_48448330719: is_recipe=true The caption explicitly mentions 'Veg manchurian' and asks a question about preference between veg and non-veg manchurian, implying a recipe for the dish. The image shows a prepared dish.
+[61/172] mini_tv_renus_kitchen C_qdvlUyuoP -> REAL_GEMINI [frame] (1.2s)
+  3490349533658045343_8161342715: is_recipe=true The caption explicitly lists ingredients and preparation steps for a sugar-free kulfi.
+[62/172] namitasatheesh DBwNmh_o1uf -> REAL_GEMINI [frame] (1.3s)
+  3468512034047113265_7549039725: is_recipe=false The image shows a bowl of yellow lentils, but there is no caption or on-screen text indicating ingredients or preparation steps. Therefore, it is not possible to determine if it is a recipe.
+[63/172] that_basic_girlllll DAioVFoi7gx -> NOT_RECIPE_GEMINI [frame] (1.7s)
+  3477140044455189235_7549039725: is_recipe=true The image shows a wrap with paneer, onions, and bell peppers, and the text "Roll Roll Roll" suggests a preparation process. The ingredients are visible and imply a recipe.
+[64/172] that_basic_girlllll DBBSHKgCZrz -> REAL_GEMINI [frame] (1.5s)
+  3487339853921376378_7549039725: is_recipe=false The image shows food being added to a pot of broth, but there are no visible ingredients, quantities, or preparation steps to indicate it is a recipe.
+[65/172] that_basic_girlllll DBlhR7UC9h6 -> NOT_RECIPE_GEMINI [frame] (1.2s)
+  3492424027862703731_7549039725: is_recipe=false The image shows mushrooms being cooked in a pan, but the caption is a question about favorite vegetable dishes and does not provide any ingredients or steps.
+[66/172] that_basic_girlllll DB3lSZRy55z -> NOT_RECIPE_GEMINI [frame] (1.7s)
+  3491625682385406913_8179476201: is_recipe=true The caption mentions a 'hack' to save money and describes a process of removing water from yogurt to make it thick and creamy, implying a preparation method. It also mentions using full cream milk for protein-rich yogurt.
+[67/172] praveensfitnessfamily DB0vw8HNovB -> REAL_GEMINI [frame] (1.5s)
+  3469722556062092813_6661497063: is_recipe=true The caption explicitly states 'Made Simple Paneer Curry', indicating a recipe. The image shows a woman cooking in a kitchen, which is consistent with a cooking video.
+[68/172] manachef_madhavi DAm7kgHPc4N -> REAL_GEMINI [frame] (1.1s)
+  3468335484352467113_39603148564: is_recipe=true The caption explicitly mentions a 'moong dal batter' as a pizza base and lists ingredients like 'onions' and 'capsicum', indicating a recipe.
+[69/172] fit.with.rachna DAiAL86thCp -> REAL_GEMINI [frame] (1.6s)
+  3390294385768546101_8285926784: is_recipe=true The caption mentions 'Episode 3 Protein packed Dosa', and the image shows a batter being poured onto a griddle, which are indicative of a cooking process.
+[70/172] cooking_day_diaries C8MvsgDvD81 -> REAL_GEMINI [frame] (2.8s)
+  3451122126872830599_8285926784: is_recipe=true The caption 'No Bread Sandwich' and the visual of a grilled item with visible vegetables suggest a recipe for preparing a sandwich without bread.
+[71/172] cooking_day_diaries C_k2UogvuKH -> REAL_GEMINI [frame] (1.7s)
+  3464224788892117964_44234724403: is_recipe=true The caption provides nutritional information (macros) for two portions and mentions "49 gm of Protein" and "the ultimate rice bowl", indicating it's a recipe for a meal.
+[72/172] mind_muscle_connection_ DATZhdcBGvM -> REAL_GEMINI [frame] (1.4s)
+  3455420364132883829_13209031403: is_recipe=false The image shows a person eating a snack while looking at a laptop. The caption mentions a "simple evening snack" but there are no visible ingredients, measurements, or preparation steps to indicate it is a recipe.
+[73/172] anushaadabalavlogs C_0HoN5yp11 -> NOT_RECIPE_GEMINI [frame] (2.4s)
+  3485950701620879824_697048003: is_recipe=false The video cover and caption indicate a 'lab test' of protein, not a recipe. There are no visible ingredients or preparation steps.
+[74/172] chiragbarjatya DBglbGaouHQ -> NOT_RECIPE_GEMINI [frame] (2.8s)
+  3475598765162472433_434609455: is_recipe=false The image and caption indicate a discussion about grains for diabetes, not a cooking demonstration. The text mentions a podcast and a YouTube channel for a full episode, suggesting an informational or educational video.
+[75/172] gunjanshouts DA7zqmTS6Px -> NOT_RECIPE_GEMINI [frame] (1.4s)
+  3400279758019276408_13209031403: is_recipe=true The caption explicitly states "5mins sweet receipe" and the image shows a prepared sweet dish, implying a recipe is being presented.
+[76/172] anushaadabalavlogs C8wOGypsK54 -> REAL_GEMINI [frame] (2.0s)
+  3419131435203086754_63914291569: is_recipe=false The image shows a woman holding a block of paneer, and the caption is simply "Panner 😋". There are no visible ingredients, quantities, or preparation steps, suggesting it's not a recipe.
+[77/172] momsdiarybyramya C9zMezLpsmi -> NOT_RECIPE_GEMINI [frame] (1.8s)
+  3482848537501054408_62658951280: is_recipe=true The video displays a list of ingredients for multigrain chapathi atta and mentions its nutritional benefits, suggesting it's a recipe for making the atta.
+[78/172] momsmilletsorganics DBVkEq8PTXI -> REAL_GEMINI [frame] (1.7s)
+  3469268534323541586_55577428433: is_recipe=false The image shows a close-up of a food item that appears to be a pizza bite, but there are no visible ingredients, quantities, or preparation steps. The caption suggests it's a "healthy pizza bytes for your kids" but doesn't provide instructions.
+[79/172] tasty_talezz DAlUVnay3ZS -> NOT_RECIPE_GEMINI [frame] (1.3s)
+  3480598692751905894_17803334150: is_recipe=true The caption mentions 'Garlic flavoured puffed rice' and the image shows puffed rice with peanuts and spices, suggesting a preparation process. The text overlay 'Garlic Murmura' further supports this.
+[80/172] cookwithpramod DBNkhHvKpRm -> REAL_GEMINI [frame] (1.6s)
+  3273506193224361398_44978188172: is_recipe=true The caption 'Dondakaya Vepudu' translates to 'Ivy Gourd Fry', and the image shows a dish that appears to be prepared with spices and possibly fried. While no explicit ingredients or steps are visible, the title strongly suggests a recipe for this dish.
+[81/172] hariscookbook C1t1In5LeW2 -> REAL_GEMINI [frame] (2.1s)
+  3476541975363661933_44978188172: is_recipe=true The image shows ingredients like turmeric powder, chili powder, and salt, along with the dish 'Pav Bhaji' and the caption 'Pav Bhaji 1', suggesting a recipe.
+[82/172] hariscookbook DA_KIHQSTBt -> REAL_GEMINI [frame] (1.6s)
+  3451722133668946963_63914291569: is_recipe=true The caption mentions "Makhana tho sweet", suggesting a sweet dish made with Makhana. The image shows a person holding a package of what appears to be Makhana, implying preparation of a food item.
+[83/172] momsdiarybyramya C_m-v4YsOQT -> REAL_GEMINI [frame] (1.3s)
+  3451777365128790388_52135011168: is_recipe=true The caption "घर पर बनाए बहुत ही टेस्टी डोसा" translates to "Make very tasty dosa at home," indicating a recipe. The image shows a dosa with chutney and fruit, which are common components of a meal that would be prepared via a recipe.
+[84/172] beauty_and_cooks C_nLTmsPEF0 -> REAL_GEMINI [frame] (1.9s)
+  3451943123209789768_13582405779: is_recipe=false The video cover and caption discuss the health benefits of A2 cow ghee and ask about the viewer's ghee consumption. There are no ingredients or preparation steps shown.
+[85/172] dr.animesh_msmch C_nw_s7xaFI -> NOT_RECIPE_GEMINI [frame] (1.5s)
+  3415695712036883992_67546908157: is_recipe=false The caption mentions "Creamy Mushroom Rice Bowl" and the image shows a prepared dish, but there are no visible ingredients, quantities, or preparation steps to indicate it's a recipe.
+[86/172] srees_palate C9m_ScoyI4Y -> NOT_RECIPE_GEMINI [frame] (1.7s)
+  3410346027985112704_37220863862: is_recipe=true The caption mentions "पंचपिठाचे जाळीदार धिरडे" which translates to "Panchpitha's lacy Dheerde" and also states "सोडा,ईनो,दही न वापरता" meaning "without soda, Eno, curd". This indicates a recipe for a specific dish, likely a type of pancake or dosa, with a list of ingredients and preparation method implied.
+[87/172] pallavis_marathi_kitchen C9T-6THN46A -> REAL_GEMINI [frame] (1.9s)
+  3437200083998055390_63914291569: is_recipe=false The image shows a woman holding a prepared food item and a small bowl of sauce. The caption "Instant breakfast 😋" suggests a food item but does not provide any ingredients or preparation steps.
+[88/172] momsdiarybyramya C-zY0PspZve -> NOT_RECIPE_GEMINI [frame] (1.7s)
+  3418263093723490865_50443131698: is_recipe=true The caption states "!പച്ചരി കുതിർക്കേണ്ട ,അഞ്ചു മിനുട്ടിൽ ക്രിസ്പി ദോശ റെഡി" which translates to "No need to soak rice, crispy dosa ready in five minutes". This indicates a recipe for making dosa quickly.
+[89/172] zillahs_world C9wHCxKN2ox -> REAL_GEMINI [frame] (2.1s)
+  3467576744295560313_58735429185: is_recipe=true The caption mentions 'మిలెట్స దోశ' (Millet Dosa) and the image shows a dosa being cooked on a pan, implying a recipe for preparing it.
+[90/172] thisisbyvandana DAfTq1LJHR5 -> REAL_GEMINI [frame] (1.7s)
+  3394356876526077433_52662673221: is_recipe=true The image shows ingredients for a dosa and the caption explicitly mentions 'Healthy Breakfast recipe', indicating it's a recipe video.
+[91/172] vinsikitchen C8bLZhaPcX5 -> REAL_GEMINI [frame] (1.2s)
+  3429453583459521823_66093604660: is_recipe=true The caption mentions 'శొంఠి బెల్లం' which translates to 'ginger jaggery', and the image shows a person mixing a food item in a bowl with a spoon, suggesting a preparation process.
+[92/172] farmer.arun07 C-X3d03y5Uf -> REAL_GEMINI [frame] (1.9s)
+  3453961238584250379_22106036843: is_recipe=true The caption mentions "healthy dosa & idli" and the image shows idlis being prepared in a steamer, indicating a cooking process. The presence of a grinder and a pan with what appears to be ingredients further supports this.
+[93/172] mereddyanushamohan C_u73JVyFAL -> REAL_GEMINI [frame] (1.8s)
+  3425741240120466193_51439316482: is_recipe=false The image shows a flatbread cooking on a griddle, but the caption is just a name and there are no visible ingredients or steps to indicate it's a recipe.
+[94/172] 4264.asha C-KrYHtyVsR -> NOT_RECIPE_GEMINI [frame] (1.3s)
+  3465605570139578445_6014147439: is_recipe=true The caption 'Instant dosa' and the image showing dosa being cooked on a griddle, along with the presentation of dosas with accompaniments, strongly suggest a recipe video.
+[95/172] aswinikichen987_official DAYTeeLyOBN -> REAL_GEMINI [frame] (1.2s)
+  3464169787116272118_69234463967: is_recipe=false The image shows a plate of rice with a spoonful of a green curry-like dish being added. There are no visible ingredients, quantities, or preparation steps in the image or caption to indicate it is a recipe.
+[96/172] manjula_ajs DATNBFCtLn2 -> NOT_RECIPE_GEMINI [frame] (1.4s)
+  3461239464611571091_58444404442: is_recipe=false The caption and image promote a product called 'Moringa Sesame Karampodi' and provide ordering information, indicating it is a product advertisement rather than a recipe.
+[97/172] aarogyanutrimix DAIyvRivGWT -> NOT_RECIPE_GEMINI [frame] (1.3s)
+  3466026183308210720_6015216727: is_recipe=true The image shows ingredients being ground in a mortar and pestle, and the caption mentions 'Chinthaaku Podi', indicating a preparation process for a food item.
+[98/172] indialoravitheja DAZzHMuSfIg -> REAL_GEMINI [frame] (1.8s)
+  3461217226754240915_69234463967: is_recipe=true The image shows a dosa being cooked on a griddle, and the caption mentions 'Jowar dosa', indicating a food preparation process. While specific ingredients and steps are not visible, the context strongly suggests a recipe.
+[99/172] manjula_ajs DAItrq7JjGT -> REAL_GEMINI [frame] (1.8s)
+  3465406370368946237_47659908499: is_recipe=false The image shows a person eating from a plate in an outdoor setting. The caption mentions 'Garlic Rasam with Coconut', but there are no visible ingredients or preparation steps in the frame to confirm it's a recipe video.
+[100/172] hariakulaofficial DAXmLu8N4A9 -> NOT_RECIPE_GEMINI [frame] (1.5s)
+  3382747489974639547_7549039725: is_recipe=false The image shows a plate of food with roti and a curry, but there is no visible text or visual cues indicating ingredients or preparation steps. The caption is also empty.
+[101/172] that_basic_girlllll C7x7utoyFu7 -> NOT_RECIPE_GEMINI [frame] (1.6s)
+  3456299468893974333_60480438418: is_recipe=true The caption translates to "Let's make pulihora with very sour gooseberries || Gooseberry puli annam grandmother", indicating a recipe. The image shows gooseberries, a key ingredient for this dish.
+[102/172] yashfood143 C_3Pg4Ay-89 -> REAL_GEMINI [frame] (1.4s)
+  3450129649024546700_60480438418: is_recipe=true The caption mentions "Masala Soda Old Style" and the image shows ingredients like lemons, green chilies, and soda bottles, along with traditional pots, suggesting a preparation process.
+[103/172] yashfood143 C_hUqLfJreM -> REAL_GEMINI [frame] (1.4s)
+  3457452039740992681_48605040729: is_recipe=true The image shows ingredients being combined in a bowl, and the text overlay clearly states 'Chole Masala Curry', indicating a recipe for a dish.
+[104/172] siriorganicsrjy C_7Vk_Qtiyp -> REAL_GEMINI [frame] (1.3s)
+  3467686752585206082_11319322295: is_recipe=true The caption explicitly states 'Chef Vibhor shows us a delicious and easy Breakfast Sandwich!', indicating a cooking demonstration. The image shows a prepared breakfast sandwich, implying a recipe.
+[105/172] mydelhieatery DAfsrqYK0lC -> REAL_GEMINI [frame] (1.3s)
+  3428417067884505015_58735429185: is_recipe=true The caption "మొలకెత్తిన రాగి పిండి తయారి ఇంట్లో నే" translates to "Sprouted Ragi Flour Preparation at Home", indicating a recipe. The image shows ingredients and preparation equipment.
+[106/172] thisisbyvandana C-ULyihJGe3 -> REAL_GEMINI [frame] (2.2s)
+  3450230326388070331_58735429185: is_recipe=false The image shows a dosa and a bowl of chutney, and the caption "Crispy గా dosa" (Crispy dosa) suggests it's about food. However, there are no visible ingredients, quantities, or preparation steps in the frame or caption to indicate it's a recipe.
+[107/172] thisisbyvandana C_hrjOlpBe7 -> NOT_RECIPE_GEMINI [frame] (2.3s)
+  3410392869677542385_58735429185: is_recipe=true The caption mentions 'Jower idli / జొన్న ఇడ్లీ' and directs users to a YouTube channel for the full video, implying a recipe is being shared. The image shows idlis and chutney, common components of a meal preparation.
+[108/172] thisisbyvandana C9UJj71p6vx -> REAL_GEMINI [frame] (1.5s)
+  3406860749468554997_65975595965: is_recipe=true The caption mentions 'Instant Dosa' and the username '@purnisyoutubeexpress' suggests a cooking channel, implying a recipe. The image shows a stack of dosas, a common Indian dish prepared through a cooking process.
+[109/172] purnisyoutubeexpress C9Hmc0jS1b1 -> REAL_GEMINI [frame] (1.0s)
+  3429324468158475694_48686207699: is_recipe=true The caption "కచ్చితంగా తినాల్సిన జొన్నపిట్టు" translates to "Jowar Puttu that must be eaten", and the image shows a woman holding a bowl of grains and a steamer, suggesting a cooking process.
+[110/172] pallavi_home_trends C-XaG84JC2u -> REAL_GEMINI [frame] (2.6s)
+  3441557025122873394_63914291569: is_recipe=false The image shows a woman holding a bowl of chickpeas, and the caption indicates a "Breakfast series." However, there are no visible ingredients, quantities, or preparation steps to confirm it's a recipe.
+[111/172] momsdiarybyramya C_C3eFUsvAy -> NOT_RECIPE_GEMINI [frame] (1.9s)
+  3435677332493599689_38518027201: is_recipe=true The caption mentions 'Amla & Mango Pulihora' and describes it as a 'Tangy Twist', implying a recipe. The image shows a dish of rice with visible ingredients like peanuts and spices, consistent with a prepared dish.
+[112/172] puviyakitchen C-t-lS2JIPJ -> REAL_GEMINI [frame] (1.1s)
+  3421349880687980301_57575196567: is_recipe=true The caption translates to 'Nutritious Methi Theple baked on a clay tawa'. The image shows a basket of theple, which are a type of Indian flatbread, and the caption implies a cooking process.
+[113/172] swast_ani_mast_recipes C97E5biu28N -> REAL_GEMINI [frame] (1.4s)
+  3398828878807367010_4065047285: is_recipe=true The caption states 'ഈസി ഗോതമ്പു വെള്ളേപ്പം 👌 Wheat Appam', indicating it is a recipe for wheat appam. The image shows the finished product.
+[114/172] athys_cookbook C8rENuFpv1i -> REAL_GEMINI [frame] (1.9s)
+  3426536441461544283_1544879313: is_recipe=false The video is not a recipe. The caption focuses on the health benefits of moringa powder and suggests adding it to existing dishes, rather than providing a specific recipe.
+[115/172] mencyclopediaofficial C-NgL0rPxVb -> NOT_RECIPE_GEMINI [frame] (1.4s)
+  3377956050682217847_9416722269: is_recipe=false The caption mentions 'Millet BAJRA-RiCh' which could imply a food item, but the image itself does not show any ingredients or preparation steps. The image appears to be a person near a refrigerator, and the caption's emojis and phrasing suggest it might be a lifestyle or product-related post rather than a recipe.
+[116/172] badi_house_2023 C7g6SGDy4V3 -> NOT_RECIPE_GEMINI [frame] (1.5s)
+  3400382991921192146_47902351376: is_recipe=true The caption mentions 'மினி தோசை கார சட்னி' which translates to 'Mini Dosa Spicy Chutney', and the image shows mini dosas and chutney, suggesting a recipe for preparing these dishes.
+[117/172] cook_with_video C8wllCtvhzS -> REAL_GEMINI [frame] (1.6s)
+  3412889199662175963_14335081464: is_recipe=true The caption explicitly states 'MAKE GINGER GARLIC PASTE THIS WAY' and the image shows ginger garlic paste being scooped from a jar, implying a preparation method.
+[118/172] letscookwithmaryam C9dBKUToZbb -> REAL_GEMINI [frame] (2.4s)
+  3425653379666709483_63914291569: is_recipe=false The image shows a woman holding corn on the cob, and the caption is simply "Sweetcorn". There are no visible ingredients, quantities, or preparation steps to indicate it is a recipe.
+[119/172] momsdiarybyramya C-KXZlSpovr -> NOT_RECIPE_GEMINI [frame] (1.2s)
+  3322660642512621109_60311185498: is_recipe=true The image shows a hand holding a prepared food item, and the Telugu text on the screen translates to 'High BP is controlled by this gingelly laddu', indicating it is a recipe for a food item.
+[120/172] shirisha_speaks C4cdkAKIs41 -> REAL_GEMINI [frame] (1.5s)
+  3419259161667459694_60311185498: is_recipe=true The image shows rice with a pile of spice mix and a dollop of ghee, and the Telugu text 'పల్లి కారం' (Palli Karam) which translates to 'peanut spice' or 'peanut powder', suggesting a recipe for a rice dish.
+[121/172] shirisha_speaks C9zphduMFpu -> REAL_GEMINI [frame] (1.4s)
+  3414423755189899741_5922402313: is_recipe=true The caption explicitly lists ingredients and preparation steps for a garlic butter spread.
+[122/172] twogoodgrassfedbeef C9ieFCgv9Hd -> REAL_GEMINI [frame] (1.6s)
+  3292163689871631220_20182604055: is_recipe=true The caption mentions 'వంకాయ పచ్చిపులుసు' which translates to Brinjal Pachipulusu, a dish. The image shows a ladle full of the prepared dish, which appears to be a soup or curry with visible ingredients like onions and herbs, suggesting a cooking process.
+[123/172] homemakerhobbiees C2wHW7tPON0 -> REAL_GEMINI [frame] (1.5s)
+  3410040125026383277_56999691341: is_recipe=true The caption explicitly states 'let's make whipped honey' and suggests ways to use it, implying a preparation process. The image shows honey being whipped with an immersion blender.
+[124/172] a1exzapata C9S5W0yBrWt -> REAL_GEMINI [frame] (1.1s)
+  3387299126763196563_7382966355: is_recipe=true The caption explicitly mentions 'High Protein Chipotle Dip' and discusses its health benefits and uses, implying a recipe is being presented. The image shows a dip with tortilla chips, a common presentation for a recipe.
+[125/172] ohcheatday C8CGpvuthCT -> REAL_GEMINI [frame] (1.2s)
+  3369190132967464405_38529563514: is_recipe=true The image shows ingredients being added to a bowl, and the on-screen text explicitly states quantities for two ingredients: '1 cup రాగులు - 1 Cup పెసర్లు' (1 cup ragi - 1 cup moong dal). The caption also mentions 'Healthy High Protein Dosa' and 'బరువు తగ్గించే దోస' (weight loss dosa), indicating a recipe.
+[126/172] nivasa_by_bhavani C7BxJNARt3V -> REAL_GEMINI [frame] (1.4s)
+  3306755328774652220_8499586188: is_recipe=true The caption provides a detailed list of ingredients with quantities and a step-by-step guide on how to prepare the dish.
+[127/172] mad.over.f00d C3j9HOavkE8 -> REAL_GEMINI [frame] (2.1s)
+  3361901933395449814_8499586188: is_recipe=true The caption mentions "Ragi Dosas made even healthier" and encourages viewers to "Do try it out", implying a recipe is being shared. The image also shows ingredients like ragi seeds and a prepared dosa with chutney.
+[128/172] mad.over.f00d C6n3_8NvBfW -> REAL_GEMINI [frame] (1.6s)
+  3379886553303065344_8499586188: is_recipe=true The caption explicitly mentions "Kadapa Karam Dosa" and provides instructions on how to prepare it, including soaking and grinding chilies.
+[129/172] mad.over.f00d C7nxOmuv6MA -> REAL_GEMINI [frame] (1.6s)
+  3385031490055093091_8499586188: is_recipe=true The caption explicitly provides instructions and quantities for preparing Dal Khichdi, indicating it is a recipe.
+[130/172] mad.over.f00d C76DDSePrtj -> REAL_GEMINI [frame] (1.8s)
+  3372689269456692993_8499586188: is_recipe=true The caption mentions "High Protein Quinoa Dosa" and suggests saving the reel to try it later, implying a recipe is being presented. The image shows the final dish with a side of chutney.
+[131/172] mad.over.f00d C7OMwVzvOcB -> REAL_GEMINI [frame] (1.7s)
+  3400228302128987380_4841455139: is_recipe=false The image shows a child with pasta and a fork, and the caption mentions 'Healthy Pasta rich in vitamin C and veggies'. However, there are no visible ingredients, quantities, or preparation steps to indicate it's a recipe.
+[132/172] yumcurry88 C8wCaAnoLz0 -> NOT_RECIPE_GEMINI [frame] (1.2s)
+  3401676349413342285_4841455139: is_recipe=false The image shows a child and two small bowls of food items, but there are no visible ingredients, quantities, or preparation steps to indicate it's a recipe. The caption 'Honey Chilli Cauliflower' suggests a dish, but the visual content doesn't support it being a recipe video.
+[133/172] yumcurry88 C81Lp3voTxN -> NOT_RECIPE_GEMINI [frame] (1.4s)
+  3408919677297017016_4841455139: is_recipe=false The image shows a woman and a child looking at rice crackers. The caption is 'Rice Crackers'. There are no visible ingredients, quantities, or preparation steps to indicate it is a recipe.
+[134/172] yumcurry88 C9O6mKhIMC4 -> NOT_RECIPE_GEMINI [frame] (1.6s)
+  3410403783130274198_4841455139: is_recipe=true The caption clearly lists ingredients and provides a step-by-step guide on how to prepare an omelette pizza, indicating it is a recipe.
+[135/172] yumcurry88 C9UMCvyINmW -> REAL_GEMINI [frame] (1.4s)
+  3412495510813146870_4841455139: is_recipe=true The caption clearly lists ingredients and provides a step-by-step guide for preparing 'Healthy Chocolate Bites'.
+[136/172] yumcurry88 C9bnpY_of72 -> REAL_GEMINI [frame] (1.9s)
+  3393959497528466483_64231489356: is_recipe=true The image shows puffed rice, jaggery, and what appears to be ghee, which are common ingredients for making puffed rice balls (Pellala Undalu). The caption also mentions "Pellala Undalu" which translates to puffed rice balls.
+[137/172] telangana_kitchen4u C8ZxC5YP1wz -> REAL_GEMINI [frame] (1.5s)
+  3396135217147051382_64231489356: is_recipe=true The image shows ingredients like sesame seeds, jaggery, nuts, and spices, along with a person shaping the mixture into balls, indicating a cooking process. The caption "నువ్వుల ఉండలు" translates to "sesame balls," further confirming it's a recipe.
+[138/172] telangana_kitchen4u C8hfvyLPn12 -> REAL_GEMINI [frame] (2.1s)
+  3397944868574462113_64231489356: is_recipe=true The image displays various ingredients like lentils, rice, and beans, and the caption 'moong pakoda' suggests a recipe. The arrangement of ingredients implies preparation steps are likely to follow.
+[139/172] telangana_kitchen4u C8n7NrZvgCh -> REAL_GEMINI [frame] (1.9s)
+  3400885869425301750_64231489356: is_recipe=true The caption 'ఆలుగడ్డ చిప్స్' translates to 'Potato Chips'. The image shows potatoes, a mandoline slicer, and a bowl, which are all common items used in preparing potato chips. This strongly suggests a recipe video.
+[140/172] telangana_kitchen4u C8yX634vZj2 -> REAL_GEMINI [frame] (1.8s)
+  3403016714000906449_64231489356: is_recipe=true The image displays various ingredients like spices, lentils, and curry leaves, along with a dough being prepared, suggesting a cooking process. The caption also names a dish, 'Sarvapindi'.
+[141/172] telangana_kitchen4u C858avivbjR -> REAL_GEMINI [frame] (1.6s)
+  3417513103129780757_64231489356: is_recipe=true The image displays various ingredients like chilies, garlic, spices, lentils, peanuts, and flattened rice, along with a prepared dish. The caption in Telugu, 'ఇంగటుకులు/చుడువ', likely refers to ingredients and a dish, suggesting a recipe.
+[142/172] telangana_kitchen4u C9tcg9_SyIV -> REAL_GEMINI [frame] (1.6s)
+  3407004788410793402_4156295133: is_recipe=false The video is an experiment about preparing paneer, not a recipe. The caption discusses two methods for compressing paneer but does not provide a full recipe with ingredients or steps.
+[143/172] upgrade_my_food C9IHM3RR726 -> NOT_RECIPE_GEMINI [frame] (1.8s)
+  3407764997278427207_3024044046: is_recipe=true The caption mentions 'Airfryer magic' and 'Sourdough buns', and states 'Making bread is easy', implying a cooking process. The image shows buns in an air fryer, suggesting preparation steps.
+[144/172] bhalla.rav C9K0DW8ymhH -> REAL_GEMINI [frame] (1.3s)
+  3372822402337045679_1978048178: is_recipe=true The video cover shows 'High Protein Burger Buns' and the caption asks about chickpea bread, implying a recipe for making these buns.
+[145/172] kriti_kaur_dhiman C7OrBrdx3yv -> REAL_GEMINI [frame] (1.7s)
+  3373522099250899383_1978048178: is_recipe=true The caption mentions "MAYONNAISE" and describes it as "LOW FAT | HEALTHY | SPICY | DIET FRIENDLY | HOMEMADE | KIDS FRIENDLY | STORE UPTO 1 WEEK". Multiple comments also explicitly ask for a "mayo recipe".
+[146/172] kriti_kaur_dhiman C7RKHm_x6m3 -> REAL_GEMINI [frame] (1.3s)
+  3374261169430053362_1978048178: is_recipe=false The video cover and caption focus on the health benefits of a superfood and ask viewers to identify it, rather than providing cooking instructions or ingredients.
+[147/172] kriti_kaur_dhiman C7TyKfvRcHy -> NOT_RECIPE_GEMINI [frame] (1.4s)
+  3377901897452082534_1978048178: is_recipe=false The image shows a bowl of cereal with milk, and the text overlay says "Healthy Chocos". The caption asks if the viewer is a "CHOCOS lover". There are no ingredients or preparation steps visible.
+[148/172] kriti_kaur_dhiman C7gt-D7v9Vm -> NOT_RECIPE_GEMINI [frame] (1.2s)
+  3407411765149708652_64231489356: is_recipe=true The video shows a person seasoning a cast iron tawa with turmeric and salt, and the caption explicitly states 'How to season Cast iron Tawa', indicating a preparation process.
+[149/172] telangana_kitchen4u C9JjvJ5PDFs -> REAL_GEMINI [frame] (1.3s)
+  3404597090174095642_63914291569: is_recipe=true The caption 'Kids tiffin box series' suggests a series of videos related to preparing food for lunchboxes, which typically involves recipes. The image shows a person preparing to pack a tiffin box, implying a cooking or preparation process.
+[150/172] momsdiarybyramya C8_jwPjJ9Ea -> REAL_GEMINI [frame] (1.2s)
+  3403811860666487778_34113475218: is_recipe=true The image explicitly states 'HOMEMADE GRANOLA RECIPE' and shows a breakfast bowl topped with granola, fruit, and what appears to be oatmeal, suggesting a recipe for the granola.
+[151/172] prachiandharsh C88xNplSZPi -> REAL_GEMINI [frame] (1.3s)
+  3306158883462383551_4851619510: is_recipe=true The caption explicitly mentions ingredients ('maida', 'urad dhal') and suggests a modification for replicating a flavor, indicating a recipe.
+[152/172] saraganeshpandy C3h1fzbxwe_ -> REAL_GEMINI [frame] (1.3s)
+  3403982908393407982_4851619510: is_recipe=true The caption explicitly mentions making homemade fruit soda and describes the process of making a ginger bug, which is a key component of the recipe. It also states that proportions are adjusted by taste, implying a preparation method.
+[153/172] saraganeshpandy C89YGuMSkXu -> REAL_GEMINI [frame] (1.6s)
+  3385046122824844526_38561435911: is_recipe=true The caption clearly lists ingredients and their quantities, indicating a recipe for 'Home Made Maggie Masala'.
+[154/172] digvijaylifestyle C76GYOTScTu -> REAL_GEMINI [frame] (1.7s)
+  3369184555432373720_38561435911: is_recipe=false The video cover and caption focus on hemp seeds as a superfood and suggest adding them to one's diet for benefits, rather than providing specific cooking instructions or ingredients for a dish.
+[155/172] digvijaylifestyle C7Bv4ChR23Y -> NOT_RECIPE_GEMINI [frame] (1.3s)
+  3350946113467941020_33527806699: is_recipe=true The caption mentions making "Garlic Masala lachcha Paratha using this new technique" and asks "Have You ever tried this technique?", implying a demonstration of preparation steps. The image shows the finished paratha and raita, suggesting a cooking process was involved.
+[156/172] bowl2soul C6A87xyu4Cc -> REAL_GEMINI [frame] (1.3s)
+  3393155040339876537_4851619510: is_recipe=true The video shows ingredients (chia seeds and milk) and the caption mentions it's an "easy bowl for breakfast/dinner", implying preparation steps will follow.
+[157/172] saraganeshpandy C8W6IgPSNq5 -> REAL_GEMINI [frame] (1.7s)
+  3387291100401828969_55546775918: is_recipe=true The caption states 'High Protein Garlic Cheese Spread' and the image shows a blended mixture in a food processor, suggesting a preparation process. The presence of what appears to be spices or herbs within the spread also hints at ingredients being combined.
+[158/172] mithila.kitchen C8CE08mSwRp -> REAL_GEMINI [frame] (1.5s)
+  3371943320467837712_8161491353: is_recipe=false The caption mentions a "high protein snack" but the image and caption do not provide any ingredients or preparation steps, suggesting it is not a recipe.
+[159/172] trainwith_manoj C7LjJWrPJMQ -> NOT_RECIPE_GEMINI [frame] (1.8s)
+  3357000532008988515_62060751256: is_recipe=true The caption mentions 'healthy & delicious' and the image shows potato chips, implying a preparation process. The text overlay 'the same as the real deal' further suggests a homemade version.
+[160/172] milamovement C6WdjKdMW9j -> REAL_GEMINI [frame] (1.8s)
+  3354547320927823338_57331986145: is_recipe=true The caption mentions "instant chutney mix" and "make chutney in minutes", implying a recipe for preparing chutney. The image shows a person holding a container with what appears to be a dry mix, consistent with a recipe ingredient.
+[161/172] monukitchen39 C6NvwPmJCXq -> REAL_GEMINI [frame] (1.2s)
+  3301096334148699567_4851619510: is_recipe=true The caption explicitly lists ingredients and quantities for making homemade Nutella, indicating a recipe.
+[162/172] saraganeshpandy C3P2aA-RwWv -> REAL_GEMINI [frame] (1.7s)
+  3296069239345326557_4851619510: is_recipe=true The caption explicitly lists ingredients and describes preparation steps for making coconut nice cream.
+[163/172] saraganeshpandy C29_YKGRSnd -> REAL_GEMINI [frame] (1.3s)
+  3282969048184781639_49009301278: is_recipe=true The caption explicitly states 'Apple Jam / No Added colour No Preservatives Healthy Homemade Apple Jam', indicating a recipe for making jam. The image shows jam being spread on toast, a common way to consume jam.
+[164/172] mee_vantille_o_restaurant C2PcvSVp_tH -> REAL_GEMINI [frame] (1.3s)
+  3284443501416602425_4851619510: is_recipe=true The caption describes how to prepare chickpea flour by soaking, drying, and grinding it, which are preparation steps for a food item.
+[165/172] saraganeshpandy C2Ur_Z6xts5 -> REAL_GEMINI [frame] (1.4s)
+  3236568442680735516_1956912909: is_recipe=false The caption mentions a "tip" for holiday meals and the image shows water in a pan, but there are no ingredients or specific cooking steps provided to qualify it as a recipe.
+[166/172] kelly.work Czqmdm9OXcc -> NOT_RECIPE_GEMINI [frame] (1.4s)
+  3253251136228559977_62593729737: is_recipe=false The image and caption indicate a welcome message for an actress and home chef, not a cooking demonstration. There are no visible ingredients or preparation steps.
+[167/172] purifry_oil C0l3qwECgxp -> NOT_RECIPE_GEMINI [frame] (1.5s)
+  3257421751171151254_58331237433: is_recipe=false The image shows a pile of puffed rice balls coated in a caramel-like substance. The caption asks viewers to guess the item in their language, suggesting it's a food item but not providing any recipe details.
+[168/172] chefvenky_ C00r9L6L_WW -> NOT_RECIPE_GEMINI [frame] (1.7s)
+  3148276455058928970_3998154030: is_recipe=false The image shows food being cooked on a griddle, but the caption is a question to followers and does not provide any ingredients or preparation steps.
+[169/172] rollercoasterofmotherhood Cuw7MFug3VK -> NOT_RECIPE_GEMINI [frame] (1.8s)
+  3134962546490447068_49629331553: is_recipe=true The image shows a packet of "Maggi Masala Magic" being sprinkled onto a flatbread, and the caption mentions "Maggi masala paratha", indicating a recipe for preparing this dish.
+[170/172] thefoodiedhaba CuBn9OHt5Tc -> REAL_GEMINI [frame] (1.2s)
+  3132204818651826772_8568735626: is_recipe=true The caption explicitly states 'Healthy Garlic Paratha' and the image shows a paratha with visible herbs and spices, suggesting a preparation process. The username '@jyotiz_kitchen' also implies a cooking channel.
+[171/172] jyotiz_kitchen Ct306_7gkpU -> REAL_GEMINI [frame] (1.4s)
+  3131495075384778460_44978188172: is_recipe=true The caption describes soaking saggubiyyam in buttermilk, refrigerating it, and mentions the consistency of punugula pindi, indicating preparation steps for a food item.
+[172/172] hariscookbook Ct1Ti4AMd7c -> REAL_GEMINI [frame] (1.6s)
+=== RETRY SUMMARY 2026-10-24T20:45:32.397Z ===
+retried 172: 0 via video, 172 via frame, 0 failed
+REAL 1210 | NOT 74 | ERROR 0
