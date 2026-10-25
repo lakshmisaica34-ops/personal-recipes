@@ -612,7 +612,7 @@ if (CHAT_API) {
   input.disabled = false; send.disabled = false;
   setStatus('Free hosted AI · chat is sent to the recipe assistant service.');
 } else {
-  setStatus('Chat service is not connected yet. The free backend needs to be deployed first.');
+  setStatus('Cloudflare chat backend is not deployed yet. Deploy the free Worker once to enable chat.');
 }
 
 function bubble(role, text='') {
