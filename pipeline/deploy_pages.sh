@@ -7,7 +7,7 @@ REPO="lakshmisaica34-ops/personal-recipes"
 : "${GITHUB_TOKEN:?set GITHUB_TOKEN (fine-grained PAT, Contents: read/write + Pages: read/write)}"
 cd "$(dirname "$0")/.."
 
-git add -A docs pipeline .gitignore package.json 2>/dev/null || true
+git add -A docs pipeline .gitignore package.json README.md ARCHITECTURE.md 2>/dev/null || true
 if git diff --cached --quiet; then
   echo "no changes to commit"
 else
