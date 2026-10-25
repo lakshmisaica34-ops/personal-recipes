@@ -8,6 +8,13 @@ the captions and — where the caption only had half the story — off the video
 It is one self-contained page: search by dish, ingredient or creator, filter by language,
 and switch any recipe between the original language and English.
 
+The dashboard is designed for cooking: a responsive, photo-first grid with the recipe name
+under each locally cached reel cover. The collection also has a free, private recipe finder:
+type a request such as “vegetarian with paneer” or “no onion”, and it filters/ranks these
+recipes in your browser. It uses no AI API, account, or server, so it costs nothing and your
+query does not leave your device. It is a collection recommender, not a general-purpose
+generative chatbot; it can only recommend dishes already in this collection.
+
 ## What is in here
 
 | | |

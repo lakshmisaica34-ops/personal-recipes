@@ -150,7 +150,7 @@ def build():
             "creator": cap.get("username") or "",
             "creator_name": cap.get("full_name") or "",
             "permalink": cap.get("permalink") or f"https://www.instagram.com/p/{code}/",
-            "thumbnail": cap.get("thumbnail_url") or "",
+            "thumbnail": ("thumbs/" + code + ".jpg") if os.path.exists(os.path.join(SITE, "thumbs", code + ".jpg")) else (cap.get("thumbnail_url") or ""),
             "taken_at": cap.get("taken_at"),
             "duration_s": cap.get("duration_s"),
             "ingredients": ingredients,
@@ -318,20 +318,22 @@ TEMPLATE = r"""<!doctype html>
   .chip{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--muted);
     padding:6px 11px;border-radius:999px;font-size:12.5px;cursor:pointer;user-select:none}
   .chip.on{background:var(--accent);border-color:var(--accent);color:#1b1408;font-weight:600}
-  main{padding:12px 14px 80px;max-width:860px;margin:0 auto}
+  main{padding:12px 14px 80px;max-width:1280px;margin:0 auto}
   .count{color:var(--muted);font-size:12.5px;margin:2px 0 10px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:10px;overflow:hidden}
-  .head{padding:13px 14px;cursor:pointer;display:flex;gap:11px;align-items:flex-start}
-  .names{flex:1;min-width:0}
-  .dish{font-size:16px;font-weight:650;line-height:1.3;word-break:break-word}
-  .dish-sub{font-size:13px;color:var(--muted);margin-top:2px;word-break:break-word}
-  .meta{font-size:11.5px;color:var(--muted);margin-top:6px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-width:0}
+  .head{cursor:pointer;display:flex;flex-direction:column;gap:0;align-items:stretch;height:100%}
+  .thumb{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--card2);display:block}
+  .no-thumb{width:100%;aspect-ratio:1/1;display:grid;place-items:center;background:var(--card2);color:var(--muted);font-size:42px}
+  .names{padding:9px 10px 11px;min-width:0;position:relative}
+  .dish{font-size:14px;font-weight:650;line-height:1.3;word-break:break-word}
+  .dish-sub{font-size:12px;color:var(--muted);margin-top:2px;word-break:break-word}
+  .meta{font-size:11px;color:var(--muted);margin-top:6px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
   .meta a{color:var(--accent);text-decoration:none}
   .badge{background:var(--card2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:10.5px}
   .badge.vid{border-color:var(--accent2);color:var(--accent2)}
-  .arrow{color:var(--muted);font-size:12px;padding-top:3px;transition:transform .15s}
-  .card.open .arrow{transform:rotate(90deg)}
-  .body{display:none;padding:0 14px 14px;border-top:1px solid var(--line)}
+  .arrow{display:none}
+  .body{display:none;padding:0 12px 14px;border-top:1px solid var(--line)}
   .card.open .body{display:block}
   .sect{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin:14px 0 7px;font-weight:600}
   ul.ing{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:1px}
@@ -352,6 +354,14 @@ TEMPLATE = r"""<!doctype html>
   .empty{text-align:center;color:var(--muted);padding:50px 20px;font-size:14px}
   .stats{font-size:12px;color:var(--muted);line-height:1.7;margin-top:14px;border-top:1px solid var(--line);padding-top:10px}
   .stats b{color:var(--text)}
+  .chat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin:0 0 14px}
+  .chat-title{font-size:14px;font-weight:650;margin-bottom:5px}
+  .chat-hint{font-size:12px;color:var(--muted);margin-bottom:9px}
+  .chatrow{display:flex;gap:8px}.chatrow input{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:9px;padding:10px 11px;font-size:15px}
+  .chatrow button{background:var(--accent);color:#1b1408;border:0;border-radius:9px;padding:0 14px;font-weight:650;cursor:pointer}
+  #chat-answer{font-size:13px;line-height:1.5;margin-top:10px;white-space:pre-line}
+  @media(max-width:380px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
+  @media(min-width:700px){.grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}}
   button.link{background:none;border:0;color:var(--accent);font-size:12.5px;cursor:pointer;padding:0;text-decoration:underline}
   #costs{display:none;margin-top:8px;max-height:280px;overflow:auto;border:1px solid var(--line);border-radius:10px}
   table{border-collapse:collapse;width:100%;font-size:11.5px}
@@ -374,6 +384,12 @@ TEMPLATE = r"""<!doctype html>
   <div class="chips" id="chips"></div>
 </header>
 <main>
+  <section class="chat">
+    <div class="chat-title">Ask your recipe collection</div>
+    <div class="chat-hint">Free and private: searches your recipes on this device. Try “vegetarian, no onion” or “something with paneer”.</div>
+    <form class="chatrow" id="chat-form"><input id="chat-q" type="search" placeholder="What would you like to cook?" autocomplete="off"><button type="submit">Find</button></form>
+    <div id="chat-answer" aria-live="polite"></div>
+  </section>
   <div class="count" id="count"></div>
   <div id="list"></div>
   <div class="stats" id="stats"></div>
@@ -445,6 +461,7 @@ function card(r, idx){
   const nv = r.variants ? r.variants.length : 1;
   return '<div class="card" data-i="' + idx + '">' +
     '<div class="head" onclick="toggle(this)">' +
+      (r.thumbnail ? '<img class="thumb" loading="lazy" src="' + attr(r.thumbnail) + '" alt="' + attr(title) + '" onerror="this.outerHTML=\'<div class=no-thumb>🍲</div>\'">' : '<div class="no-thumb">🍲</div>') +
       '<div class="names">' +
         '<div class="dish">' + esc(title) + '</div>' +
         (sub ? '<div class="dish-sub">' + esc(sub) + '</div>' : '') +
@@ -456,7 +473,7 @@ function card(r, idx){
             ({'video': 'on camera', 'stills': 'frames + audio'}[r.source] || 'caption') + '</span>' +
           (nv > 1 ? '<span class="badge">' + nv + ' versions</span>' : '') +
         '</div>' +
-      '</div><div class="arrow">▶</div>' +
+      '</div>' +
     '</div>' +
     '<div class="body">' + ingHTML(r) +
       '<div class="toggle"><button class="on" onclick="setMode(this,\'orig\')">Original</button><button onclick="setMode(this,\'en\')">English</button></div>' +
@@ -498,12 +515,54 @@ function render(){
   chips();
   const rows = filtered();
   $('#count').textContent = rows.length + ' of ' + DATA.length + ' dishes';
+  list.className = 'grid';
   list.innerHTML = rows.length ? rows.map(r => card(r, DATA.indexOf(r))).join('') :
     '<div class="empty">No dishes match “' + esc(state.q) + '”.</div>';
 }
 
 qEl.addEventListener('input', e => { state.q = e.target.value.trim().toLowerCase(); render(); });
 sortEl.addEventListener('change', e => { state.sort = e.target.value; render(); });
+
+// Tiny deterministic recommender: no hosted model, account, or API key. It turns
+// natural-language constraints into ingredient/title filters, then ranks matches.
+function chatRecommend(text){
+  const q=text.toLowerCase();
+  const avoid=[];
+  const avoidMap={onion:['onion'],garlic:['garlic'],dairy:['milk','cream','cheese','butter','paneer','yogurt','curd'],
+    nuts:['almond','cashew','peanut','pistachio','walnut'],gluten:['wheat','flour','maida','bread','pasta'],
+    egg:['egg'],meat:['chicken','mutton','lamb','beef','pork','fish','prawn','shrimp']};
+  for(const [word,items] of Object.entries(avoidMap)) if(new RegExp('\\b(no|without|avoid|exclude|skip)\\s+(\\w+\\s+){0,2}'+word+'s?\\b').test(q)) avoid.push(...items);
+  const vegetarian=/vegetarian|vegan|veg food|no meat/.test(q);
+  if(vegetarian) avoid.push(...avoidMap.meat);
+  if(/vegan/.test(q)) avoid.push(...avoidMap.dairy,...avoidMap.egg);
+  const wants=[];
+  for(const m of q.matchAll(/(?:with|using|have|has)\s+([a-z][a-z -]{1,24})/g)) wants.push(m[1].trim());
+  const positiveQ=q.replace(/\b(no|without|avoid|exclude|skip)\s+(\w+\s+){0,2}\w+s?\b/g,' ')
+    .replace(/\b(vegetarian|vegan|veg food|no meat|quick|easy|healthy|spicy|recipe|recipes|something|anything|make|cook|want|like|please|find|show|recommend|for|with|that|have|has)\b/g,' ');
+  const terms=positiveQ.split(/[^a-z0-9\u0900-\u0DFF]+/).filter(w=>w.length>2);
+  let matches=DATA.filter(r=>{
+    const hay=field(r);
+    if(avoid.some(x=>hay.includes(x))) return false;
+    return true;
+  }).map(r=>{
+    const hay=field(r); let score=0;
+    for(const t of terms) if(hay.includes(t)) score+=t.length>4?3:1;
+    for(const w of wants) if(hay.includes(w)) score+=5;
+    if(/easy|simple|quick/.test(q) && (r.steps||[]).length) score+=1;
+    return {r,score};
+  }).filter(x=>x.score>0 || (!terms.length && (vegetarian||avoid.length))).sort((a,b)=>b.score-a.score);
+  if(!terms.length && !vegetarian && !avoid.length) matches=[];
+  return matches.slice(0,8).map(x=>x.r);
+}
+$('#chat-form').addEventListener('submit',e=>{
+  e.preventDefault(); const q=$('#chat-q').value.trim(); if(!q)return;
+  const found=chatRecommend(q); const answer=$('#chat-answer');
+  if(!found.length){answer.textContent='I couldn’t find a clear match. Try an ingredient or a constraint such as “no onion”.';return;}
+  answer.innerHTML='<b>'+found.length+' ideas from your collection:</b> '+found.map(r=>'<button class="link" onclick="openRecipe(\''+attr(r.code)+'\')">'+esc(r.dish_en||r.dish)+'</button>').join(' · ');
+  list.className='grid'; list.innerHTML=found.map(r=>card(r,DATA.indexOf(r))).join('');
+  $('#count').textContent=found.length+' recommendations'; window.scrollTo({top:0,behavior:'smooth'});
+});
+window.openRecipe=(code)=>{const el=list.querySelector('[data-i="'+DATA.findIndex(r=>r.code===code)+'"]');if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.querySelector('.head').click();}};
 
 $('#hdr').textContent = '· ' + SUMMARY.recipes + ' dishes · ' + SUMMARY.creators + ' creators';
 $('#stats').innerHTML =
