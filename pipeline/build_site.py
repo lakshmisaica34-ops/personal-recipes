@@ -30,6 +30,7 @@ ING_PATCHES = [
 ]
 TITLE_PATCH = os.path.join(ROOT, "work/batches/out_gap_title.jsonl")
 LOG = os.path.join(ROOT, "work/video_log.jsonl")
+CHAT_API_URL = os.environ.get("RECIPE_CHAT_API_URL", "")
 SITE = os.path.join(ROOT, "docs")
 os.makedirs(SITE, exist_ok=True)
 
@@ -282,7 +283,7 @@ def render_html(recipes, summary, costs):
     cdata = json.dumps(costs, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     sdata = json.dumps(summary, ensure_ascii=False)
     return (TEMPLATE.replace("__DATA__", data).replace("__COSTS__", cdata)
-            .replace("__SUMMARY__", sdata))
+            .replace("__SUMMARY__", sdata).replace("__CHAT_API_URL__", json.dumps(CHAT_API_URL)))
 
 
 TEMPLATE = r"""<!doctype html>
@@ -411,8 +412,8 @@ TEMPLATE = r"""<!doctype html>
   <section id="chat-view" class="view">
     <div class="chat">
       <div class="chat-title">Chat with your recipes</div>
-      <div class="chat-hint">Paste your own free Gemini API key to chat. It stays in this tab’s memory and is sent directly to Google—never saved in this site or its files. Google’s free-tier terms may allow use of submitted content to improve its products.</div>
-      <div class="chat-tools"><a class="link" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Get a free Gemini API key ↗</a><input id="api-key" type="password" autocomplete="off" spellcheck="false" placeholder="Paste API key"><button id="connect-ai" type="button">Connect</button><button id="forget-key" type="button" hidden>Forget key</button><button id="clear-chat" type="button">New chat</button><span id="chat-status" aria-live="polite">Get a key, paste it, and press Connect.</span></div>
+      <div class="chat-hint">Recipe chat is powered by Cloudflare Workers AI. Your messages and matching recipe details are sent to Cloudflare. The free daily allowance is limited and may change.</div>
+      <div class="chat-tools"><button id="clear-chat" type="button">New chat</button><span id="chat-status" aria-live="polite">Checking chat connection…</span></div>
       <div id="chat-log" aria-live="polite"></div>
       <form class="chatrow" id="chat-form"><input id="chat-q" type="text" placeholder="Ask for a recipe… e.g. dinner with paneer, no onion" autocomplete="off" disabled><button id="chat-send" type="submit" disabled>Send</button></form>
     </div>
@@ -599,37 +600,17 @@ $('#stats').innerHTML =
 render();
 </script>
 <script type="module">
+const CHAT_API = __CHAT_API_URL__;
 const statusEl = document.querySelector('#chat-status');
 const form = document.querySelector('#chat-form');
 const input = document.querySelector('#chat-q');
 const send = document.querySelector('#chat-send');
 const log = document.querySelector('#chat-log');
-const keyInput = document.querySelector('#api-key');
-const connectBtn = document.querySelector('#connect-ai');
-const forgetBtn = document.querySelector('#forget-key');
-let geminiKey = '';
 let busy = false;
 let history = [];
 const setStatus = (s) => { statusEl.textContent = s; };
-input.disabled = true; send.disabled = true;
-
-connectBtn.addEventListener('click', () => {
-  const key = keyInput.value.trim();
-  if (!key) { setStatus('Paste the Gemini API key first.'); keyInput.focus(); return; }
-  geminiKey = key;
-  keyInput.value = '';
-  keyInput.hidden = true; connectBtn.hidden = true;
-  forgetBtn.hidden = false;
-  input.disabled = false; send.disabled = false;
-  setStatus('Connected to Gemini. Key is held only in this tab until you forget it or close the page.');
-  input.focus();
-});
-forgetBtn.addEventListener('click', () => {
-  geminiKey = ''; history = []; log.replaceChildren();
-  keyInput.hidden = false; connectBtn.hidden = false; forgetBtn.hidden = true;
-  input.disabled = true; send.disabled = true;
-  setStatus('Key forgotten. Paste a Gemini API key and press Connect to chat.');
-});
+input.disabled = !CHAT_API; send.disabled = !CHAT_API;
+setStatus(CHAT_API ? 'Cloudflare Workers AI is ready.' : 'Cloudflare Worker needs to be deployed and connected.');
 
 function bubble(role, text='') {
   const el = document.createElement('div');
@@ -686,13 +667,13 @@ function showPicks(parent, recipes, answer) {
 
 document.querySelector('#clear-chat').addEventListener('click', () => {
   history = []; log.replaceChildren();
-  if (geminiKey) setStatus('New conversation. Gemini is ready.');
+  if (CHAT_API) setStatus('New conversation. Cloudflare AI is ready.');
 });
 
 form.addEventListener('submit', async e => {
   e.preventDefault();
   const text = input.value.trim();
-  if (!text || !geminiKey || busy) return;
+  if (!text || !CHAT_API || busy) return;
   input.value = ''; busy = true; send.disabled = true;
   bubble('user', text);
   const picks = pickRecipes(text);
@@ -706,17 +687,11 @@ form.addEventListener('submit', async e => {
   else history[0] = {role:'system', content:system};
   history.push({role:'user', content:text});
   const assistant = bubble('assistant', '');
-  setStatus('Thinking with Gemini…');
+  setStatus('Thinking…');
   try {
-    const contents = history.slice(1).slice(-12).map(m => ({
-      role:m.role === 'assistant' ? 'model' : 'user', parts:[{text:m.content}]
-    }));
-    const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:streamGenerateContent?alt=sse', {
-      method:'POST', headers:{'Content-Type':'application/json','x-goog-api-key':geminiKey},
-      body:JSON.stringify({
-        systemInstruction:{parts:[{text:system}]}, contents,
-        generationConfig:{temperature:0.65,maxOutputTokens:400}
-      })
+    const response = await fetch(CHAT_API, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({messages:[{role:'system',content:system},...history.slice(1).slice(-10)]})
     });
     if (!response.ok) throw new Error((await response.text()).slice(0,240) || `HTTP ${response.status}`);
     if (!response.body) throw new Error('The chat service returned no response stream');
@@ -732,7 +707,7 @@ form.addEventListener('submit', async e => {
         const raw=line.slice(5).trim(); if(!raw||raw==='[DONE]')continue;
         try{
           const chunk=JSON.parse(raw);
-          for(const part of chunk.candidates?.[0]?.content?.parts||[]) if(!part.thought) answer+=part.text||'';
+          answer+=chunk.response||'';
         }catch{}
         assistant.textContent=answer;log.scrollTop=log.scrollHeight;
       }
@@ -741,12 +716,12 @@ form.addEventListener('submit', async e => {
     assistant.textContent = answer;
     history.push({role:'assistant', content:answer});
     showPicks(assistant, picks, answer);
-    setStatus('Gemini free tier · limits vary by account and model.');
+    setStatus('Cloudflare Workers AI · free daily allowance applies.');
   } catch (err) {
     assistant.textContent = 'Gemini request failed: ' + (err?.message || err);
-    setStatus('Check the API key and free-tier quota, then try again.');
+    setStatus('Check the chat connection and free daily allowance, then try again.');
   } finally {
-    busy = false; send.disabled = !geminiKey; input.focus();
+    busy = false; send.disabled = !CHAT_API; input.focus();
   }
 });
 </script>

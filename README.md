@@ -10,13 +10,11 @@ and switch any recipe between the original language and English.
 
 The dashboard is designed for cooking: a responsive, photo-first grid with the recipe name
 under each locally cached reel cover. Its separate Chat tab supports natural, multi-turn recipe
-recommendations through Google's free Gemini API tier. Get a key from [Google AI Studio](https://aistudio.google.com/apikey),
-paste it into the Chat tab, and press Connect—no install, model download, or backend setup.
-The key is held in browser memory only (not stored in the webpage or GitHub), and is forgotten
-when you close the page or press Forget key. Requests go directly to Google; free-tier content
-may be used to improve Google's products, and quotas vary. The chat only recommends dishes in
-this collection; ingredient extraction can be incomplete, so verify allergy-sensitive details
-against the linked original video. Keep this as a personal dashboard and never publish your key.
+recommendations through Cloudflare Workers AI. See [`worker/README.md`](worker/README.md) for
+the one-time browser-dashboard setup and connection steps. Chat messages and matching recipe
+details are sent to Cloudflare; free daily allowance and limits may change. The chat only
+recommends dishes in this collection; ingredient extraction can be incomplete, so verify
+allergy-sensitive details against the linked original video.
 
 ## What is in here
 
