@@ -415,8 +415,8 @@ TEMPLATE = r"""<!doctype html>
   <section id="chat-view" class="view">
     <div class="chat">
       <div class="chat-title">Chat with your recipes</div>
-      <div class="chat-hint">Recipe chat is powered by Cloudflare Workers AI. Your messages and matching recipe details are sent to Cloudflare. The free daily allowance is limited and may change.</div>
-      <div class="chat-tools"><button id="clear-chat" type="button">New chat</button><span id="chat-status" aria-live="polite">Checking chat connection…</span></div>
+      <div class="chat-hint">Recipe chat uses Cloudflare Workers AI. To continue with your own ChatGPT account, use the handoff button: it copies this conversation and matching recipe details, then opens ChatGPT. You’ll paste the prompt there; chats do not sync back here.</div>
+      <div class="chat-tools"><button id="chatgpt-handoff" type="button">Continue in ChatGPT ↗</button><button id="clear-chat" type="button">New chat</button><span id="chat-status" aria-live="polite">Checking chat connection…</span></div>
       <div id="chat-log" aria-live="polite"></div>
       <form class="chatrow" id="chat-form"><input id="chat-q" type="text" placeholder="Ask for a recipe… e.g. dinner with paneer, no onion" autocomplete="off" disabled><button id="chat-send" type="submit" disabled>Send</button></form>
     </div>
@@ -671,6 +671,20 @@ function showPicks(parent, recipes, answer) {
 document.querySelector('#clear-chat').addEventListener('click', () => {
   history = []; log.replaceChildren();
   if (CHAT_API) setStatus('New conversation. Cloudflare AI is ready.');
+});
+
+document.querySelector('#chatgpt-handoff').addEventListener('click', async () => {
+  const transcript = history.filter(m => m.role !== 'system')
+    .map(m => `${m.role === 'user' ? 'Me' : 'Assistant'}: ${m.content}`).join('\n\n');
+  if (!transcript) { setStatus('Ask a recipe question first, then continue it in ChatGPT.'); return; }
+  const prompt = `${history[0]?.content || 'Help me choose recipes from my personal collection.'}\n\nConversation so far:\n${transcript}\n\nContinue this conversation naturally. Recommend only recipes included in the supplied collection.`;
+  window.open('https://chatgpt.com/', '_blank', 'noopener');
+  try {
+    await navigator.clipboard.writeText(prompt);
+    setStatus('Chat copied. Paste it into the new ChatGPT tab to continue.');
+  } catch {
+    setStatus('ChatGPT opened, but clipboard access failed. Copy the chat manually or allow clipboard access.');
+  }
 });
 
 form.addEventListener('submit', async e => {
