@@ -30,7 +30,10 @@ ING_PATCHES = [
 ]
 TITLE_PATCH = os.path.join(ROOT, "work/batches/out_gap_title.jsonl")
 LOG = os.path.join(ROOT, "work/video_log.jsonl")
-CHAT_API_URL = os.environ.get("RECIPE_CHAT_API_URL", "")
+CHAT_API_URL = os.environ.get(
+    "RECIPE_CHAT_API_URL",
+    "https://personal-recipes-chat.ath-sailak2.workers.dev/chat",
+)
 SITE = os.path.join(ROOT, "docs")
 os.makedirs(SITE, exist_ok=True)
 
@@ -707,7 +710,7 @@ form.addEventListener('submit', async e => {
         const raw=line.slice(5).trim(); if(!raw||raw==='[DONE]')continue;
         try{
           const chunk=JSON.parse(raw);
-          answer+=chunk.response||'';
+          answer+=chunk.choices?.[0]?.delta?.content||chunk.response||'';
         }catch{}
         assistant.textContent=answer;log.scrollTop=log.scrollHeight;
       }
