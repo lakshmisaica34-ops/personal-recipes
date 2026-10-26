@@ -298,44 +298,47 @@ TEMPLATE = r"""<!doctype html>
 <meta name="theme-color" content="#12100e">
 <style>
   :root{
-    --bg:#12100e; --card:#1c1917; --card2:#242019; --line:#332d26;
-    --text:#f2ece4; --muted:#a89c8d; --accent:#e8a33d; --accent2:#8fbf6a;
-    --radius:14px;
+    --bg:#f6f4ee; --card:#fffefa; --card2:#f1eee5; --line:#e5e0d4;
+    --text:#262820; --muted:#72766b; --accent:#47734e; --accent2:#bd7d3c;
+    --radius:17px; --shadow:0 10px 32px rgba(40,42,30,.06);
   }
-  @media (prefers-color-scheme: light){
-    :root{--bg:#faf7f2;--card:#fff;--card2:#f3ede3;--line:#e5dccd;--text:#231f1a;--muted:#7a6f60;--accent:#b26b12;--accent2:#4b7a2b;}
+  @media (prefers-color-scheme: dark){
+    :root{--bg:#151813;--card:#1e231d;--card2:#262c24;--line:#343c32;--text:#f0f0e9;--muted:#a5ad9f;--accent:#9ac28b;--accent2:#e0a365;--shadow:0 10px 32px rgba(0,0,0,.18)}
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
     font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Telugu","Noto Sans Devanagari",sans-serif;
     -webkit-text-size-adjust:100%}
-  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);
-    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px 14px calc(10px)}
-  h1{font-size:17px;margin:0 0 8px;letter-spacing:.2px;font-weight:650}
-  h1 span{color:var(--muted);font-weight:400;font-size:13px}
-  .nav{display:flex;gap:6px;margin:0 0 9px}
-  .nav button{flex:1;background:var(--card);border:1px solid var(--line);color:var(--muted);border-radius:9px;padding:8px 12px;font-size:13px;font-weight:600;cursor:pointer}
-  .nav button.active{background:var(--accent);border-color:var(--accent);color:#1b1408}
+  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 91%,transparent);
+    backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:12px max(18px,calc((100vw - 1280px)/2)) 13px}
+  h1{font-size:18px;margin:0 0 11px;letter-spacing:-.35px;font-weight:750;display:flex;align-items:baseline;gap:8px}
+  h1 span{color:var(--muted);font-weight:450;font-size:12px}
+  .nav{display:flex;gap:7px;margin:0 0 11px;max-width:420px}
+  .nav button{flex:1;background:transparent;border:1px solid transparent;color:var(--muted);border-radius:10px;padding:9px 14px;font-size:13px;font-weight:650;cursor:pointer;transition:background .16s,border-color .16s,color .16s}
+  .nav button:hover{background:var(--card2)}
+  .nav button.active{background:var(--card);border-color:var(--line);color:var(--text);box-shadow:0 2px 7px rgba(0,0,0,.04)}
   .view{display:none}.view.active{display:block}
   .searchrow{display:flex;gap:8px}
   input[type=search]{flex:1;min-width:0;background:var(--card);border:1px solid var(--line);color:var(--text);
-    border-radius:10px;padding:11px 12px;font-size:16px;outline:none}
-  input[type=search]:focus{border-color:var(--accent)}
-  select{background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:11px 8px;font-size:14px}
+    border-radius:12px;padding:12px 14px;font-size:16px;outline:none;box-shadow:0 1px 2px rgba(0,0,0,.02)}
+  input[type=search]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
+  select{background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:11px 12px;font-size:14px}
   .chips{display:flex;gap:6px;overflow-x:auto;padding:9px 0 2px;scrollbar-width:none}
   .chips::-webkit-scrollbar{display:none}
   .chip{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--muted);
     padding:6px 11px;border-radius:999px;font-size:12.5px;cursor:pointer;user-select:none}
   .chip.on{background:var(--accent);border-color:var(--accent);color:#1b1408;font-weight:600}
-  main{padding:12px 14px 80px;max-width:1280px;margin:0 auto}
-  .count{color:var(--muted);font-size:12.5px;margin:2px 0 10px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-width:0}
+  main{padding:22px 20px 80px;max-width:1320px;margin:0 auto}
+  .count{color:var(--muted);font-size:13px;margin:2px 0 14px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-width:0;box-shadow:0 2px 7px rgba(35,39,28,.035);transition:transform .18s,box-shadow .18s,border-color .18s}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
   .head{cursor:pointer;display:flex;flex-direction:column;gap:0;align-items:stretch;height:100%}
-  .thumb{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--card2);display:block}
+  .thumb{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--card2);display:block;transition:transform .25s}
+  .card:hover .thumb{transform:scale(1.025)}
   .no-thumb{width:100%;aspect-ratio:1/1;display:grid;place-items:center;background:var(--card2);color:var(--muted);font-size:42px}
-  .names{padding:9px 10px 11px;min-width:0;position:relative}
-  .dish{font-size:14px;font-weight:650;line-height:1.3;word-break:break-word}
+  .names{padding:11px 12px 13px;min-width:0;position:relative}
+  .dish{font-size:14px;font-weight:680;line-height:1.35;word-break:break-word}
   .dish-sub{font-size:12px;color:var(--muted);margin-top:2px;word-break:break-word}
   .meta{font-size:11px;color:var(--muted);margin-top:6px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
   .meta a{color:var(--accent);text-decoration:none}
@@ -363,22 +366,54 @@ TEMPLATE = r"""<!doctype html>
   .empty{text-align:center;color:var(--muted);padding:50px 20px;font-size:14px}
   .stats{font-size:12px;color:var(--muted);line-height:1.7;margin-top:14px;border-top:1px solid var(--line);padding-top:10px}
   .stats b{color:var(--text)}
-  .chat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin:0 0 14px}
-  .chat-title{font-size:14px;font-weight:650;margin-bottom:5px}
-  .chat-hint{font-size:12px;color:var(--muted);margin-bottom:9px}
-  .chat-tools{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
-  .chat-tools button{background:var(--card2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:7px 10px;cursor:pointer}
-  .chat-tools input{min-width:190px;flex:1;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 10px;font-size:14px}
-  #chat-status{font-size:12px;color:var(--muted)}
-  .chatrow{display:flex;gap:8px}.chatrow input{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:9px;padding:10px 11px;font-size:15px}
-  .chatrow button{background:var(--accent);color:#1b1408;border:0;border-radius:9px;padding:0 14px;font-weight:650;cursor:pointer}
-  .chatrow button:disabled,.chatrow input:disabled{opacity:.5;cursor:not-allowed}
-  #chat-log{display:flex;flex-direction:column;gap:8px;margin:8px 0;max-height:420px;overflow:auto}
-  .bubble{max-width:88%;padding:9px 11px;border-radius:12px;font-size:13px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
-  .bubble.user{align-self:flex-end;background:var(--card2)}.bubble.assistant{align-self:flex-start;background:var(--bg);border:1px solid var(--line)}
-  .chat-picks{display:flex;flex-wrap:wrap;gap:6px;max-width:92%}.chat-picks button{border:1px solid var(--line);background:var(--card2);color:var(--text);border-radius:999px;padding:6px 9px;font-size:11px;cursor:pointer}
-  @media(max-width:380px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
-  @media(min-width:700px){.grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}}
+  #chat-view{max-width:980px;margin:0 auto}
+  .chat{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:0;margin:0 auto;overflow:hidden;box-shadow:var(--shadow)}
+  .chat-head{display:flex;align-items:center;gap:14px;padding:22px 24px 17px;border-bottom:1px solid var(--line)}
+  .chat-mark{width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;border-radius:16px;background:color-mix(in srgb,var(--accent) 13%,var(--card));font-size:24px}
+  .chat-heading{min-width:0;flex:1}
+  .chat-eyebrow{font-size:10px;letter-spacing:1.3px;font-weight:750;color:var(--accent);margin:0 0 3px;text-transform:uppercase}
+  .chat-title{font-size:21px;font-weight:750;letter-spacing:-.5px;margin:0;line-height:1.25}
+  .chat-subtitle{font-size:12.5px;color:var(--muted);margin:4px 0 0}
+  .model-pill{white-space:nowrap;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:7px 10px;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:7px}
+  .model-dot{width:7px;height:7px;border-radius:50%;background:#5c9b62;box-shadow:0 0 0 3px color-mix(in srgb,#5c9b62 17%,transparent)}
+  .chat-log-wrap{padding:16px 22px 4px}
+  #chat-log{display:flex;flex-direction:column;gap:10px;margin:0;min-height:400px;max-height:min(58vh,620px);overflow:auto;scroll-behavior:smooth;padding:3px 3px 12px;overscroll-behavior:contain}
+  .chat-welcome{margin:auto;text-align:center;max-width:560px;padding:24px 16px;color:var(--muted)}
+  .welcome-icon{font-size:33px;margin-bottom:8px}
+  .chat-welcome h3{font-size:18px;color:var(--text);margin:0 0 5px;letter-spacing:-.25px}
+  .chat-welcome p{font-size:13px;line-height:1.55;margin:0 auto 17px;max-width:420px}
+  .suggestions{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
+  .suggestions button{background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:999px;padding:9px 12px;font-size:12px;cursor:pointer;transition:border-color .15s,background .15s,transform .15s}
+  .suggestions button:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 7%,var(--card));transform:translateY(-1px)}
+  .bubble{max-width:min(82%,680px);padding:12px 15px;border-radius:17px;font-size:14px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere}
+  .bubble.user{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:5px}
+  .bubble.assistant{align-self:flex-start;background:var(--bg);border:1px solid var(--line);border-bottom-left-radius:5px}
+  .chat-picks{display:flex;flex-wrap:wrap;gap:7px;max-width:90%;margin:0 0 2px 2px}
+  .chat-picks button{border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));background:color-mix(in srgb,var(--accent) 8%,var(--card));color:var(--text);border-radius:999px;padding:8px 11px;font-size:12px;cursor:pointer}
+  .chat-bottom{padding:8px 22px 18px;border-top:1px solid var(--line);background:color-mix(in srgb,var(--card) 94%,var(--bg))}
+  .chat-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:34px;margin-bottom:8px}
+  #chat-status{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:7px}
+  #clear-chat{background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:12px;cursor:pointer;white-space:nowrap}
+  #clear-chat:hover{color:var(--text);background:var(--card2)}
+  .chatrow{display:flex;gap:9px;align-items:center}
+  .chatrow input{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:13px;padding:13px 15px;font-size:15px;outline:none}
+  .chatrow input:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 17%,transparent)}
+  .chatrow button{background:var(--accent);color:#fff;border:0;border-radius:12px;min-height:45px;padding:0 17px;font-size:13px;font-weight:700;cursor:pointer;transition:filter .15s,transform .15s}
+  .chatrow button:hover:not(:disabled){filter:brightness(1.07);transform:translateY(-1px)}
+  .chatrow button:disabled,.chatrow input:disabled{opacity:.55;cursor:not-allowed}
+  .chat-footnote{text-align:center;color:var(--muted);font-size:10.5px;margin:10px 0 0}
+  button:focus-visible,.head:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 55%,transparent);outline-offset:2px}
+  @media(max-width:600px){
+    header{padding:10px 13px 11px}.nav{max-width:none;margin-bottom:9px}
+    main{padding:14px 12px 50px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .chat{border-radius:17px}.chat-head{padding:17px 15px 14px;gap:10px}.chat-mark{width:40px;height:40px;flex-basis:40px;border-radius:13px;font-size:21px}
+    .chat-title{font-size:18px}.chat-subtitle{font-size:11.5px}.model-pill{font-size:0;padding:9px}.model-dot{width:8px;height:8px}
+    .chat-log-wrap{padding:11px 12px 2px}#chat-log{min-height:370px;max-height:52vh}.chat-welcome{padding:19px 5px}
+    .bubble{max-width:92%;font-size:13.5px;padding:11px 13px}.chat-bottom{padding:7px 12px 13px}.chat-toolbar{margin-bottom:7px}
+    .chatrow{gap:7px}.chatrow input{font-size:16px;padding:12px}.chatrow button{padding:0 14px;min-height:44px}
+  }
+  @media(max-width:380px){.grid{gap:8px}.names{padding:9px 9px 11px}.dish{font-size:13px}}
+  @media(min-width:700px){.grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:17px}}
   button.link{background:none;border:0;color:var(--accent);font-size:12.5px;cursor:pointer;padding:0;text-decoration:underline}
   #costs{display:none;margin-top:8px;max-height:280px;overflow:auto;border:1px solid var(--line);border-radius:10px}
   table{border-collapse:collapse;width:100%;font-size:11.5px}
@@ -414,11 +449,18 @@ TEMPLATE = r"""<!doctype html>
   </section>
   <section id="chat-view" class="view">
     <div class="chat">
-      <div class="chat-title">Chat with your recipes</div>
-      <div class="chat-hint">Recipe chat uses NVIDIA Nemotron 3 Ultra through OpenRouter’s free endpoint. Your messages and matching recipe details go to the provider. Free-model availability and limits vary. To continue in ChatGPT, use the handoff button to copy this conversation and matching recipes.</div>
-      <div class="chat-tools"><button id="chatgpt-handoff" type="button">Continue in ChatGPT ↗</button><button id="clear-chat" type="button">New chat</button><span id="chat-status" aria-live="polite">Checking chat connection…</span></div>
-      <div id="chat-log" aria-live="polite"></div>
-      <form class="chatrow" id="chat-form"><input id="chat-q" type="text" placeholder="Ask for a recipe… e.g. dinner with paneer, no onion" autocomplete="off" disabled><button id="chat-send" type="submit" disabled>Send</button></form>
+      <div class="chat-head">
+        <div class="chat-mark" aria-hidden="true">🍲</div>
+        <div class="chat-heading"><p class="chat-eyebrow">Your recipe collection</p><h2 class="chat-title">What sounds good?</h2><p class="chat-subtitle">Tell me what you’re craving or what’s in your kitchen.</p></div>
+        <div class="model-pill" title="Free OpenRouter model"><span class="model-dot"></span>Free model</div>
+      </div>
+      <div class="chat-log-wrap"><div id="chat-log" aria-live="polite"></div></div>
+      <template id="chat-welcome-template"><div class="chat-welcome" id="chat-welcome"><div class="welcome-icon" aria-hidden="true">🥘</div><h3>Find something delicious</h3><p>I’ll look through your saved recipes and suggest dishes that fit. Refine your request as we go.</p><div class="suggestions"><button type="button" data-suggestion="Suggest a quick vegetarian dinner">Quick vegetarian dinner</button><button type="button" data-suggestion="I have paneer and spinach. What can I make?">Use paneer &amp; spinach</button><button type="button" data-suggestion="Find a recipe without onion">No onion</button></div></div></template>
+      <div class="chat-bottom">
+        <div class="chat-toolbar"><span id="chat-status" aria-live="polite">Checking chat connection…</span><button id="clear-chat" type="button">New chat</button></div>
+        <form class="chatrow" id="chat-form"><input id="chat-q" type="text" placeholder="Ask about dinner, ingredients, or a craving…" autocomplete="off" disabled><button id="chat-send" type="submit" disabled>Send&nbsp; ↑</button></form>
+        <p class="chat-footnote">Recommendations come from your saved recipes. Check the original video for allergy-sensitive details.</p>
+      </div>
     </div>
   </section>
 </main>
@@ -614,8 +656,12 @@ let history = [];
 const setStatus = (s) => { statusEl.textContent = s; };
 input.disabled = !CHAT_API; send.disabled = !CHAT_API;
 setStatus(CHAT_API ? 'Free OpenRouter models are ready.' : 'Chat backend needs to be connected.');
+const welcomeTemplate = document.querySelector('#chat-welcome-template');
+const showWelcome = () => log.appendChild(welcomeTemplate.content.cloneNode(true));
+showWelcome();
 
 function bubble(role, text='') {
+  document.querySelector('#chat-welcome')?.remove();
   const el = document.createElement('div');
   el.className = 'bubble ' + role;
   el.textContent = text;
@@ -670,21 +716,14 @@ function showPicks(parent, recipes, answer) {
 
 document.querySelector('#clear-chat').addEventListener('click', () => {
   history = []; log.replaceChildren();
+  showWelcome();
   if (CHAT_API) setStatus('New conversation. Free OpenRouter models are ready.');
 });
-
-document.querySelector('#chatgpt-handoff').addEventListener('click', async () => {
-  const transcript = history.filter(m => m.role !== 'system')
-    .map(m => `${m.role === 'user' ? 'Me' : 'Assistant'}: ${m.content}`).join('\n\n');
-  if (!transcript) { setStatus('Ask a recipe question first, then continue it in ChatGPT.'); return; }
-  const prompt = `${history[0]?.content || 'Help me choose recipes from my personal collection.'}\n\nConversation so far:\n${transcript}\n\nContinue this conversation naturally. Recommend only recipes included in the supplied collection.`;
-  window.open('https://chatgpt.com/', '_blank', 'noopener');
-  try {
-    await navigator.clipboard.writeText(prompt);
-    setStatus('Chat copied. Paste it into the new ChatGPT tab to continue.');
-  } catch {
-    setStatus('ChatGPT opened, but clipboard access failed. Copy the chat manually or allow clipboard access.');
-  }
+log.addEventListener('click', e => {
+  const button = e.target.closest('[data-suggestion]');
+  if (!button) return;
+  input.value = button.dataset.suggestion || '';
+  form.requestSubmit();
 });
 
 form.addEventListener('submit', async e => {
@@ -735,7 +774,7 @@ form.addEventListener('submit', async e => {
     showPicks(assistant, picks, answer);
     setStatus('OpenRouter free model · provider limits and availability vary.');
   } catch (err) {
-    assistant.textContent = 'Gemini request failed: ' + (err?.message || err);
+    assistant.textContent = 'Chat request failed: ' + (err?.message || err);
     setStatus('Check the chat connection and free daily allowance, then try again.');
   } finally {
     busy = false; send.disabled = !CHAT_API; input.focus();
