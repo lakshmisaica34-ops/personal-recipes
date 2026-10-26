@@ -1,4 +1,4 @@
-const MODEL = "@cf/openai/gpt-oss-20b";
+const MODEL = "nvidia/nemotron-3-ultra-550b-a55b:free";
 const WINDOW_MS = 15 * 60 * 1000;
 const LIMIT = 30;
 const buckets = new Map();
@@ -43,7 +43,7 @@ export default {
     if (origin !== env.ALLOWED_ORIGIN) return json({ error: "origin not allowed" }, 403, headers);
     if (url.pathname === "/health" && request.method === "GET") return json({ ok: true }, 200, headers);
     if (url.pathname !== "/chat" || request.method !== "POST") return json({ error: "not found" }, 404, headers);
-    if (!env.AI) return json({ error: "Workers AI binding is not configured" }, 503, headers);
+    if (!env.OPENROUTER_API_KEY) return json({ error: "OpenRouter key is not configured" }, 503, headers);
     const declared = Number(request.headers.get("Content-Length") || 0);
     if (declared > 40_000) return json({ error: "request too large" }, 413, headers);
     if (rateLimited(request.headers.get("CF-Connecting-IP") || "unknown")) {
@@ -67,21 +67,36 @@ export default {
     if (messages.some(m => !["system", "user", "assistant"].includes(m.role) || !m.content)) {
       return json({ error: "invalid message" }, 400, headers);
     }
+    let upstream;
     try {
-      const stream = await env.AI.run(MODEL, {
-        messages, temperature: 0.65, max_tokens: 400, stream: true,
-      });
-      return new Response(stream, {
+      upstream = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        method: "POST",
         headers: {
-          ...headers,
-          "Content-Type": "text/event-stream; charset=utf-8",
-          "Cache-Control": "no-cache, no-transform",
-          "X-Accel-Buffering": "no",
+          "Authorization": `Bearer ${env.OPENROUTER_API_KEY}`,
+          "Content-Type": "application/json",
+          "HTTP-Referer": "https://lakshmisaica34-ops.github.io/personal-recipes/",
+          "X-Title": "Personal Recipe Chat",
         },
+        body: JSON.stringify({
+          model: MODEL, messages, temperature: 0.65,
+          max_tokens: 400, stream: true,
+        }),
       });
-    } catch (error) {
-      const detail = String(error?.message || error).slice(0, 400);
-      return json({ error: "Workers AI request failed", detail }, /limit|quota|neuron|429/i.test(detail) ? 429 : 502, headers);
+    } catch {
+      return json({ error: "could not reach OpenRouter" }, 502, headers);
     }
+    if (!upstream.ok) {
+      const detail = (await upstream.text()).slice(0, 500);
+      return json({ error: "OpenRouter request failed", detail }, upstream.status, headers);
+    }
+    return new Response(upstream.body, {
+      status: 200,
+      headers: {
+        ...headers,
+        "Content-Type": "text/event-stream; charset=utf-8",
+        "Cache-Control": "no-cache, no-transform",
+        "X-Accel-Buffering": "no",
+      },
+    });
   },
 };

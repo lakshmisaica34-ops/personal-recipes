@@ -10,9 +10,11 @@ and switch any recipe between the original language and English.
 
 The dashboard is designed for cooking: a responsive, photo-first grid with the recipe name
 under each locally cached reel cover. Its separate Chat tab supports natural, multi-turn recipe
-recommendations through Cloudflare Workers AI. See [`worker/README.md`](worker/README.md) for
-the one-time browser-dashboard setup and connection steps. Chat messages and matching recipe
-details are sent to Cloudflare; free daily allowance and limits may change. The chat only
+recommendations through NVIDIA Nemotron 3 Ultra's free OpenRouter endpoint, proxied by a
+Cloudflare Worker. The OpenRouter key is stored as a Worker secret, not in the public site.
+OpenRouter free models currently allow 50 requests/day for accounts under $10 in purchased
+credits; provider availability may vary.
+Chat messages and matching recipe details are sent to OpenRouter and the selected provider. The chat only
 recommends dishes in this collection; ingredient extraction can be incomplete, so verify
 allergy-sensitive details against the linked original video.
 

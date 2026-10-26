@@ -415,7 +415,7 @@ TEMPLATE = r"""<!doctype html>
   <section id="chat-view" class="view">
     <div class="chat">
       <div class="chat-title">Chat with your recipes</div>
-      <div class="chat-hint">Recipe chat uses Cloudflare Workers AI. To continue with your own ChatGPT account, use the handoff button: it copies this conversation and matching recipe details, then opens ChatGPT. You’ll paste the prompt there; chats do not sync back here.</div>
+      <div class="chat-hint">Recipe chat uses NVIDIA Nemotron 3 Ultra through OpenRouter’s free endpoint. Your messages and matching recipe details go to the provider. Free-model availability and limits vary. To continue in ChatGPT, use the handoff button to copy this conversation and matching recipes.</div>
       <div class="chat-tools"><button id="chatgpt-handoff" type="button">Continue in ChatGPT ↗</button><button id="clear-chat" type="button">New chat</button><span id="chat-status" aria-live="polite">Checking chat connection…</span></div>
       <div id="chat-log" aria-live="polite"></div>
       <form class="chatrow" id="chat-form"><input id="chat-q" type="text" placeholder="Ask for a recipe… e.g. dinner with paneer, no onion" autocomplete="off" disabled><button id="chat-send" type="submit" disabled>Send</button></form>
@@ -613,7 +613,7 @@ let busy = false;
 let history = [];
 const setStatus = (s) => { statusEl.textContent = s; };
 input.disabled = !CHAT_API; send.disabled = !CHAT_API;
-setStatus(CHAT_API ? 'Cloudflare Workers AI is ready.' : 'Cloudflare Worker needs to be deployed and connected.');
+setStatus(CHAT_API ? 'Free OpenRouter models are ready.' : 'Chat backend needs to be connected.');
 
 function bubble(role, text='') {
   const el = document.createElement('div');
@@ -670,7 +670,7 @@ function showPicks(parent, recipes, answer) {
 
 document.querySelector('#clear-chat').addEventListener('click', () => {
   history = []; log.replaceChildren();
-  if (CHAT_API) setStatus('New conversation. Cloudflare AI is ready.');
+  if (CHAT_API) setStatus('New conversation. Free OpenRouter models are ready.');
 });
 
 document.querySelector('#chatgpt-handoff').addEventListener('click', async () => {
@@ -733,7 +733,7 @@ form.addEventListener('submit', async e => {
     assistant.textContent = answer;
     history.push({role:'assistant', content:answer});
     showPicks(assistant, picks, answer);
-    setStatus('Cloudflare Workers AI · free daily allowance applies.');
+    setStatus('OpenRouter free model · provider limits and availability vary.');
   } catch (err) {
     assistant.textContent = 'Gemini request failed: ' + (err?.message || err);
     setStatus('Check the chat connection and free daily allowance, then try again.');
